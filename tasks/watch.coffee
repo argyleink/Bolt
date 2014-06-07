@@ -3,17 +3,17 @@ module.exports =
     livereload: true
 
   css:
-    files: ["debug/styles/**/*.styl"]
+    files: ["app/styles/**/*.styl"]
     tasks: ["stylus:debug"]
 
   js:
-    files: ["debug/js/**/*.js"]
+    files: ["app/js/**/*.js"]
     tasks: ["newer:copy:debug"]
 
   html:
-    files: ["debug/**/*.jade", "!debug/templates/**/*"]
+    files: ["app/**/*.jade", "!app/templates/**/*"]
     tasks: ["jade:debug"]
 
   templates:
-    files: ["debug/templates/**/*.jade"]
+    files: ["app/templates/**/*.jade"]
     tasks: ["shell:clientjade"]

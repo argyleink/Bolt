@@ -3,7 +3,7 @@ module.exports =
     files: [
       {
         expand: true
-        cwd: "debug/js"
+        cwd: "app/js"
         src: ["*.js"]
         dest: "dist/js/"
         ext: ".js"

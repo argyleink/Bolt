@@ -14,7 +14,7 @@
 			],
 			"follow_symlinks": true,
 			"name": "App",
-			"path": "debug"
+			"path": "app"
 		},
 		{
 			"follow_symlinks": true,
@@ -34,7 +34,7 @@
 		{
 			"folder_exclude_patterns":
 			[
-				"debug",
+				"app",
 				"bower_components",
 				"dist",
 				"tasks"

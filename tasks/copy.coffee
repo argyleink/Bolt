@@ -2,14 +2,14 @@ module.exports = debug:
   files: [
     {
       expand: true
-      cwd: "debug/js"
+      cwd: "app/js"
       src: ["*.js"]
       dest: "dist/js"
       ext: ".js"
     },
     {
       expand: true
-      cwd: "debug/img"
+      cwd: "app/img"
       src: ["*"]
       dest: "dist/img"
     }

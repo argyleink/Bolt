@@ -7,7 +7,7 @@ module.exports =
 
     files: [
       expand: true
-      cwd:    "debug/"
+      cwd:    "app/"
       src:    ["*.jade"]
       dest:   "dist/"
       ext:    ".html"
@@ -20,7 +20,7 @@ module.exports =
 
     files: [
       expand: true
-      cwd:    "debug/"
+      cwd:    "app/"
       src:    ["*.jade"]
       dest:   "dist/"
       ext:    ".html"

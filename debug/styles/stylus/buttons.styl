@@ -1,0 +1,95 @@
+.btn-size
+  padding: 1rem 1.75rem
+  @extend .no-callout
+
+.btn
+  @extend .btn-size
+  @extend .font-normal
+  @extend .text-center
+
+  display:inline-block
+  font-size:2rem
+  position:relative
+  background-color: brand-color
+  border:none // removes borders from <button> elements
+  outline:none
+  border-top:1px solid hsl(181, 67%, 65%)
+  color:light-text-color
+  text-shadow:1px 1px 0 hsl(181,67%,40%)
+
+  .icon
+    margin-right:0.25em
+    top:1px
+    position: relative
+
+  // .btn.block
+  &.block
+    display:block
+    width:100%
+
+  &:active, .active
+    background: hsl(181, 100%, 35%)
+    border-top:1px solid hsl(181, 67%, 30%)
+
+  &:focus
+    outline:none
+
+  &.narrow
+    padding: 0.5em
+  
+  // Disabled Button
+  &.disabled, &.disabled:hover, &.disabled:active, &[disabled]
+    cursor:initial !important
+    background: hsl(0,0%,50%) !important
+    border-top-color: hsl(0,0%,45%) !important
+    text-shadow:0 1px hsl(0,0%,55%) !important
+    color:hsl(0,0%,40%) !important
+
+  // Dark Button
+  &.dark
+    background: hsl(0, 0%, 12%)
+    color:light-text-color
+    border-top-color:hsl(0, 0%, 20%)
+    text-shadow:1px 1px 0 hsl(0,0%,2%)
+
+    &:active, &.active
+      background: hsl(0, 0%, 11%)
+      border-top-color:hsl(0, 0%, 8%)
+      text-shadow:1px 1px 0 hsl(0,0%,0%)
+
+  // Light Button
+  &.light
+    background: light-text-color
+    color:hsl(0,0%,40%)
+    border-top-color:hsl(0,0%,70%)
+    text-shadow:1px 1px 0 hsl(0,0%,80%)
+
+  > .loader
+    top:0
+
+  @media phone-small
+    font-size:1.5rem
+
+    .icon
+      margin-right:0
+
+  // Adjust buttons for desktop, give them harder to paint, but cooler looking buttons
+  @media laptop 
+    font-size: 1.5rem
+
+    background: linear-gradient(top, hsl(181, 67%, 44%), hsl(181, 95%, 31%))
+
+    &:active:not(.disabled)
+      background: linear-gradient(top, hsl(181, 67%, 25%), hsl(181, 95%, 31%))
+    
+    &:hover
+      background: hsl(181, 100%, 36%)
+      color:white
+    
+    &.dark:hover
+      background: hsl(0, 0%, 12%)
+      color:light-text-color
+    
+    &.light:hover
+      background: #eee
+      color:brand-color

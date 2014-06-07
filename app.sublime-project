@@ -1,0 +1,52 @@
+{
+	"build_systems":
+	[
+		{
+			"name": "Grunt Build: Debug",
+			"shell_cmd": "grunt debug"
+		}
+	],
+	"folders":
+	[
+		{
+			"file_exclude_patterns":[
+				"*.html"
+			],
+			"follow_symlinks": true,
+			"name": "App",
+			"path": "debug"
+		},
+		{
+			"follow_symlinks": true,
+			"name": "Dist",
+			"path": "dist"
+		},
+		{
+			"follow_symlinks": true,
+			"name": "Tasks",
+			"path": "tasks"
+		},
+		{
+			"follow_symlinks": true,
+			"name": "Bower",
+			"path": "bower_components"
+		},
+		{
+			"folder_exclude_patterns":
+			[
+				"debug",
+				"bower_components",
+				"dist",
+				"tasks"
+			],
+			"follow_symlinks": true,
+			"name": "Configs",
+			"path": "/"
+		}
+	],
+	"settings":
+	{
+		"tab_size": 2,
+		"translate_tabs_to_spaces": true
+	}
+}

@@ -1,0 +1,22 @@
+{
+  "name":     "Adam Argyle - Portfolio",
+  "version":  "0.0.1",
+  "homepage": "https://github.com/argyleink/project-grunt.jade.stylus",
+  "authors": [
+    "Adam Argyle <atom@argyleink.com>"
+  ],
+  "description":  "Open sourced components",
+  "license":      "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "velocity":     "*",
+    "flexboxgrid":  "*",
+    "fastclick":    "~0.6.10"
+  }
+}

@@ -1,0 +1,52 @@
+// try to keep this file about block level elements and their high level/overall usage as a component
+figure, nav, header, section, article
+  position:relative
+
+h1,h2,h3,h4,h5,h6
+  @extend .font-normal
+
+h1 > .icon
+  top:0.25rem
+
+a
+  text-decoration:none
+
+img
+  max-width: 100%
+  height:auto
+  vertical-align:middle
+
+input,
+button,
+select,
+textarea
+  font-family: inherit
+  font-size: inherit
+  line-height: inherit
+
+nav
+  position:fixed
+  left:0
+  right:0
+  top:0
+  width: 100%
+  z-index: 10
+
+article
+  padding:2rem
+  @extend .clearfix
+
+figure
+  @extend .text-center
+  @extend .no-callout
+  > img
+    width:100%
+
+figcaption
+  position:absolute
+  bottom:0
+  left:0
+  width:100%
+  padding:3rem 1rem 1rem 1rem
+  background-color:hsla(0,0%,0%,0.5)
+  background:linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.8))

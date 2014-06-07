@@ -1,0 +1,118 @@
+.block
+  display: block
+  width:100%
+
+.hidden
+  display:none
+
+.font-thin
+  font-weight:100
+  font-weight:lighter
+
+.font-normal
+  font-weight:300
+
+.font-bold
+  font-weight:500
+  font-weight:bold
+
+@media (max-width:400px)
+  .hidden-ss
+    display:none
+
+.fit
+  padding-left:0
+  padding-right:0
+
+.fit-image
+  background-repeat:no-repeat
+  background-position:center center
+  background-size:cover
+  &.img
+    height:100%
+
+.scroll-y
+  overflow-y:auto
+  overflow-x:hidden
+  -webkit-overflow-scrolling:touch
+
+.sticky
+  position:-webkit-sticky
+  position:-ms-sticky
+  position:sticky
+
+.text-right
+  text-align:right
+
+.text-left
+  text-align: left
+
+.text-center
+  text-align: center
+
+.hint-text
+  color:#999
+  font-size: 1.4rem
+  line-height: 2rem
+
+.highlight-text
+  color:white
+  border-bottom:1px dashed brand-color
+
+.truncate
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+.no-callout
+  cursor:pointer
+  -webkit-touch-callout: none
+  user-select: none
+
+.preserve-pixels
+  transform-style:preserve-3d
+
+// MAGIC BULLET, USE @extend to enable on your el
+.magic-bullet
+  transform: translateZ(0)
+
+.no-backface
+  backface-visibility: hidden
+
+.push-top
+  margin-top:1rem
+
+.push-bottom
+  margin-bottom:1rem
+
+.pull-right
+  float: right
+.pull-left
+  float: left
+
+.hide
+  display: none
+.show
+  display: block
+.invisible
+  visibility: hidden
+
+.table
+  display:table
+  width:100%
+
+.column
+  display:table-cell
+  width:25%
+  vertical-align:middle
+  &.dominant
+    width:100%
+
+.clearfix
+  &:before,
+  &:after
+    content: " "
+    display: table
+
+  &:after
+    clear: both

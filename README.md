@@ -1,4 +1,6 @@
-project-grunt.jade.stylus
-=========================
+Jade/Stylus/Grunt Project Starter
+=======
 
-A project starter for jade and stylus projects, done my way.
+Clone and cd into this repo directory
+Then run `bash setup.sh`
+After you've run setup, subsequent app runs should be done with `grunt`

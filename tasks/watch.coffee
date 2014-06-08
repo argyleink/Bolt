@@ -10,6 +10,10 @@ module.exports =
     files: ["app/js/**/*.js"]
     tasks: ["newer:copy:debug"]
 
+  images:
+    files: ["app/img/**/*"]
+    tasks: ["newer:copy:debug"]
+
   html:
     files: ["app/**/*.jade", "!app/templates/**/*"]
     tasks: ["jade:debug"]

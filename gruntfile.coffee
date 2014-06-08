@@ -13,12 +13,12 @@ module.exports = (grunt) ->
   
   # compile everything and watch
   grunt.registerTask "default", [
-    "clean"
+    "clean" 
+    "shell:clientjade"
     "concurrent:makeLibs" 
     "concurrent:stylusAndJade"
     "notify:appstarted"
-    "shell:open_app" 
-    "shell:clientjade"
+    "shell:open_app"
     "connect"
     "watch"
   ]
@@ -32,6 +32,7 @@ module.exports = (grunt) ->
   
   # for prod use, minify all js files, html is already compressed 
   grunt.registerTask "prod", [
+    "shell:clientjade"
     "uglify:libs"
     "stylus:compile" 
     "jade:release"

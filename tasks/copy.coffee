@@ -5,7 +5,6 @@ module.exports = debug:
       cwd: "app/js"
       src: ["*.js"]
       dest: "dist/js"
-      ext: ".js"
     },
     {
       expand: true

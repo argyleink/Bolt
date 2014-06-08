@@ -15,8 +15,6 @@
     "tests"
   ],
   "devDependencies": {
-    "velocity":     "*",
-    "flexboxgrid":  "*",
-    "fastclick":    "~0.6.10"
+    "jquery":       "*"
   }
 }

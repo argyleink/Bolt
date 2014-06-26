@@ -1,13 +1,35 @@
 head
   meta(charset='utf-8')
-  meta(name='viewport', content='initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no')
-  meta(name='msapplication-tap-highlight', content='no')
-  meta(name='HandheldFriendly', content='true')
-  meta(name='description', content='')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(
+    name='viewport', 
+    content='initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui'
+  )  
+  
+  title New App
   link(rel='icon', type='image/png', href='img/favicon.png')
+  meta(name='description', content='')
 
-  title App
+  //- Start Mobile Meta
+  meta(name='HandheldFriendly', content='true')
+
+  //- Add to homescreen for Chrome on Android 
+  meta(name='mobile-web-app-capable', content='yes')
+  link(rel='icon', sizes='196x196', href='img/chrome-touch-icon.png')
+  
+  //- Add to homescreen for Safari on iOS 
+  meta(name='apple-mobile-web-app-capable', content='yes')
+  meta(name='apple-mobile-web-app-status-bar-style', content='black')
+  meta(name='apple-mobile-web-app-title', content='New App')
+  link(rel='apple-touch-icon', href='img/apple-touch-icon.png')
+  link(rel='apple-touch-startup-image', href='img/startup.png')
+  
+  //- Tile icon for Win8 (144x144 + tile color) 
+  meta(name='msapplication-TileImage', content='img/ms-touch-icon.png')
+  meta(name='msapplication-TileColor', content='#3372DF')
+
+  //- Windows Phone 8
+  meta(name='msapplication-tap-highlight', content='no')
 
   //- master.styl combines all our modules into this file
   link(rel='stylesheet', href='styles/master.css')
-  link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css')

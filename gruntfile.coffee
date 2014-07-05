@@ -39,5 +39,6 @@ module.exports = (grunt) ->
     "jade:release"
     "uglify:prod"
     "cssc" 
+    "cssshrink"
     "notify:prod"
   ]

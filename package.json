@@ -16,6 +16,7 @@
     "grunt-contrib-uglify":   "*",
     "grunt-contrib-watch":    "*",
     "grunt-cssc":             "*",
+    "grunt-cssshrink":        "*",
     "grunt-newer":            "*",
     "grunt-notify":           "*",
     "grunt-shell":            "*",

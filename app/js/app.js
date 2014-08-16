@@ -1,7 +1,7 @@
 $(function(){
 
   // Init Fastclick
-  // FastClick.attach(document.body);
+  FastClick.attach(document.body);
 
   // $.ajaxPrefilter('script', function(settings, osettings, xhr) {
   //   settings.cache = true;
@@ -14,10 +14,6 @@ $(function(){
   $(window).resize(setAppHeight);
   function setAppHeight() {
     App.Browser.ipadAndUp = window.innerWidth >= 1024;
-    // if (App.Browser.desktop)
-      // document.getElementById('viewport').style.minHeight = window.innerHeight + 'px';
-    // else
-    //   document.getElementById('viewport').style.minHeight = window.innerHeight - 62 + 'px';
   }
   setAppHeight();
 

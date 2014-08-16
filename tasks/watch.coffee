@@ -21,3 +21,7 @@ module.exports =
   templates:
     files: ["app/templates/**/*.jade"]
     tasks: ["shell:clientjade"]
+
+  libs:
+    files: ["app/js/libs/*"]
+    tasks: ["uglify:libs"]

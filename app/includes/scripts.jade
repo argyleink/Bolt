@@ -1,17 +1,34 @@
 if dev
+  //- first script loads css clientside
   script(src='js/detect-and-fill.js')
+
+  //- then load lib dependencies
   script(src='js/lib.min.js')
+
+  //- set's namespace
   script(src='js/app.js')
-  script(src='js/templates.js')
+
+  //- Load modules here, aysnc if you want
+  //- script(src='js/modules.js', async)
 
   //- Remote Debugging with Weinre, uncomment and swap your comp's IP to enable
+  //- TODO: make an IP var that's passed in from jade.coffee and use it here for dynamic IP
   //- script(src='http://10.1.11.13:8081/target/target-script-min.js#anonymous')
+
+  //- Analytics dev
+  //- script.
+  //-   heap.load("#"); 
   
 else
+  //- first script loads css clientside
   script(src='js/detect-and-fill.js')
-  script(src='js/lib.min.js')
-  script(src='js/app.js')
 
-  //- Analytics
+  //- then load lib dependencies
+  script(src='js/lib.min.js')
+
+  //- last all your app logic bundled up
+  script(src='js/app.min.js')
+
+  //- Analytics prod
   //- script.
-  //-   heap.load("1929493658"); 
+  //-   heap.load("#"); 

@@ -1,11 +1,21 @@
 {
-  "name":     "App",
-  "version":  "0.0.1",
-  "author":   "Adam Argyle",
-  "private":  false,
+  "name": "App",
+  "version": "0.0.1",
+  "author": "Adam Argyle",
+  "private": false,
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/argyleink/website.git"
+  },
+  "scripts": {
+    "postinstall": "node_modules/.bin/bower install && grunt",
+    "start": "node server.js"
+  },
   "devDependencies": {
+    "bower":                  "*",
+    "clientjade":             "*",
     "css-condense":           "*",
-    "grunt":                  "*",
     "grunt-bump":             "*",
     "grunt-concurrent":       "*",
     "grunt-contrib-clean":    "*",

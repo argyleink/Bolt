@@ -8,6 +8,7 @@ module.exports =
   prod:
     files: 
       "dist/js/lib.min.js": libsArray,
+      "dist/js/detect-and-fill.js": "app/js/detect-and-fill.js",
       "dist/js/app.min.js": [
         # bundle up your app logic
         "app/js/app.js"

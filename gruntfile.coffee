@@ -31,14 +31,16 @@ module.exports = (grunt) ->
   
   # for prod use, minify all js files, html is already compressed 
   grunt.registerTask "prod", [
-    "uglify:libs"
     "shell:clientjade"
+    "uglify:libs"
     "stylus:compile" 
     "jade:release"
     "uglify:prod"
     "cssc" 
-    "cssshrink"
+    # "cssshrink"
     "notify:prod"
+    "connect"
+    "watch"
   ]
 
   grunt.registerTask "heroku", [
@@ -49,4 +51,5 @@ module.exports = (grunt) ->
     "jade:release"
     "uglify:prod"
     "cssc"
+    # "cssshrink"
   ]

@@ -20,9 +20,9 @@ Build a grunt based, rather unopinionated, front end build system. It starts wit
 `npm install`  
 
 ### Requirements:
-(Node.js)[http://nodejs.org/]  
-NPM (will come with node.js download from link above) 
-(Grunt)[http://gruntjs.com/]  
+[Node.js](http://nodejs.org/)  
+NPM (will come with node.js download from link above)  
+[Grunt](http://gruntjs.com/)  
 
 ### Notes
 After you've run setup, subsequent app runs should be done with `grunt`  

@@ -1,6 +1,5 @@
 module.exports =
   makeLibs: [
-    "shell:clientjade"
     "uglify:libs"
     "copy"
   ]

@@ -14,6 +14,7 @@ module.exports = (grunt) ->
   # compile everything, run server, and watch
   grunt.registerTask "default", [
     "clean" 
+    "shell:clientjade"
     "concurrent:makeLibs" 
     "concurrent:stylusAndJade"
     "notify:appstarted"
@@ -25,6 +26,7 @@ module.exports = (grunt) ->
   # compile everything for debug but don't watch
   grunt.registerTask "dev", [
     "clean"
+    "shell:clientjade"
     "concurrent:makeLibs" 
     "concurrent:stylusAndJade" 
   ]

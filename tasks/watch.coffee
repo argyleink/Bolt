@@ -7,8 +7,12 @@ module.exports =
     tasks: ["stylus:debug"]
 
   js:
-    files: ["app/js/**/*.js"]
+    files: ["app/js/**/*.js", "!app/js/libs/**/*"]
     tasks: ["newer:copy:debug"]
+
+  libs:
+    files: ["app/js/libs/**/*.js"]
+    tasks: ["uglify:libs"]
 
   images:
     files: ["app/img/**/*"]
@@ -21,7 +25,3 @@ module.exports =
   templates:
     files: ["app/templates/**/*.jade"]
     tasks: ["shell:clientjade"]
-
-  libs:
-    files: ["app/js/libs/*"]
-    tasks: ["uglify:libs"]

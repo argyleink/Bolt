@@ -28,7 +28,7 @@
 		},
 		{
 			"follow_symlinks": true,
-			"name": "Bower",
+			"name": "Libraries",
 			"path": "app/js/libs"
 		},
 		{

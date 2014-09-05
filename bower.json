@@ -16,6 +16,6 @@
   ],
   "devDependencies": {
     "jquery":     "*",
-    "fastclick":  "*"
+    "jquery.finger":  "*"
   }
 }

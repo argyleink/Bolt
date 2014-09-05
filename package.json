@@ -30,6 +30,7 @@
     "grunt-newer":            "*",
     "grunt-notify":           "*",
     "grunt-shell":            "*",
+    "grunt-browser-sync":     "*",
     "load-grunt-configs":     "*",
     "matchdep":               "*",
     "time-grunt":             "*"

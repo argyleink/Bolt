@@ -1,5 +1,5 @@
 libsArray = [
-  "app/js/libs/jquery/dist/jquery.js"
+  "app/js/libs/jquery/jquery.js"
   "app/js/libs/jquery.finger/dist/jquery.finger.js"
   "app/js/ga.js"
 ]

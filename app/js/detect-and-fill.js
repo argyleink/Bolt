@@ -41,13 +41,13 @@ App.Browser = (function() {
 
   // and now we do our filling
   if (detect.android) { 
-    addStylesheet('/styles/android.css');
+    // addStylesheet('/styles/android.css');
   }
   else if (detect.ios)     { 
-    addStylesheet('/styles/ios.css'); 
+    // addStylesheet('/styles/ios.css'); 
   }
   else if (detect.wp8)     { 
-    addStylesheet('/styles/ie10.css'); 
+    // addStylesheet('/styles/ie10.css'); 
 
     // stupid ms, their viewport shit is all screwed up, this hack sucks, but is the best solution as of right now
     var msViewportStyle = document.createElement("style");

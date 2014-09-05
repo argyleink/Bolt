@@ -1,7 +1,10 @@
 module.exports =
   dev:
   	bsFiles:
-  		src: "dist/styles/*"
+  		src: [
+  			"dist/styles/*"
+  			"dist/*.html"
+  		]
 
   options:
   	watchTask: true

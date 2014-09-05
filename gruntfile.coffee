@@ -18,6 +18,14 @@ module.exports = (grunt) ->
     "concurrent:makeLibs" 
     "concurrent:stylusAndJade"
     "notify:appstarted"
+    # "shell:open_app"
+    "connect"
+    "browserSync"
+    "watch"
+  ]
+
+  # serve static dist/ directory
+  grunt.registerTask "serve", [
     "shell:open_app"
     "connect"
     "watch"

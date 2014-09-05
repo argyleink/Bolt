@@ -15,7 +15,7 @@
   "devDependencies": {
     "bower":                  "*",
     "clientjade":             "*",
-    "css-condense":           "*",
+    "css-condense":           "~0.0.6",
     "grunt-bump":             "*",
     "grunt-concurrent":       "*",
     "grunt-contrib-clean":    "*",

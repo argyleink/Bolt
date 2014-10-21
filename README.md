@@ -1,5 +1,5 @@
 ### Goal
-Build a grunt based, rather unopinionated, front end build system. It starts with Jade & Stylus as default, but swap it for whatever you want easily.
+Build a grunt based, rather unopinionated, mobile first front end build system. It starts with Jade & Stylus as default, but swap it for whatever you want easily. Tries to have just enough boilerplate based on standards, so it's not in the way.
 
 ### Setup
 `npm install`  
@@ -12,10 +12,10 @@ NPM (will come with node.js download from link above)
 ### Included
 - Clean Grunt task architecture `tasks/`, coffeescript tasks (No long gruntfile crap!!)
 - Grunt concurrent for fast task running
-- Auto reload, watch, & file server built in
+- Auto reload, CSS injection, watch, & file server built in (BrowserSync)
 - Jade static HTML site generation
-- Jade client side templating
-- Stylus with Nib ready
+- Jade client side templates
+- Stylus with Nib
 - Bower library management, uses local bower (good for Heroku/etc)
 - Mobile first & polyfill architecture
 - Conditionally loads css clientside for varying mobile OS's (android.css, ios.css, etc)

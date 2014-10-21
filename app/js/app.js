@@ -1,5 +1,17 @@
-$(function(){
+App.ModuleTemplate = (function(){
 
-  console.log('all is well in the cosmos');
+  var appName = 'Jade and Stylus rule';
 
-});
+  function privateMethod() {
+
+  }
+
+  function publicMethod() {
+    return appName;
+  }
+
+  return {
+    name: publicMethod
+  }
+
+})();

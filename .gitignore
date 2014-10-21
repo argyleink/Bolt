@@ -1,4 +1,4 @@
 .DS_Store
-app/js/libs/
+app/js/bower/
 dist/
 node_modules/

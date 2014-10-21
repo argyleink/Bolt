@@ -1,24 +1,27 @@
 if dev
-  //- first script loads css clientside, sets namespace
+  //- first script loads conditional css clientside, sets namespace
   script(src='js/detect-and-fill.js')
 
-  //- then load lib dependencies
-  script(src='js/lib.min.js')
+  //- async script loader to sequence libs and app logic and keep things fast
+  script(src='js/script.js')
 
-  //- Load modules here, aysnc if you want
-  script(src='js/app.js', async)
-  //- script(src='js/modules.js', async)
+  script.
+    $script('js/lib.min.js', function(){
+      $script([
+        //- all your app scripts go here
+        'js/app.js'
+      ]);
+    });
 
   //- Remote Debugging with Weinre, uncomment and swap your comp's IP to enable
   //- TODO: make an IP var that's passed in from jade.coffee and use it here for dynamic IP
   //- script(src='http://10.1.11.13:8081/target/target-script-min.js#anonymous')
   
 else
-  //- first script injects css onto page if needed
   script(src='js/detect-and-fill.js')
-
-  //- then load lib dependencies
-  script(src='js/lib.min.js')
-
-  //- last all your app logic bundled up
-  script(src='js/app.min.js', async)
+  script(src='js/script.js')
+  script.
+    $script('js/lib.min.js', function(){
+      //- uglify.coffee bundles all scripts together
+      $script('js/app.min.js');
+    });

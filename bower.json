@@ -15,7 +15,8 @@
     "tests"
   ],
   "devDependencies": {
-    "jquery":     "*",
-    "jquery.finger":  "*"
+    "jquery": "*",
+    "jquery.finger": "*",
+    "scriptjs": "~2.5.7"
   }
 }

@@ -11,8 +11,13 @@ module.exports =
   prod:
     files: 
       "dist/js/lib.min.js":         libsArray,
-      "dist/js/detect-and-fill.js": "app/js/libs/detect-and-fill.js",
-      "dist/js/app.min.js":         ["app/js/*.js", "!app/js/detect-and-fill.js"]
+      "dist/js/detect-and-fill.js": "app/js/detect-and-fill.js",
+      "dist/js/script.js":          "app/js/script.js",
+      "dist/js/app.min.js":         [
+        "app/js/*.js", 
+        "!app/js/detect-and-fill.js", 
+        "!app/js/script.js"
+      ]
 
   libs:
     files:

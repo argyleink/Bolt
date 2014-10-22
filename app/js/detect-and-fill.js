@@ -22,8 +22,6 @@ App.Browser = (function() {
     wp8:        ua.match(/IEMobile/i) ? true : false,
     kindle:     ua.match(/Amazon/i) ? true : false,
 
-    // mobile:     this.android || this.ios || this.wp8, // not working, not sure why
-    // desktop:    !this.mobile,
     ipadAndUp:  window.innerWidth >= 1024,
 
     svg:        Modernizr.svg,

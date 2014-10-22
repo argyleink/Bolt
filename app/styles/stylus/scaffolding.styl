@@ -1,5 +1,5 @@
 // try to keep this file about block level elements and their high level/overall usage as a component
-figure, nav, header, section, article
+figure, header, section, article
   position:relative
 
 h1,h2,h3,h4,h5,h6
@@ -25,12 +25,18 @@ textarea
   line-height: inherit
 
 nav
-  position:fixed
+  @extend .sticky
   left:0
   right:0
   top:0
   width: 100%
   z-index: 10
+  background:light-text-color
+
+  > a
+    display:inline-block
+    padding:1rem 2rem
+    color:dark-text-color
 
 article
   padding:2rem

@@ -24,4 +24,4 @@ module.exports =
 
   templates:
     files: ["app/templates/**/*.jade"]
-    tasks: ["shell:clientjade"]
+    tasks: ["shell:clientjade", "uglify:libs"]

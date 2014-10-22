@@ -197,10 +197,10 @@ buf.push('<dl>');
       var item = items[$index];
 
 buf.push('<dt>');
-var __val__ = title
+var __val__ = item.title
 buf.push(escape(null == __val__ ? "" : __val__));
 buf.push('</dt><dd>');
-var __val__ = detail
+var __val__ = item.detail
 buf.push(escape(null == __val__ ? "" : __val__));
 buf.push('</dd>');
     }
@@ -209,10 +209,10 @@ buf.push('</dd>');
       var item = items[$index];
 
 buf.push('<dt>');
-var __val__ = title
+var __val__ = item.title
 buf.push(escape(null == __val__ ? "" : __val__));
 buf.push('</dt><dd>');
-var __val__ = detail
+var __val__ = item.detail
 buf.push(escape(null == __val__ ? "" : __val__));
 buf.push('</dd>');
    }
@@ -236,10 +236,10 @@ buf.push('<dl>');
       var item = items[$index];
 
 buf.push('<dt>');
-var __val__ = title
+var __val__ = item.title
 buf.push(escape(null == __val__ ? "" : __val__));
 buf.push('</dt><dd>');
-var __val__ = detail
+var __val__ = item.detail
 buf.push(escape(null == __val__ ? "" : __val__));
 buf.push('</dd>');
     }
@@ -248,10 +248,10 @@ buf.push('</dd>');
       var item = items[$index];
 
 buf.push('<dt>');
-var __val__ = title
+var __val__ = item.title
 buf.push(escape(null == __val__ ? "" : __val__));
 buf.push('</dt><dd>');
-var __val__ = detail
+var __val__ = item.detail
 buf.push(escape(null == __val__ ? "" : __val__));
 buf.push('</dd>');
    }

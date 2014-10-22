@@ -5,12 +5,17 @@ stylusFiles = [
   # "dist/styles/android.css":  "app/styles/stylus/android.styl"
 ]
 
+autoprefixerPlugin = [
+  () -> require('autoprefixer-stylus')('last 2 versions', 'ie 8', 'ie 9')
+]
+
 module.exports =
   compile:
     options:
       compress:       true
       linenos:        false
       "include css":  true
+      use: autoprefixerPlugin
 
     files: stylusFiles
 
@@ -19,5 +24,6 @@ module.exports =
       compress:       false
       linenos:        true
       "include css":  true
+      use: autoprefixerPlugin
 
     files: stylusFiles

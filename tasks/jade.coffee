@@ -11,6 +11,12 @@ module.exports =
       src:    ["*.jade"]
       dest:   "dist/"
       ext:    ".html"
+    ,
+      expand: true
+      cwd:    "app/ajax/"
+      src:    ["**/*.jade"]
+      dest:   "dist/ajax/"
+      ext:    ".html"
     ]
 
   release:

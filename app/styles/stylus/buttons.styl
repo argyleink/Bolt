@@ -1,5 +1,5 @@
 .btn-size
-  padding: 1rem 1.75rem
+  padding: 1rem 2rem
   @extend .no-callout
 
 .btn
@@ -8,14 +8,13 @@
   @extend .text-center
 
   display:inline-block
-  font-size:2rem
   position:relative
   background-color: brand-color
   border:none // removes borders from <button> elements
   outline:none
-  border-top:1px solid hsl(181, 67%, 65%)
+  border-top:1px solid lighten(brand-color, 10%)
   color:light-text-color
-  text-shadow:1px 1px 0 hsl(181,67%,40%)
+  text-shadow:1px 1px 0 darken(brand-color, 20%)
 
   .icon
     margin-right:0.25em
@@ -28,8 +27,8 @@
     width:100%
 
   &:active, .active
-    background: hsl(181, 100%, 35%)
-    border-top:1px solid hsl(181, 67%, 30%)
+    background: darken(brand-color, 10%)
+    border-top:1px solid darken(brand-color, 15%)
 
   &:focus
     outline:none
@@ -75,21 +74,21 @@
 
   // Adjust buttons for desktop, give them harder to paint, but cooler looking buttons
   @media laptop 
-    font-size: 1.5rem
+    font-size: 1.25rem
 
-    background: linear-gradient(top, hsl(181, 67%, 44%), hsl(181, 95%, 31%))
+    // background: linear-gradient(top, hsl(181, 67%, 44%), hsl(181, 95%, 31%))
 
-    &:active:not(.disabled)
-      background: linear-gradient(top, hsl(181, 67%, 25%), hsl(181, 95%, 31%))
+    // &:active:not(.disabled)
+    //   background: linear-gradient(top, hsl(181, 67%, 25%), hsl(181, 95%, 31%))
     
     &:hover
-      background: hsl(181, 100%, 36%)
+      background: lighten(brand-color, 2%)
       color:white
     
     &.dark:hover
-      background: hsl(0, 0%, 12%)
+      background: hsl(0, 0%, 13%)
       color:light-text-color
     
     &.light:hover
-      background: #eee
+      background: hsl(0, 0%, 93%)
       color:brand-color

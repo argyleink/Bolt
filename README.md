@@ -6,11 +6,11 @@ This project's default setup is for deploying static sites to be hosted somewher
 
 #### Quickstart
 - **Download:** [Node.js](http://nodejs.org/)  
->NPM (will come with node.js download from link above)  
+> NPM (will come with node.js download from link above)  
 - **Download:** [Grunt](http://gruntjs.com/) 
 - **Install modules**: `npm install`  
->This will install all node modules, bower modules, run grunt and auto open the build in your default browser. Hot and ready to update when things change.
-- **Open the project in Sublime:** `subl app.sublime-project`
+> This will install all node modules, bower modules, run grunt and auto open the build in your default browser. Hot and ready to update when things change.
+- **Open the project in Sublime:** `subl app.sublime-project`  
 > Or if you don't have sublime, double click the project file. Or if you don't have sublime, then ignore this feature!
 
 ## Features

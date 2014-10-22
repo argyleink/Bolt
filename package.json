@@ -33,6 +33,7 @@
     "grunt-uncss":            "*",
     "load-grunt-configs":     "*",
     "matchdep":               "*",
-    "time-grunt":             "*"
+    "time-grunt":             "*",
+    "autoprefixer-stylus":    "~0.3.0"
   }
 }

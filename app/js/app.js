@@ -1,6 +1,8 @@
 App.ModuleTemplate = (function(){
 
-  var appName = 'Jade and Stylus rule';
+  var appName             = 'Jade and Stylus rule'
+    , listViewContainer   = $('#list-template-example')
+    , ajaxViewContainer   = $('#ajax-example');
 
   function privateMethod() {
 
@@ -13,8 +15,8 @@ App.ModuleTemplate = (function(){
   function renderJadeList() {
     // http://projects.jga.me/clientjade/
     jade.render(
-      $('#list-template-example')[0],       // DOM Node
-      'list',                               // Template name
+      listViewContainer[0],     // DOM Node
+      'list',                   // Template name
       {
         items: [
           { title: 'Title 1', detail: 'Detail 1' },
@@ -25,7 +27,13 @@ App.ModuleTemplate = (function(){
     );
   }
 
+  function renderAjaxExample() {
+    ajaxViewContainer.load('ajax/example.html');
+  }
+
+  // Example methods to show how these things can work
   renderJadeList();
+  renderAjaxExample();
 
   return {
     name: publicMethod

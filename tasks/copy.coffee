@@ -9,4 +9,9 @@ module.exports = debug:
       cwd:    "app/img"
       src:    ["*"]
       dest:   "dist/img"
+    ,
+      expand: true
+      cwd:    "app/"
+      src:    ["robots.txt"]
+      dest:   "dist/"
   ]

@@ -2,8 +2,24 @@
 	"build_systems":
 	[
 		{
-			"name": "Grunt Build: Debug",
-			"shell_cmd": "grunt debug"
+			"name": "Grunt: Default task, used for local development",
+			"shell_cmd": "grunt"
+		},
+		{
+			"name": "Grunt Serve: Serve the dist/ directory",
+			"shell_cmd": "grunt serve"
+		},
+		{
+			"name": "Grunt Dev: Build for local dev, but don't watch or serve",
+			"shell_cmd": "grunt dev"
+		},
+		{
+			"name": "Grunt Prod: Build and serve a super crunched version of the site",
+			"shell_cmd": "grunt prod"
+		},
+		{
+			"name": "Grunt Heroku: Super crunch the build, but don't serve or watch",
+			"shell_cmd": "grunt heroku"
 		}
 	],
 	"folders":

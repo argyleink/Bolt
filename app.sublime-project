@@ -44,8 +44,8 @@
 		},
 		{
 			"follow_symlinks": true,
-			"name": "Libraries",
-			"path": "app/js/libs"
+			"name": "Bower Libraries",
+			"path": "app/js/bower"
 		},
 		{
 			"folder_exclude_patterns":

@@ -1,3 +1,4 @@
+var App = {};
 App.ModuleTemplate = (function(){
 
   var appName             = 'Jade and Stylus rule'

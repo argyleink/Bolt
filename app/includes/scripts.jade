@@ -1,8 +1,5 @@
 if dev
-  //- first script loads conditional css clientside, sets namespace
-  script(src='js/detect-and-fill.js')
-
-  //- async script loader to sequence libs and app logic and keep things fast
+  ///- async script loader to sequence libs and app logic and keep things fast
   script(src='js/script.js')
 
   script.
@@ -18,7 +15,6 @@ if dev
   //- script(src='http://10.1.11.13:8081/target/target-script-min.js#anonymous')
   
 else
-  script(src='js/detect-and-fill.js')
   script(src='js/script.js')
   script.
     $script('js/lib.min.js', function(){

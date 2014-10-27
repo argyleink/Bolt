@@ -33,3 +33,9 @@ head
 
   //- master.styl combines all our modules into this file
   link(rel='stylesheet', href='styles/master.css')
+
+  //- OH NO, JS in the head!
+  //- Yes, we want to block rendering until we've polyfilled, with vanilla js
+  //- Goal: Prevent flashes of unstyled content (FOUC)
+  script(src='js/device-detect.js')
+  script(src='js/shiv.js')

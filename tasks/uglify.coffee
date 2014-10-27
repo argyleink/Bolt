@@ -10,13 +10,15 @@ libsArray = [
 module.exports =
   prod:
     files: 
-      "dist/js/lib.min.js":         libsArray,
-      "dist/js/detect.js":          "app/js/detect.js",
-      "dist/js/shiv.js":            "app/js/shiv.js",
-      "dist/js/script.js":          "app/js/script.js",
+      "dist/js/lib.min.js":         libsArray
+      "dist/js/device-detect.js":   "app/js/bower/device-detect.js/device-detect.js"
+      "dist/js/shiv.js":            "app/js/shiv.js"
+      "dist/js/script.js":          "app/js/script.js"
       "dist/js/app.min.js":         [
-        "app/js/*.js", 
-        "!app/js/detect-and-fill.js", 
+        "app/js/app.js"
+        # app.js should be first, since it sets the namespace
+        "app/js/*.js"
+        "!app/js/shiv.js"
         "!app/js/script.js"
       ]
 

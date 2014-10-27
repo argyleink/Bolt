@@ -6,6 +6,11 @@ module.exports = debug:
       dest:   "dist/js"
     ,
       expand: true
+      cwd:    "app/js/bower/device-detect.js"
+      src:    ["device-detect.js"]
+      dest:   "dist/js"
+    ,
+      expand: true
       cwd:    "app/img"
       src:    ["*"]
       dest:   "dist/img"

@@ -28,37 +28,171 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+          <h1>
+<a name="goal" class="anchor" href="#goal"><span class="octicon octicon-link"></span></a>Goal</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>Offer a grunt based, rather unopinionated, mobile first, front end, static site build system. It comes with <a href="http://jade-lang.com/">Jade</a> &amp; <a href="http://learnboost.github.io/stylus/">Stylus</a> as default, but swap it for whatever you want easily. At the end of the day, it's <a href="http://gruntjs.com/">Grunt</a>, do whatever you want. </p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<h2>
+<a name="overview" class="anchor" href="#overview"><span class="octicon octicon-link"></span></a>Overview</h2>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>This project's default setup is for deploying static sites to be hosted somewhere on the web. This could be a webview hybrid app, single page app, marketing site, who cares. This tool comes with all the tips, tricks, meta data, and automated tasks that help you build quick and efficient across browsers.</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<h4>
+<a name="quickstart" class="anchor" href="#quickstart"><span class="octicon octicon-link"></span></a>Quickstart</h4>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<ul>
+<li>
+<strong>Download:</strong> <a href="http://nodejs.org/">Node.js</a><br>
+&gt; NPM (will come with node.js download from link above)<br>
+</li>
+<li>
+<strong>Download:</strong> <a href="http://gruntjs.com/">Grunt</a> </li>
+<li>
+<strong>Install modules</strong>: <code>npm install</code><br>
+&gt; This will install all node modules, bower modules, run grunt and auto open the build in your default browser. Hot and ready to update when things change.</li>
+<li>
+<strong>Open the project in Sublime:</strong> <code>subl app.sublime-project</code><br>
+&gt; Or if you don't have sublime, double click the project file. Or if you don't have sublime, then ignore this feature!</li>
+</ul>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<h2>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<h4>
+<a name="separate-prod-and-dev-builds" class="anchor" href="#separate-prod-and-dev-builds"><span class="octicon octicon-link"></span></a>Separate Prod and Dev builds.</h4>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<p>Huge because dev builds produce legible debuggable code, and prod builds produce super tiny crunched and concatenated code. Easily test them locally before deployment. Know for a fact that you're deploying a solid build.  </p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<h4>
+<a name="sublime-text-project-file" class="anchor" href="#sublime-text-project-file"><span class="octicon octicon-link"></span></a>Sublime Text project file</h4>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<p>For awesome IDE organization and normalization of settings. Set your projects tab indentation spacing, folder structure, etc. I've got it setup to hide all files that you shouldn't be editing, group all the config files, and more. I find this valuable.</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<h4>
+<a name="clean-grunt-task-architecture" class="anchor" href="#clean-grunt-task-architecture"><span class="octicon octicon-link"></span></a>Clean Grunt task architecture</h4>
+
+<p>See the <code>tasks/</code> directory. All Grunt work is written in coffeescript because it's pretty. But also checkout the Gruntfile, notice no long file mess! Clean and easy to CRUD. </p>
+
+<h4>
+<a name="live-reload" class="anchor" href="#live-reload"><span class="octicon octicon-link"></span></a>Live Reload</h4>
+
+<p>Get an automatic page reload when your HTML changes. Also get <strong>hot CSS pushes</strong> (no page reload) when stylus files change. <strong>This is huge!</strong> As for JS, I've set it up to !auto reload, you can change this if you want in <code>watch.coffee</code>.</p>
+
+<h4>
+<a name="local-server" class="anchor" href="#local-server"><span class="octicon octicon-link"></span></a>Local Server</h4>
+
+<p>Powered by <a href="https://github.com/gruntjs/grunt-contrib-watch">Watch</a>, <a href="https://github.com/gruntjs/grunt-contrib-connect">Connect</a> and <a href="https://www.npmjs.org/package/grunt-browser-sync">BrowserSync</a>, don't worry about MAMP or whatever, just start building the front end. Since it's using <a href="http://www.browsersync.io/">BrowserSync</a>, all your scrolling, clicks, and form input values are synced across all connected clients. Makes for some sick RWD web building, as well as QA. </p>
+
+<h4>
+<a name="build-static-sites-like-a-boss" class="anchor" href="#build-static-sites-like-a-boss"><span class="octicon octicon-link"></span></a>Build static sites like a boss</h4>
+
+<p><a href="http://jade-lang.com/">Jade</a> everywhere! Why learn 2-3 templating languages when you could be learning/using 1? <a href="http://jade-lang.com/">Jade</a> is used in this build process for: </p>
+
+<ul>
+<li>General HTML site generation</li>
+<li>AJAX intended pages</li>
+<li><a href="http://projects.jga.me/clientjade/">Client side templates</a></li>
+</ul>
+
+<h4>
+<a name="manage-your-javascript-like-a-boss" class="anchor" href="#manage-your-javascript-like-a-boss"><span class="octicon octicon-link"></span></a>Manage your Javascript like a boss</h4>
+
+<p><strong>Grunt + <a href="bower.io">Bower</a> = awesome things</strong> for your web app development. This project uses <a href="bower.io">Bower</a> to manage front end assets, which I've found handles 95% of my use cases. You'll find everything installed from bower in <code>app/js/bower/</code>. From there, <code>tasks/uglify.coffee</code> makes a <code>lib.min.js</code> bundle for use in your app. Personally, I like to bundle my libs together (since they rarely change), and my app logic (since it changes a lot) separately. You can of course change this to whatever you want, just open up <code>tasks/uglify.coffee</code> and tell it how you want it.</p>
+
+<p>This project also offers a solution for the %5 that falls outside bower's reach. Just drop any libraries into <code>app/js/libs</code> and they'll get scooped up into the <code>lib.min.js</code> file automagically. </p>
+
+<p>Also, this project comes with an <a href="http://www.dustindiaz.com/scriptjs">async script loader</a> setup. So load scripts non blocking like a boss, and schedule or create module dependencies. </p>
+
+<h4>
+<a name="manage-your-styles-like-a-boss" class="anchor" href="#manage-your-styles-like-a-boss"><span class="octicon octicon-link"></span></a>Manage your styles like a boss</h4>
+
+<p>I prefer <a href="http://learnboost.github.io/stylus/">Stylus</a> because it let's you write to the modern spec, unprefixed, and output really tight well formed CSS. I especially like the <a href="http://learnboost.github.io/stylus/docs/extend.html">@extend</a> feature, that saves me lines of CSS by grouping selectors. Stylus also let's you easily import any CSS library, since it allows valid CSS to run through it's processor. I often put libraries pulled from Bower, into my <code>app/styles/master.styl</code> file, and let Stylus include and output 1 CSS file. </p>
+
+<p>This implementation also comes with <a href="http://visionmedia.github.io/nib/">Nib</a> and is post-processed by <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>. Open up <code>tasks/stylus.coffee</code> to specify which target browsers you want to support in your CSS. This is a really powerful way to write minimal amounts of CSS, but output very powerful and compliant CSS. </p>
+
+<p><strong>Browser hacks</strong> are no fun, but we all write them. We want a site to look uniform across browsers. I've included in this project my personal preferred clientside method of fixing styles for browsers. It stuck for me becuase it's done in a way that prevents <a href="http://www.paulirish.com/2009/fighting-the-font-face-fout/">FOUT</a>, since the JS script <code>app/js/detect-and-fill.js</code> is evaluated before any other scripts are loaded, and it's loaded intentionally blocking. It blocks, detects which browser, and appends a script to the dom for immediate loading. So since this is all setup, you can now easily, on the client, fill iOS or Android layout issues, without causing any jank, and written easily with stylus. Enjoy. The other best alternative here, is server side detection and templating. Do this if you got the chops =). This clientside way is pretty awesome though. Never serve CSS to a browser that it won't use, block page painting until the new CSS is loaded, and lastly, do it all with vanilla js so there's no libs to load to fill, keeping it quick.</p>
+
+<h4>
+<a name="mobile-first" class="anchor" href="#mobile-first"><span class="octicon octicon-link"></span></a>Mobile First</h4>
+
+<p>All includes styles are mobile first. There's some ground work laid out for you in <code>app/styles/stylus/vars.styl</code>. Set your brand color, responsive breakpoints, and other common variables you want to use in your CSS. </p>
+
+<h4>
+<a name="ready-to-deploy" class="anchor" href="#ready-to-deploy"><span class="octicon octicon-link"></span></a>Ready to Deploy</h4>
+
+<p>Heroku deploy ready, use this <a href="https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt">Heroku grunt buildpack</a> in your Heroku app settings. There's a custom heroku grunt task too, that compiles the super crunched prod site for your static heroku server. </p>
+
+<h2>
+<a name="grunt-jobs" class="anchor" href="#grunt-jobs"><span class="octicon octicon-link"></span></a>Grunt Jobs</h2>
+
+<p><code>grunt</code><br>
+Default task runs <code>grunt dev</code> but with notifications, a server, and BrowserSync. This creates a Live Reload environment, with legible code output for easy debugging, and is ready for rapid prototyping. Behind the scenes, the grunt watch command uses <a href="https://github.com/tschaub/grunt-newer">grunt newer</a> so that it's only compiling or copying the files that have changed. </p>
+
+<p><code>grunt dev</code><br>
+Legible js and css output, no server</p>
+
+<p><code>grunt prod</code><br>
+Runs all tasks with super crunch options turned on, and also runs a server so you can test the build in browser. This will also include an appcache manifest, so your visitors will get a super cached browser experience. </p>
+
+<p><code>grunt heroku</code><br>
+Runs prod tasks without a server. So produces super crunched up html/css/js, ready to be dropped onto a server somewhere and served up.</p>
+
+<p><code>grunt bump</code><br>
+Uses the version in package.json, increments it, and creates a .git tag. Awesome for lazy release creation. Easily add it to <code>grunt prod</code> if you want to. </p>
+
+<h2>
+<a name="grunt-tasks" class="anchor" href="#grunt-tasks"><span class="octicon octicon-link"></span></a>Grunt Tasks</h2>
+
+<ul>
+<li>
+<a href="http://www.browsersync.io/">BrowserSync</a>: Proxy to a local server, sync interactions, hot push CSS</li>
+<li>
+<a href="https://github.com/vojtajina/grunt-bump">Bump</a>: Use grunt to manage your releases, easily make this part of your prod build job</li>
+<li>
+<a href="https://github.com/gruntjs/grunt-contrib-clean">Clean</a>: Wipes the build directory</li>
+<li>
+<a href="https://github.com/sindresorhus/grunt-concurrent">Concurrent</a>: Runs jade/stylus/copy tasks in parallel to keep the build fast</li>
+<li>
+<a href="https://github.com/gruntjs/grunt-contrib-connect">Connect</a>: Static web server</li>
+<li>
+<a href="https://github.com/gruntjs/grunt-contrib-copy">Copy</a>: Copy images, js, and more to the build directory</li>
+<li>
+<a href="https://github.com/gruntjs/grunt-contrib-imagemin">Imagemin</a>: Minifies images in the prod build job</li>
+<li>
+<a href="https://github.com/gruntjs/grunt-contrib-jade">Jade</a>: Compiles templates, site, and ajax content</li>
+<li>
+<a href="https://github.com/gunta/grunt-manifest">Manifest</a>: Create an appcache manifest automatically</li>
+<li>
+<a href="https://github.com/dylang/grunt-notify">Notify</a>: Custom notifications when build jobs complete</li>
+<li>
+<a href="https://github.com/sindresorhus/grunt-shell">Shell</a>: Run custom shell commands from grunt, this can do all sorts of good stuff</li>
+<li>
+<a href="https://github.com/gruntjs/grunt-contrib-stylus">Stylus</a>: Compiles all stylus files</li>
+<li>
+<a href="https://github.com/gruntjs/grunt-contrib-uglify">Uglify</a>: Crunches and combines javascript</li>
+<li>
+<a href="https://github.com/addyosmani/grunt-uncss">Uncss</a>: Optional part of the prod build, can potentially reduce file size greatly</li>
+<li>
+<a href="https://github.com/gruntjs/grunt-contrib-watch">Watch</a>: Runs tasks when certain files change</li>
+</ul>
+
+<h2>
+<a name="maintaining-this" class="anchor" href="#maintaining-this"><span class="octicon octicon-link"></span></a>Maintaining This</h2>
+
+<p>There's not much to maintaining this build system. There's only a few pieces of manual management, and it's around your choices of Javascript and CSS. If you add a bower package, go update the uglify task <code>tasks/uglify.coffee</code>. It needs to know what new libs there are, and how to want to load them. You will also want to spend time looking at <code>app/includes/scripts.jade</code>. </p>
+
+<p>For CSS, if you pull in a grid framework, for example. You'll want to update <code>app/styles/master.styl</code> to import that file. It's better that you manage your styles using stylus then importing lots of scripts into your page. But again, up to you. </p>
+
+<h2>
+<a name="inspiration" class="anchor" href="#inspiration"><span class="octicon octicon-link"></span></a>Inspiration</h2>
+
+<ul>
+<li><a href="http://roots.cx/">Roots</a></li>
+<li><a href="http://yeoman.io/">Yeoman</a></li>
+<li><a href="https://developers.google.com/web/starter-kit/">Google Web Starter Kit</a></li>
+<li><a href="https://github.com/h5bp/html5-boilerplate">HTML5 Mobile Boilerplate</a></li>
+</ul>
         </section>
 
         <aside id="sidebar">

@@ -1,3 +1,9 @@
+[![Build Status](http://img.shields.io/badge/Bolt-v0.0.5-green.svg?style=flat)](#)  
+[![Node Version](http://img.shields.io/node/v/gh-badges.svg?style=flat)](#)  
+[![NPM](http://img.shields.io/npm/v/npm.svg)](#)  
+[![Deps](http://img.shields.io/david/strongloop/express.svg)](#)  
+
+
 # Goal
 Offer a grunt based, rather unopinionated, mobile first, front end, static site build system. It comes with [Jade](http://jade-lang.com/) & [Stylus](http://learnboost.github.io/stylus/) as default, but swap it for whatever you want easily. At the end of the day, it's [Grunt](http://gruntjs.com/), do whatever you want. 
 

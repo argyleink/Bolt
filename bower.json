@@ -18,6 +18,6 @@
     "jquery": "*",
     "jquery.finger": "*",
     "scriptjs": "~2.5.7",
-    "device-detect.js": "~0.0.1"
+    "device-detect.js": "*"
   }
 }

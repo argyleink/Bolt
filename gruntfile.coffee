@@ -49,6 +49,7 @@ module.exports = (grunt) ->
     "uncss"
     "uglify:prod"
     "imagemin"
+    "svgmin"
     "manifest"
     "notify:prod"
     "connect"
@@ -64,5 +65,6 @@ module.exports = (grunt) ->
     "uncss"
     "uglify:prod"
     "imagemin"
+    "svgmin"
     "manifest"
   ]

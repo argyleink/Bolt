@@ -13,6 +13,7 @@
     "start": "node server.js"
   },
   "devDependencies": {
+    "autoprefixer-stylus":    "*",
     "bower":                  "*",
     "clientjade":             "*",
     "grunt-browser-sync":     "*",
@@ -30,10 +31,10 @@
     "grunt-newer":            "*",
     "grunt-notify":           "*",
     "grunt-shell":            "*",
+    "grunt-svgmin":           "*",
     "grunt-uncss":            "*",
     "load-grunt-configs":     "*",
     "matchdep":               "*",
-    "time-grunt":             "*",
-    "autoprefixer-stylus":    "~0.3.0"
+    "time-grunt":             "*"
   }
 }

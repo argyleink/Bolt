@@ -11,7 +11,7 @@ module.exports =
     tasks: ["newer:copy:debug"]
 
   libs:
-    files: ["app/js/bower/**/*.js"]
+    files: ["app/js/bower/**/*.js", "app/js/libs/**/*.js"]
     tasks: ["uglify:libs"]
 
   images:
@@ -24,4 +24,4 @@ module.exports =
 
   templates:
     files: ["app/templates/**/*.jade"]
-    tasks: ["shell:clientjade", "uglify:libs"]
+    tasks: ["shell:clientjade"]

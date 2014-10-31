@@ -23,5 +23,9 @@ module.exports =
       ]
 
   libs:
+    options:
+      mangle: false
+      compress: false
+      beautify: true
     files:
       "dist/js/lib.min.js": libsArray

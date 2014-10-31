@@ -51,9 +51,9 @@
 			"folder_exclude_patterns":
 			[
 				"app",
-				"bower_components",
 				"dist",
-				"tasks"
+				"tasks",
+				"node_modules"
 			],
 			"follow_symlinks": true,
 			"name": "Configs",

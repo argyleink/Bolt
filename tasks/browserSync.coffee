@@ -4,6 +4,7 @@ module.exports =
   		src: [
   			"dist/styles/*"
   			"dist/*.html"
+        "dist/js/lib.min.js"
   		]
 
   options:

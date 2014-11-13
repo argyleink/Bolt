@@ -17,6 +17,6 @@ module.exports = debug:
     ,
       expand: true
       cwd:    "app/"
-      src:    ["robots.txt"]
+      src:    ["robots.txt", "manifest.json"]
       dest:   "dist/"
   ]

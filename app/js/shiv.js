@@ -18,7 +18,7 @@ if (Device.android) {
 else if (Device.ios) { 
   addStylesheet('/styles/ios.css'); 
 }
-else if (Device.ie10) {
+else if (Device.ie10 || Device.ie11) {
   addStylesheet('/styles/ie10.css'); 
 }
 else if (Device.windowsphone8) { 

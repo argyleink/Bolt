@@ -13,6 +13,7 @@ module.exports = (grunt) ->
   
   # compile everything, run server, and watch
   grunt.registerTask "default", [
+    "asciify:headline"
     "clean" 
     "shell:clientjade"
     "concurrent:makeLibs" 
@@ -26,6 +27,7 @@ module.exports = (grunt) ->
 
   # serve static dist/ directory
   grunt.registerTask "serve", [
+    "asciify:headline"
     "shell:open_app"
     "connect"
     "watch"
@@ -67,4 +69,5 @@ module.exports = (grunt) ->
     "imagemin"
     "svgmin"
     "manifest"
+    "asciify:build"
   ]

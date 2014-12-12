@@ -3,6 +3,6 @@ module.exports =
     files: [
       expand: true
       cwd: "app/img/"
-      src: ["**/*.{svg}"]
+      src: ["**/*.svg"]
       dest: "dist/img/"
     ]

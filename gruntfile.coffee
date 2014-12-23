@@ -2,6 +2,7 @@ module.exports = (grunt) ->
   
   require("matchdep").filterDev("grunt-*").forEach grunt.loadNpmTasks
   require("time-grunt")(grunt)
+  require("jit-grunt")(grunt)
 
   # load tasks
   options = 

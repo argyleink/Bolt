@@ -1,6 +1,7 @@
 module.exports =
   options:
     livereload: false
+    spawn: false
 
   css:
     files: ["app/styles/**/*.styl"]

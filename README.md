@@ -26,6 +26,8 @@ Huge because dev builds produce legible debuggable code, and prod builds produce
 #### Sublime Text project file
 For awesome IDE organization and normalization of settings. Set your projects tab indentation spacing, folder structure, etc. I've got it setup to hide all files that you shouldn't be editing, group all the config files, and more. I find this valuable.
 
+`grunt subl` will open it for you =)
+
 #### Clean Grunt task architecture
 See the `tasks/` directory. All Grunt work is written in coffeescript because it's pretty. But also checkout the Gruntfile, notice no long file mess! Clean and easy to CRUD. 
 
@@ -76,6 +78,9 @@ Runs prod tasks without a server. So produces super crunched up html/css/js, rea
 
 `grunt bump`  
 Uses the version in package.json, increments it, and creates a .git tag. Awesome for lazy release creation. Easily add it to `grunt prod` if you want to. 
+
+`grunt subl`
+Opens the `app.sublime-project` file. AKA `open app.sublime-project` or `subl app.sublime-project`. Just forget about it.
 
 ## Grunt Tasks
 - [BrowserSync](http://www.browsersync.io/): Proxy to a local server, sync interactions, hot push CSS

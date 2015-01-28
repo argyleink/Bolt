@@ -6,12 +6,12 @@ head
     content='initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'
   )  
   
-  title New Bolt App
+  title New App
   link(rel='icon', type='image/png', href='img/favicon.png')
   meta(name='description', content='')
 
   //- Start Mobile Meta
-  meta(name='HandheldFriendly', content='true')
+  include mobile/handheld
 
   //- Add to homescreen for Chrome on Android 
   meta(name='mobile-web-app-capable', content='yes')
@@ -38,5 +38,9 @@ head
   //- OH NO, JS in the head!
   //- Yes, we want to block rendering until we've polyfilled, with vanilla js
   //- Goal: Prevent flashes of unstyled content (FOUC)
+  //- Allows: CSS and JS alterations to happen, I use it mostly for CSS edge case fixes and stuff
+
+  //- device-detect.js is a project of mine, use whateva ya want =) 
+  //- https://github.com/argyleink/Mobile-Detection
   script(src='js/device-detect.js')
   script(src='js/shiv.js')

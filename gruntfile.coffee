@@ -13,6 +13,8 @@ module.exports = (grunt) ->
   grunt.initConfig configs
   
   # compile everything, run server, and watch
+  # nothing is smashed, find comments for line numbers in your precompressors
+  # should be totally out of your way, just awesome automated-ness
   grunt.registerTask "default", [
     "asciify:headline"
     "clean" 
@@ -27,6 +29,7 @@ module.exports = (grunt) ->
   ]
 
   # serve static dist/ directory
+  # run this if you've run prod or dev commands and want to serve the output
   grunt.registerTask "serve", [
     "asciify:headline"
     "shell:open_app"
@@ -35,6 +38,7 @@ module.exports = (grunt) ->
   ]
   
   # compile everything for debug but don't watch
+  # comes in handy if you just want to output a static dev version, no server
   grunt.registerTask "dev", [
     "clean"
     "shell:clientjade"
@@ -43,6 +47,8 @@ module.exports = (grunt) ->
   ]
   
   # for prod use, minify all js files, html is already compressed 
+  # serve it local, no browsersync, just static folder
+  # for smoke testing your features before you deploy or commit
   grunt.registerTask "prod", [
     "clean"
     "shell:clientjade"
@@ -59,6 +65,8 @@ module.exports = (grunt) ->
     "watch"
   ]
 
+  # hook into Heroku builds with this and the heroku grunt build pack
+  # runs your prod tasks
   grunt.registerTask "heroku", [
     "clean"
     "shell:clientjade"
@@ -71,4 +79,10 @@ module.exports = (grunt) ->
     "svgmin"
     "manifest"
     "asciify:build"
+  ]
+
+  # handy command for opening the project file in sublime
+  # so you dont have to remember
+  grunt.registerTask "subl", [
+    "shell:open_sublime"
   ]

@@ -1,7 +1,5 @@
-[![Build Status](http://img.shields.io/badge/Bolt-v0.0.5-green.svg?style=flat)](#)  
-[![Node Version](http://img.shields.io/node/v/gh-badges.svg?style=flat)](#)  
-[![NPM](http://img.shields.io/npm/v/npm.svg)](#)  
-[![Deps](http://img.shields.io/david/strongloop/express.svg)](#)  
+![bolt logo](https://dl.dropboxusercontent.com/u/6515442/hipsterlogogenerator_1422411720676.png)  
+Logo courtesy of [HipsterLogoGenerator.com](http://www.hipsterlogogenerator.com/)
 
 
 # Goal

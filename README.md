@@ -9,13 +9,18 @@ Offer a grunt based, rather unopinionated, mobile first, front end, static site 
 This project's default setup is for deploying static sites to be hosted somewhere on the web. This could be a webview hybrid app, single page app, marketing site, who cares. This tool comes with all the tips, tricks, meta data, and automated tasks that help you build quick and efficient across browsers.
 
 #### Quickstart
-- **Download:** [Node.js](http://nodejs.org/)  
-> NPM (will come with node.js download from link above)  
-- **Download:** [Grunt](http://gruntjs.com/) 
-- **Install Node modules**: `npm install`  
-> This will install all node modules, bower modules, run grunt and auto open the build in your default browser. Hot and ready to update when things change.
-- **Open the project in Sublime:** `grunt subl`  
-> If you don't have sublime, then ignore this feature! Or pull request an Atom one?
+##### Have [Node.js](http://nodejs.org/)    
+> NPM (will come with node.js download from link above)
+
+##### Have [Grunt](http://gruntjs.com/)  
+##### Optional [Bower](http://bower.io/)  
+> Bower is used for the Heroku part of this app, if you dont like Bower or don't plan to deploy to Heroku, then don't worry about Bower. But if you do like Bower, then do your thang. Just update `tasks/uglify.coffee` and point to the js file you want from the project. I usually do their non-minified version, just in case there's an error.
+
+##### **Install Bolt's required Node modules**: `npm install`  
+> This will install all node modules, bower modules, run grunt and auto open the build in your default browser. Hot and ready to update when things change. See `package.json` for more.
+
+##### **Open the project in Sublime:** `grunt subl`  
+> If you don't have sublime, then ignore this feature! Or pull request an Atom grunt command?
 
 ## Features
 #### Separate Prod and Dev builds.

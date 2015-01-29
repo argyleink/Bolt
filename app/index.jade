@@ -1,35 +1,47 @@
-doctype html
-html(manifest = dev ? '' : 'manifest.appcache')
-	include includes/head
-	body
-		nav
-			a(href='#') Link 1
-			a(href='#') Link 2
-			a(href='#') Link 3
+extends _jade/layouts/page
 
-		header.text-center
-			p Works! This isn't a pretty splash page, but you're going to delete it anyway!
+//- use these if you like to control page titles and SEO descriptions
+block title
+	title Index Page
 
-		article
-			h2 Buttons
-			.btn Button 1
-			.btn.dark Button Dark
-			.btn.light Button Light
-		
-		article
-			h1 Title h1
-			h2 Title h2
-			h3 Title h3
-			h4 Title h4
-			h5 Title h5
-			h6 Title h6
+block description
+	meta(name='description', content='Index page description')
 
-		article
-			h2 Jade Template List
-			section#list-template-example
+//- use this to append special css for a page or overwrite the css entirely
+//- block append css
+//- 	link(rel='stylesheet', href='path/to/your/file')
 
-		article
-			h2 AJAX Example
-			section#ajax-example
+block content
+	nav
+		a(href='#') Link 1
+		a(href='#') Link 2
+		a(href='#') Link 3
 
-	include includes/scripts
+	header.text-center
+		p Works! This isn't a pretty splash page, but you're going to delete it anyway!
+
+	article
+		h2 Buttons
+		.btn Button 1
+		.btn.dark Button Dark
+		.btn.light Button Light
+	
+	article
+		h1 Title h1
+		h2 Title h2
+		h3 Title h3
+		h4 Title h4
+		h5 Title h5
+		h6 Title h6
+
+	article
+		h2 Jade Template List
+		section#list-template-example
+
+	article
+		h2 AJAX Example
+		section#ajax-example
+
+//- use this to append or overwrite the js for a page or overwrite the js entirely
+//- block append js
+//- 	script(src='your/script.js')

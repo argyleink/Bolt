@@ -4,7 +4,7 @@ module.exports = (grunt) ->
   require("time-grunt")(grunt)
   require("jit-grunt")(grunt)
 
-  # load tasks
+  # load your tasks, allows them to be in separate files for cleanliness
   options = 
     config:
       src: "tasks/*.coffee"
@@ -86,3 +86,4 @@ module.exports = (grunt) ->
   grunt.registerTask "subl", [
     "shell:open_sublime"
   ]
+  

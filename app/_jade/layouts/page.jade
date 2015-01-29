@@ -1,0 +1,21 @@
+include ../includes/doctype
+  include ../includes/head
+    
+  block title
+    title Default Page Title
+
+  block description
+    meta(name='description', content='Default page description')
+
+  block css
+    //- master.styl combines all our modules into this file
+    link(rel='stylesheet', href='styles/master.css')
+
+  include ../includes/polyfill
+
+  body
+    block content
+      h1 Default Test Title
+
+    block scripts
+      include ../includes/scripts

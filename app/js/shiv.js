@@ -12,6 +12,7 @@ function addStylesheet(path) {
 }
 
 // and now we do our device operating system filling
+// by default this is turned on for you, to render and inject various device CSS files
 if (Device.android) { 
   addStylesheet('/styles/android.css');
 }

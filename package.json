@@ -28,6 +28,7 @@
     "grunt-contrib-stylus": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
+    "grunt-jade-inheritance": "^0.1.0",
     "grunt-manifest": "*",
     "grunt-newer": "*",
     "grunt-notify": "*",

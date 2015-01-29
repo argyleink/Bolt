@@ -6,25 +6,32 @@ Logo courtesy of [HipsterLogoGenerator.com](http://www.hipsterlogogenerator.com/
 Offer a grunt based, rather unopinionated, mobile first, front end, static site build system. It comes with [Jade](http://jade-lang.com/) & [Stylus](http://learnboost.github.io/stylus/) as default, but swap it for whatever you want easily. At the end of the day, it's [Grunt](http://gruntjs.com/), do whatever you want. 
 
 ## Overview
-This project's default setup is for deploying static sites to be hosted somewhere on the web. This could be a webview hybrid app, single page app, marketing site, who cares. This tool comes with all the tips, tricks, meta data, and automated tasks that help you build quick and efficient across browsers.
+This project's default setup is for deploying static sites to be hosted somewhere on the web. This could be a webview hybrid app, single page app, marketing site, who cares. This tool comes with all the tips, tricks, meta data, and automated tasks that help you build quick and efficient across browsers. Jade is setup for client side templating, ajax fragments, and of course a static page building. 
 
 #### Quickstart
 ##### Have [Node.js](http://nodejs.org/)    
 > NPM (will come with node.js download from link above)
 
 ##### Have [Grunt](http://gruntjs.com/)  
-##### Optional [Bower](http://bower.io/)  
-> Bower is used for the Heroku part of this app, if you dont like Bower or don't plan to deploy to Heroku, then don't worry about Bower. But if you do like Bower, then do your thang. Just update `tasks/uglify.coffee` and point to the js file you want from the project. I usually do their non-minified version, just in case there's an error.
+`npm install -g grunt-cli`
 
-##### **Install Bolt's required Node modules**: `npm install`  
+##### Optional [Bower](http://bower.io/)  
+`npm install -g bower`
+> A local copy of Bower is included in this system, for the Heroku integration aspects of this system. If you dont like Bower or don't plan to deploy to Heroku, then don't worry about Bower. But if you do like Bower, then do your thang. Just update `tasks/uglify.coffee` and point to the js file you want from the project.
+
+##### **Install Bolt's required Node modules**:  
+`npm install`  
 > This will install all node modules, bower modules, run grunt and auto open the build in your default browser. Hot and ready to update when things change. See `package.json` for more.
 
 ##### **Open the project in Sublime:** `grunt subl`  
 > If you don't have sublime, then ignore this feature! Or pull request an Atom grunt command?
 
+
+
+
 ## Features
 #### Separate Prod and Dev builds.
-Huge because dev builds produce legible debuggable code, and prod builds produce super tiny crunched and concatenated code. Easily test them locally before deployment. Know for a fact that you're deploying a solid build.  
+Huge because dev builds produce legible debuggable code, and prod builds produce super tiny crunched and concatenated code, and super cache with a dynamically generated appcache. Easily test both builds locally before deployment. Know for a fact that you're deploying a solid build. I go as far as using non-minified libraries from Bower too, so that debugging my libs is possible. 
 
 #### Sublime Text project file
 For awesome IDE organization and normalization of settings. Set your projects tab indentation spacing, folder structure, etc. I've got it setup to hide all files that you shouldn't be editing, group all the config files, and more. I find this valuable.
@@ -32,13 +39,13 @@ For awesome IDE organization and normalization of settings. Set your projects ta
 `grunt subl` will open it for you =)
 
 #### Clean Grunt task architecture
-See the `tasks/` directory. All Grunt work is written in coffeescript because it's pretty. But also checkout the Gruntfile, notice no long file mess! Clean and easy to CRUD. 
+See the `tasks/` directory. All Grunt work is written in coffeescript because it's pretty, no other reason. Checkout the Gruntfile, notice no long file mess! Clean and easy to CRUD. Very easy task management, sharing, readability, etc.
 
-#### Live Reload
-Get an automatic page reload when your HTML changes. Also get **hot CSS pushes** (no page reload) when stylus files change. **This is huge!** As for JS, I've set it up to !auto reload, you can change this if you want in `watch.coffee`.
+#### Live Reload with [BrowserSync](http://www.browsersync.io/)
+Get an automatic page reload when your HTML changes. Also get **hot CSS pushes** (no page reload) when stylus (or whatever you setup) files change. **This is huge!** As for JS, I've set it up to !auto reload, you can change this if you want in `watch.coffee`.
 
 #### Local Server
-Powered by [Watch](https://github.com/gruntjs/grunt-contrib-watch), [Connect](https://github.com/gruntjs/grunt-contrib-connect) and [BrowserSync](https://www.npmjs.org/package/grunt-browser-sync), don't worry about MAMP or whatever, just start building the front end. Since it's using [BrowserSync](http://www.browsersync.io/), all your scrolling, clicks, and form input values are synced across all connected clients. Makes for some sick RWD web building, as well as QA. 
+Powered by [Watch](https://github.com/gruntjs/grunt-contrib-watch), [Connect](https://github.com/gruntjs/grunt-contrib-connect) and [BrowserSync](https://www.npmjs.org/package/grunt-browser-sync), don't worry about MAMP, Nginx or whatever, just start building the front end. Since it's using [BrowserSync](http://www.browsersync.io/), all your scrolling, clicks, and form input values are synced across all connected clients. Makes for some sick RWD web building, as well as QA. 
 
 #### Build static sites like a boss
 [Jade](http://jade-lang.com/) everywhere! Why learn 2-3 templating languages when you could be learning/using 1? [Jade](http://jade-lang.com/) is used in this build process for: 
@@ -56,7 +63,7 @@ Also, this project comes with an [async script loader](http://www.dustindiaz.com
 #### Manage your styles like a boss
 I prefer [Stylus](http://learnboost.github.io/stylus/) because it let's you write to the modern spec, unprefixed, and output really tight well formed CSS. I especially like the [@extend](http://learnboost.github.io/stylus/docs/extend.html) feature, that saves me lines of CSS by grouping selectors. Stylus also let's you easily import any CSS library, since it allows valid CSS to run through it's processor. I often put libraries pulled from Bower, into my `app/styles/master.styl` file, and let Stylus include and output 1 CSS file. 
 
-This implementation also comes with [Nib](http://visionmedia.github.io/nib/) and is post-processed by [Autoprefixer](https://github.com/postcss/autoprefixer). Open up `tasks/stylus.coffee` to specify which target browsers you want to support in your CSS. This is a really powerful way to write minimal amounts of CSS, but output very powerful and compliant CSS. 
+This implementation also comes with [Nib](http://visionmedia.github.io/nib/) and is post-processed by [Autoprefixer](https://github.com/postcss/autoprefixer). Open up `tasks/stylus.coffee` to specify which target browsers you want to support in your CSS. This is a really powerful way to write minimal amounts of CSS, but output very powerful and compliant CSS. Autoprefixer removes all the cruft that Nib applies too. If you need IE7 support though, either remove Autoprefixr or specify the browsers you want to support! So rad!
 
 **Browser hacks** are no fun, but we all write them. We want a site to look uniform across browsers. I've included in this project my personal preferred clientside method of fixing styles for browsers. It stuck for me becuase it's done in a way that prevents [FOUT](http://www.paulirish.com/2009/fighting-the-font-face-fout/), since the JS script `app/js/detect-and-fill.js` is evaluated before any other scripts are loaded, and it's loaded intentionally blocking. It blocks, detects which browser, and appends a script to the dom for immediate loading. So since this is all setup, you can now easily, on the client, fill iOS or Android layout issues, without causing any jank, and written easily with stylus. Enjoy. The other best alternative here, is server side detection and templating. Do this if you got the chops =). This clientside way is pretty awesome though. Never serve CSS to a browser that it won't use, block page painting until the new CSS is loaded, and lastly, do it all with vanilla js so there's no libs to load to fill, keeping it quick.
 

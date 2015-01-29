@@ -5,5 +5,5 @@ module.exports =
   ]
   stylusAndJade: [
     "stylus:debug"
-    "jade:debug"
+    "jade:compile"
   ]

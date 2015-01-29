@@ -21,7 +21,7 @@ module.exports =
 
   html:
     files: ["app/**/*.jade", "!app/templates/**/*.jade"]
-    tasks: ["jade:debug"]
+    tasks: ["jade:compile"]
 
   templates:
     files: ["app/templates/**/*.jade"]

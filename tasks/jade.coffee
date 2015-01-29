@@ -1,7 +1,7 @@
 jadeFiles = [
   expand: true
   cwd:    "app/"
-  src:    ["*.jade"]
+  src:    ["*.jade", '!source/**/*.jade']
   dest:   "dist/"
   ext:    ".html"
 ,
@@ -13,11 +13,12 @@ jadeFiles = [
 ]
 
 module.exports =
-  debug:
+  compile:
     options:
       data:
         dev: true
       pretty: true
+      client: false
 
     files: jadeFiles
 

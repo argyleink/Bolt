@@ -1,0 +1,22 @@
+doctype html
+html(manifest = dev ? '' : 'manifest.appcache')
+  include ../includes/head
+    
+  block title
+    title New App
+
+  block description
+    meta(name='description', content='')
+
+  block css
+    //- master.styl combines all our modules into this file
+    link(rel='stylesheet', href='styles/master.css')
+
+  include ../includes/polyfill
+
+  body
+    block content
+      h1 Test Title
+
+    block scripts
+      include ../includes/scripts

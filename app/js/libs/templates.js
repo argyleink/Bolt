@@ -189,6 +189,16 @@ attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow |
 var buf = [];
 with (locals || {}) {
 var interp;
+var detailItem_mixin = function(data){
+var block = this.block, attributes = this.attributes || {}, escaped = this.escaped || {};
+buf.push('<dt>');
+var __val__ = data.title
+buf.push(escape(null == __val__ ? "" : __val__));
+buf.push('</dt><dd>');
+var __val__ = data.detail
+buf.push(escape(null == __val__ ? "" : __val__));
+buf.push('</dd>');
+};
 buf.push('<dl>');
 // iterate items
 ;(function(){
@@ -196,25 +206,13 @@ buf.push('<dl>');
     for (var $index = 0, $$l = items.length; $index < $$l; $index++) {
       var item = items[$index];
 
-buf.push('<dt>');
-var __val__ = item.title
-buf.push(escape(null == __val__ ? "" : __val__));
-buf.push('</dt><dd>');
-var __val__ = item.detail
-buf.push(escape(null == __val__ ? "" : __val__));
-buf.push('</dd>');
+detailItem_mixin(item);
     }
   } else {
     for (var $index in items) {
       var item = items[$index];
 
-buf.push('<dt>');
-var __val__ = item.title
-buf.push(escape(null == __val__ ? "" : __val__));
-buf.push('</dt><dd>');
-var __val__ = item.detail
-buf.push(escape(null == __val__ ? "" : __val__));
-buf.push('</dd>');
+detailItem_mixin(item);
    }
   }
 }).call(this);
@@ -228,6 +226,16 @@ attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow |
 var buf = [];
 with (locals || {}) {
 var interp;
+var detailItem_mixin = function(data){
+var block = this.block, attributes = this.attributes || {}, escaped = this.escaped || {};
+buf.push('<dt>');
+var __val__ = data.title
+buf.push(escape(null == __val__ ? "" : __val__));
+buf.push('</dt><dd>');
+var __val__ = data.detail
+buf.push(escape(null == __val__ ? "" : __val__));
+buf.push('</dd>');
+};
 buf.push('<dl>');
 // iterate items
 ;(function(){
@@ -235,25 +243,13 @@ buf.push('<dl>');
     for (var $index = 0, $$l = items.length; $index < $$l; $index++) {
       var item = items[$index];
 
-buf.push('<dt>');
-var __val__ = item.title
-buf.push(escape(null == __val__ ? "" : __val__));
-buf.push('</dt><dd>');
-var __val__ = item.detail
-buf.push(escape(null == __val__ ? "" : __val__));
-buf.push('</dd>');
+detailItem_mixin(item);
     }
   } else {
     for (var $index in items) {
       var item = items[$index];
 
-buf.push('<dt>');
-var __val__ = item.title
-buf.push(escape(null == __val__ ? "" : __val__));
-buf.push('</dt><dd>');
-var __val__ = item.detail
-buf.push(escape(null == __val__ ? "" : __val__));
-buf.push('</dd>');
+detailItem_mixin(item);
    }
   }
 }).call(this);

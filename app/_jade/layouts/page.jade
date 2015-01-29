@@ -1,12 +1,11 @@
-doctype html
-html(manifest = dev ? '' : 'manifest.appcache')
+include ../includes/doctype
   include ../includes/head
     
   block title
-    title New App
+    title Default Page Title
 
   block description
-    meta(name='description', content='')
+    meta(name='description', content='Default page description')
 
   block css
     //- master.styl combines all our modules into this file
@@ -16,7 +15,7 @@ html(manifest = dev ? '' : 'manifest.appcache')
 
   body
     block content
-      h1 Test Title
+      h1 Default Test Title
 
     block scripts
       include ../includes/scripts

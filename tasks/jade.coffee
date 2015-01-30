@@ -1,7 +1,11 @@
 jadeFiles = [
   expand: true
   cwd:    "app/"
-  src:    ["*.jade", '!source/**/*.jade']
+  src:    [
+    "*.jade", 
+    "!app/ajax/**/*.jade"
+    "!source/**/*.jade"
+  ]
   dest:   "dist/"
   ext:    ".html"
 ,

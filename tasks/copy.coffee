@@ -1,4 +1,4 @@
-module.exports = debug:
+module.exports = dev:
   files: [
       expand: true
       cwd:    "app/js"

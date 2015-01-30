@@ -22,7 +22,7 @@ module.exports =
         "!app/js/script.js"
       ]
 
-  libs:
+  dev:
     options:
       mangle: false
       compress: false

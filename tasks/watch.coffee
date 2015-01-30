@@ -5,23 +5,23 @@ module.exports =
 
   css:
     files: ["app/styles/**/*.styl"]
-    tasks: ["stylus:debug"]
+    tasks: ["stylus:dev"]
 
   js:
     files: ["app/js/*.js"]
-    tasks: ["newer:copy:debug"]
+    tasks: ["newer:copy:dev"]
 
   libs:
     files: ["app/js/bower/**/*.js", "app/js/libs/**/*.js"]
-    tasks: ["uglify:libs"]
+    tasks: ["uglify:dev"]
 
   images:
     files: ["app/img/**/*"]
-    tasks: ["newer:copy:debug"]
+    tasks: ["newer:copy:dev"]
 
   html:
     files: ["app/**/*.jade", "!app/templates/**/*.jade"]
-    tasks: ["jade:compile"]
+    tasks: ["jade:dev"]
 
   templates:
     files: ["app/templates/**/*.jade"]

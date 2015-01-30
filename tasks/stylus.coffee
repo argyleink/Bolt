@@ -12,7 +12,7 @@ autoprefixerPlugin = [
 ]
 
 module.exports =
-  compile:
+  prod:
     options:
       compress:       true
       linenos:        false
@@ -21,7 +21,7 @@ module.exports =
 
     files: stylusFiles
 
-  debug:
+  dev:
     options:
       compress:       false
       linenos:        true

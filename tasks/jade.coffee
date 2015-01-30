@@ -13,7 +13,7 @@ jadeFiles = [
 ]
 
 module.exports =
-  compile:
+  dev:
     options:
       data:
         dev: true
@@ -22,7 +22,7 @@ module.exports =
 
     files: jadeFiles
 
-  release:
+  prod:
     options:
       data:
         dev: false

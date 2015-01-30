@@ -1,9 +1,19 @@
 module.exports =
-  makeLibs: [
-    "uglify:libs"
-    "copy"
+  dev_StylusJadeUglify: [
+    "uglify:dev"
+    "stylus:dev"
+    "jade:dev"
+    "shell:clientjade"
   ]
-  stylusAndJade: [
-    "stylus:debug"
-    "jade:compile"
+  prod_StylusJadeUglify: [
+    "uglify:prod"
+    "stylus:prod"
+    "jade:prod"
+    "shell:clientjade"
+  ]
+  shrink: [
+    # "uncss"
+    "imagemin"
+    "svgmin"
+    "manifest"
   ]

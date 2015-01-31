@@ -5,7 +5,7 @@ Logo courtesy of [HipsterLogoGenerator.com](http://www.hipsterlogogenerator.com/
 # Goal
 Offer a grunt based, rather unopinionated, mobile first, front end, static site build system. It comes with [Jade](http://jade-lang.com/) & [Stylus](http://learnboost.github.io/stylus/) as default, but swap it for whatever you want easily. At the end of the day, it's [Grunt](http://gruntjs.com/), do whatever you want. 
 
-![Build Status](https://travis-ci.org/argyleink/Bolt.svg?branch=master)]
+![Build Status](https://travis-ci.org/argyleink/Bolt.svg?branch=master)
 
 ## Overview
 This project's default setup is for deploying static sites to be hosted somewhere on the web. This could be a webview hybrid app, single page app, marketing site, who cares. This tool comes with all the tips, tricks, meta data, and automated tasks that help you build quick and efficient across browsers. Jade is setup for client side templating, ajax fragments, and of course a static page building. 
@@ -115,6 +115,9 @@ Opens the `app.sublime-project` file. AKA `open app.sublime-project` or `subl ap
 There's not much to maintaining this build system. There's only a few pieces of manual management, and it's around your choices of Javascript and CSS. If you add a bower package, go update the uglify task `tasks/uglify.coffee`. It needs to know what new libs there are, and how to want to load them. You will also want to spend time looking at `app/includes/scripts.jade`. 
 
 For CSS, if you pull in a grid framework, for example. You'll want to update `app/styles/master.styl` to import that file. It's better that you manage your styles using stylus then importing lots of scripts into your page. But again, up to you. 
+
+## Thanks
+Nice of you to read this far lol, if you did. Hope this helps you build web apps like it has me. 
 
 ## Inspiration
 - [Roots](http://roots.cx/)

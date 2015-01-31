@@ -5,6 +5,8 @@ Logo courtesy of [HipsterLogoGenerator.com](http://www.hipsterlogogenerator.com/
 # Goal
 Offer a grunt based, rather unopinionated, mobile first, front end, static site build system. It comes with [Jade](http://jade-lang.com/) & [Stylus](http://learnboost.github.io/stylus/) as default, but swap it for whatever you want easily. At the end of the day, it's [Grunt](http://gruntjs.com/), do whatever you want. 
 
+![Build Status](https://travis-ci.org/argyleink/Bolt.svg?branch=master)]
+
 ## Overview
 This project's default setup is for deploying static sites to be hosted somewhere on the web. This could be a webview hybrid app, single page app, marketing site, who cares. This tool comes with all the tips, tricks, meta data, and automated tasks that help you build quick and efficient across browsers. Jade is setup for client side templating, ajax fragments, and of course a static page building. 
 

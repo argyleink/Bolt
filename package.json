@@ -10,7 +10,8 @@
   },
   "scripts": {
     "postinstall": "node_modules/.bin/bower install && grunt",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node_modules/.bin/bower install && grunt test"
   },
   "devDependencies": {
     "autoprefixer-stylus": "*",

@@ -3,7 +3,7 @@ Logo courtesy of [HipsterLogoGenerator.com](http://www.hipsterlogogenerator.com/
 
 
 # Goal
-Offer a grunt based, rather unopinionated, mobile first, front end, static site build system. It comes with [Jade](http://jade-lang.com/) & [Stylus](http://learnboost.github.io/stylus/) as default, but swap it for whatever you want easily. At the end of the day, it's [Grunt](http://gruntjs.com/), do whatever you want. 
+Offer a FAST, Grunt based, rather un-opinionated build system. Use it for whatever, but I've laid a cache heavy, smart loading , mobile first, front end, static site build system. It comes with [Jade](http://jade-lang.com/) & [Stylus](http://learnboost.github.io/stylus/) as defaults, but swap it for whatever you want, easily. Or do more than 1 preprocessor, it's ready. At the end of the day, it's [Grunt](http://gruntjs.com/), do whatever you want. 
 
 ![Build Status](https://travis-ci.org/argyleink/Bolt.svg?branch=master)
 
@@ -52,8 +52,9 @@ Powered by [Watch](https://github.com/gruntjs/grunt-contrib-watch), [Connect](ht
 #### Build static sites like a boss
 [Jade](http://jade-lang.com/) everywhere! Why learn 2-3 templating languages when you could be learning/using 1? [Jade](http://jade-lang.com/) is used in this build process for: 
 - General HTML site generation
-- AJAX intended pages
 - [Client side templates](http://projects.jga.me/clientjade/)
+- Shared mixins, layouts, and everything
+- Load only the markup that's changed
 
 #### Manage your Javascript like a boss
 **Grunt + [Bower](bower.io) = awesome things** for your web app development. This project uses [Bower](bower.io) to manage front end assets, which I've found handles 95% of my use cases. You'll find everything installed from bower in `app/js/bower/`. From there, `tasks/uglify.coffee` makes a `lib.min.js` bundle for use in your app. Personally, I like to bundle my libs together (since they rarely change), and my app logic (since it changes a lot) separately. You can of course change this to whatever you want, just open up `tasks/uglify.coffee` and tell it how you want it.
@@ -67,7 +68,7 @@ I prefer [Stylus](http://learnboost.github.io/stylus/) because it let's you writ
 
 This implementation also comes with [Nib](http://visionmedia.github.io/nib/) and is post-processed by [Autoprefixer](https://github.com/postcss/autoprefixer). Open up `tasks/stylus.coffee` to specify which target browsers you want to support in your CSS. This is a really powerful way to write minimal amounts of CSS, but output very powerful and compliant CSS. Autoprefixer removes all the cruft that Nib applies too. If you need IE7 support though, either remove Autoprefixr or specify the browsers you want to support! So rad!
 
-**Browser hacks** are no fun, but we all write them. We want a site to look uniform across browsers. I've included in this project my personal preferred clientside method of fixing styles for browsers. It stuck for me becuase it's done in a way that prevents [FOUT](http://www.paulirish.com/2009/fighting-the-font-face-fout/), since the JS script `app/js/detect-and-fill.js` is evaluated before any other scripts are loaded, and it's loaded intentionally blocking. It blocks, detects which browser, and appends a script to the dom for immediate loading. So since this is all setup, you can now easily, on the client, fill iOS or Android layout issues, without causing any jank, and written easily with stylus. Enjoy. The other best alternative here, is server side detection and templating. Do this if you got the chops =). This clientside way is pretty awesome though. Never serve CSS to a browser that it won't use, block page painting until the new CSS is loaded, and lastly, do it all with vanilla js so there's no libs to load to fill, keeping it quick.
+**Browser hacks** are no fun, but we all write them. We want a site to look uniform across browsers. I've included in this project my personal preferred clientside method of fixing styles for browsers. It stuck for me becuase it's done in a way that prevents [FOUT](http://www.paulirish.com/2009/fighting-the-font-face-fout/) or other CSS adjustments, since the JS script `app/js/detect-and-fill.js` is evaluated before any other scripts are loaded, and it's loaded intentionally blocking. It blocks, detects which browser, and appends a script to the dom for immediate loading. So since this is all setup, you can now easily, on the client, fill iOS or Android layout issues, without causing any jank, and written easily with stylus. Enjoy. The other best alternative here, is server side detection and templating. Do this if you got the chops =), all of it is fun right!? This clientside way is pretty awesome though I've experienced. Never serve CSS to a browser that it won't use, block page painting until the new CSS is loaded, and lastly, do it all with vanilla js so there's no libs to load to fill, keeping it quick.
 
 #### Mobile First
 All includes styles are mobile first. There's some ground work laid out for you in `app/styles/stylus/vars.styl`. Set your brand color, responsive breakpoints, and other common variables you want to use in your CSS. 
@@ -124,3 +125,5 @@ Nice of you to read this far lol, if you did. Hope this helps you build web apps
 - [Yeoman](http://yeoman.io/)
 - [Google Web Starter Kit](https://developers.google.com/web/starter-kit/)
 - [HTML5 Mobile Boilerplate](https://github.com/h5bp/html5-boilerplate)
+
+### Don't forget you are just starting with this, it's ready for whatever!

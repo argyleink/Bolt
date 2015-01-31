@@ -45,6 +45,13 @@ module.exports = (grunt) ->
     "concurrent:dev_StylusJadeUglify" 
     "copy"
   ]
+
+  grunt.registerTask "test", [
+    "concurrent:dev_StylusJadeUglify"
+    "concurrent:prod_StylusJadeUglify"
+    "concurrent:shrink"
+    "copy"
+  ]
   
   # for prod use, minify all js files, html is already compressed 
   # serve it local, no browsersync, just static folder

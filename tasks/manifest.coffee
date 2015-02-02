@@ -4,7 +4,7 @@ module.exports = manifest:
     timestamp: true
   src: [
     '*.html'
-    'js/*.js'
+    'js/*'
     'styles/*.css'
     'img/*.{jpg,gif,png,ico,svg,jpeg}'
   ]

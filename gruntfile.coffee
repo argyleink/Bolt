@@ -8,12 +8,7 @@ module.exports = (grunt) ->
   require("jit-grunt")(grunt)
 
   # load your tasks, allows them to be in separate files for cleanliness
-  options = 
-    config:
-      src: "tasks/*.coffee"
-  configs = require("load-grunt-configs")(grunt, options)
-
-  grunt.initConfig configs
+  grunt.initConfig require("load-grunt-configs")(grunt, config: src: "tasks/*.coffee")
   
   # compile everything, run server, and watch
   # nothing is smashed, find comments for line numbers in your precompressors

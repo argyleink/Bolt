@@ -3,12 +3,12 @@ Logo courtesy of [HipsterLogoGenerator.com](http://www.hipsterlogogenerator.com/
 
 
 # Goal
-Offer a FAST, Grunt based, rather un-opinionated build system. Use it for whatever, but I've laid a cache heavy, smart loading , mobile first, front end, static site build system. It comes with [Jade](http://jade-lang.com/) & [Stylus](http://learnboost.github.io/stylus/) as defaults, but swap it for whatever you want, easily. Or do more than 1 preprocessor, it's ready. At the end of the day, it's [Grunt](http://gruntjs.com/), do whatever you want. 
+Offer a FAST, Grunt based, rather un-opinionated build system. Use it for whatever, but I've laid a cache heavy, smart loading, mobile first, front end, static site build system. It comes with [Jade](http://jade-lang.com/) & [Stylus](http://learnboost.github.io/stylus/) as defaults, but swap it for whatever you want, easily. Or want more than 1 preprocessor, it's ready. At the end of the day, it's [Grunt](http://gruntjs.com/), do whatever you want. 
 
 ![Build Status](https://travis-ci.org/argyleink/Bolt.svg?branch=master)
 
 ## Overview
-This project's default setup is for deploying static sites to be hosted somewhere on the web. This could be a webview hybrid app, single page app, marketing site, who cares. This tool comes with all the tips, tricks, meta data, and automated tasks that help you build quick and efficient across browsers. Jade is setup for client side templating, ajax fragments, and of course a static page building. 
+This project's default setup is for deploying static sites to be hosted somewhere on the web. This could be a webview hybrid app, single page app, marketing site, who cares. This tool comes with all the tips, tricks, meta data, and automated tasks that help you build quick and efficient across browsers. Jade is setup for client side templating and of course static HTML crafting. Hook up [Express](http://expressjs.com/) and render the same Jade on your server. **Isomorphic Jade: share mixins, partials, everything between server and client HTML.**
 
 #### Quickstart
 ##### Have [Node.js](http://nodejs.org/)    

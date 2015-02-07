@@ -2,8 +2,7 @@ var App = {};
 App.ModuleTemplate = (function(){
 
   var appName             = 'Jade and Stylus rule'
-    , listViewContainer   = $('#list-template-example')
-    , ajaxViewContainer   = $('#ajax-example');
+    , listViewContainer   = $('#list-template-example');
 
   function privateMethod() {
 
@@ -28,13 +27,8 @@ App.ModuleTemplate = (function(){
     );
   }
 
-  function renderAjaxExample() {
-    ajaxViewContainer.load('ajax/example.html');
-  }
-
   // Example methods to show how these things can work
   renderJadeList();
-  renderAjaxExample();
 
   return {
     name: publicMethod

@@ -1,8 +1,9 @@
 stylusFiles = [
   "dist/styles/master.css":   "app/styles/master.styl"
-  "dist/styles/ios.css":      "app/styles/stylus/ios.styl"
-  "dist/styles/ie10.css":     "app/styles/stylus/ie10.styl"
-  "dist/styles/android.css":  "app/styles/stylus/android.styl"
+  # below you can create your own additional css files for browser hacks, polyfills, etc
+  "dist/styles/ios.css":      "app/styles/browser/ios.styl"
+  "dist/styles/ie10.css":     "app/styles/browser/ie10.styl"
+  "dist/styles/android.css":  "app/styles/browser/android.styl"
 ]
 
 autoprefixerPlugin = [

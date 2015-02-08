@@ -1,4 +1,5 @@
-include ../includes/doctype
+doctype html
+html(manifest = dev ? '' : 'manifest.appcache')
   include ../includes/head
     
   block title

@@ -1,3 +1,5 @@
 mixin detailItem(data)
-  dt= data.title
-  dd= data.detail
+  dt: h5= data.title
+  
+  each detail in data.details
+    dd.hint-text= detail

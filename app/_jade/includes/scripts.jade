@@ -4,11 +4,10 @@ if dev
   script(src='js/script.js')
 
   script.
-    $script('js/lib.min.js', function(){
+    $script(['js/lib.min.js', 'js/templates.js'], function(){
       $script([
         //- all your app scripts go here
-        'js/app.js',
-        'js/templates.js'
+        'js/app.js'
       ]);
     });
 

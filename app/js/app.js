@@ -19,9 +19,9 @@ App.ModuleTemplate = (function(){
       'list',                   // Template name
       {
         items: [
-          { title: 'Title 1', detail: 'Detail 1' },
-          { title: 'Title 2', detail: 'Detail 2' },
-          { title: 'Title 3', detail: 'Detail 3' }
+          { title: 'Title 1', details: ['Detail 1', 'Detail 2'] },
+          { title: 'Title 2', details: ['Detail 3'] },
+          { title: 'Title 3', details: ['Detail 4', 'Detail 5'] }
         ]
       }
     );

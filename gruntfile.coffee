@@ -4,7 +4,8 @@ module.exports = (grunt) ->
   require("time-grunt")(grunt)
   # while watching, only load the dep needed to take the grunt action
   require("jit-grunt")(grunt)
-
+  # explicitly load a tool to fix jade rendering to only the files affected
+  grunt.loadNpmTasks "grunt-jade-inheritance"
   # load your tasks, allows them to be in separate files for cleanliness
   grunt.initConfig require("load-grunt-configs")(grunt, config: src: "tasks/*.coffee")
   

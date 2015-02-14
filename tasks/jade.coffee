@@ -16,6 +16,7 @@ module.exports =
         dev: true
       pretty: true
       client: false
+      basedir: 'app'
 
     files: jadeFiles
 

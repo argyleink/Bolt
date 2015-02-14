@@ -16,7 +16,7 @@
   "devDependencies": {
     "autoprefixer-stylus": "*",
     "bower": "*",
-    "clientjade": "*",
+    "clientjade": "git://github.com/argyleink/clientjade.git",
     "grunt-asciify": "*",
     "grunt-browser-sync": "*",
     "grunt-bump": "*",

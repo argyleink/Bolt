@@ -9,7 +9,7 @@ module.exports =
 
   js:
     files: ["app/js/*.js"]
-    tasks: ["newer:copy"]
+    tasks: ["newer:copy:dev"]
 
   libs:
     files: ["app/js/bower/**/*.js", "app/js/libs/**/*.js"]
@@ -17,12 +17,12 @@ module.exports =
 
   images:
     files: ["app/img/**/*"]
-    tasks: ["newer:copy"]
+    tasks: ["newer:copy:dev"]
 
   html:
     files: ["app/**/*.jade", "!app/templates/**/*.jade"]
     tasks: ["jade:dev"]
 
   templates:
-    files: ["app/templates/**/*.jade"]
+    files: ["app/templates/**/*.jade", "app/_jade/**/*.jade"]
     tasks: ["shell:clientjade"]

@@ -1,7 +1,5 @@
 module.exports = (grunt) ->
   
-  # autoload your deps
-  require("matchdep").filterDev("grunt-*").forEach grunt.loadNpmTasks
   # track the time it takes to run tasks
   require("time-grunt")(grunt)
   # while watching, only load the dep needed to take the grunt action

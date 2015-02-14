@@ -38,7 +38,6 @@
     "grunt-uncss": "*",
     "jit-grunt": "*",
     "load-grunt-configs": "*",
-    "matchdep": "*",
     "time-grunt": "*"
   }
 }

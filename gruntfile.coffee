@@ -7,7 +7,11 @@ module.exports = (grunt) ->
   # explicitly load a tool to fix jade rendering to only the files affected
   grunt.loadNpmTasks "grunt-jade-inheritance"
   # load your tasks, allows them to be in separate files for cleanliness
-  grunt.initConfig require("load-grunt-configs")(grunt, config: src: "tasks/*.coffee")
+  tasks = require("load-grunt-configs")(grunt, config: src: "tasks/*.coffee")
+  # loads file paths and other build configurations
+  buildConfig = require("./build.coffee")(grunt)
+  # Merge all tasks and build config together and then init
+  grunt.initConfig grunt.util._.extend(tasks, buildConfig)
   
   # compile everything, run server, and watch
   # nothing is smashed, find comments for line numbers in your precompressors
@@ -15,10 +19,10 @@ module.exports = (grunt) ->
   grunt.registerTask "default", [
     "asciify:headline"
     "clean" 
-    "concurrent:dev_StylusJadeUglify" 
+    "concurrent:dev_StylusJade" 
     "copy"
     "notify:appstarted"
-    "connect"
+    "connect:dev"
     "browserSync"
     "watch"
   ]
@@ -28,7 +32,7 @@ module.exports = (grunt) ->
   grunt.registerTask "serve", [
     "asciify:headline"
     "shell:open_app"
-    "connect"
+    "connect:dev"
     "watch"
   ]
   
@@ -56,7 +60,7 @@ module.exports = (grunt) ->
     "copy"
     "concurrent:shrink"
     "notify:prod"
-    "connect"
+    "connect:prod"
     "watch"
   ]
 

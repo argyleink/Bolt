@@ -1,14 +1,3 @@
-# jadeFiles = [
-#   expand: true
-#   cwd:    "app/"
-#   src:    [
-#     "*.jade"
-#     "!source/**/*.jade"
-#   ]
-#   dest:   "dist/"
-#   ext:    ".html"
-# ]
-
 module.exports =
   dev:
     options:

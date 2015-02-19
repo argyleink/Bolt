@@ -10,7 +10,8 @@ module.exports =
       compress:       true
       linenos:        false
       "include css":  true
-      use: autoprefixerPlugin
+      define:         bower: "<%= vendor_files.css %>"
+      use:            autoprefixerPlugin
 
     files: "<%= app_files.stylus.prod %>"
 
@@ -19,6 +20,7 @@ module.exports =
       compress:       false
       linenos:        true
       "include css":  true
-      use: autoprefixerPlugin
+      define:         bower: "<%= vendor_files.css %>"
+      use:            autoprefixerPlugin
 
     files: "<%= app_files.stylus.dev %>"

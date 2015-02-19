@@ -1,5 +1,5 @@
 .DS_Store
 app/js/bower/
-dist/
+build/
 node_modules/
 app.sublime-workspace

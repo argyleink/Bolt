@@ -4,25 +4,25 @@ module.exports =
     spawn: false
 
   css:
-    files: ["app/styles/**/*.styl"]
+    files: ["<%= app_dir %>/styles/**/*.styl"]
     tasks: ["stylus:dev"]
 
   js:
-    files: ["app/js/*.js"]
+    files: ["<%= app_dir %>/js/*.js"]
     tasks: ["newer:copy:dev"]
 
   libs:
-    files: ["app/js/bower/**/*.js", "app/js/libs/**/*.js"]
+    files: ["<%= app_dir %>/js/bower/**/*.js", "<%= app_dir %>/js/libs/**/*.js"]
     tasks: ["uglify:dev"]
 
   images:
-    files: ["app/img/**/*"]
+    files: ["<%= app_dir %>/img/**/*"]
     tasks: ["newer:copy:dev"]
 
   html:
-    files: ["app/**/*.jade", "!app/templates/**/*.jade"]
+    files: ["<%= app_dir %>/**/*.jade", "!<%= app_dir %>/templates/**/*.jade"]
     tasks: ["jade:dev"]
 
   templates:
-    files: ["app/templates/**/*.jade", "app/_jade/**/*.jade"]
+    files: ["<%= app_dir %>/templates/**/*.jade", "<%= app_dir %>/_jade/**/*.jade"]
     tasks: ["shell:clientjade"]

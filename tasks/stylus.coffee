@@ -1,11 +1,3 @@
-stylusFiles = [
-  "dist/styles/master.css":   "app/styles/master.styl"
-  # below you can create your own additional css files for browser hacks, polyfills, etc
-  "dist/styles/ios.css":      "app/styles/browser/ios.styl"
-  "dist/styles/ie10.css":     "app/styles/browser/ie10.styl"
-  "dist/styles/android.css":  "app/styles/browser/android.styl"
-]
-
 autoprefixerPlugin = [
   () -> require('autoprefixer-stylus')(
     browsers: 'last 2 versions', 'ie 8', 'ie 9'
@@ -20,7 +12,7 @@ module.exports =
       "include css":  true
       use: autoprefixerPlugin
 
-    files: stylusFiles
+    files: "<%= app_files.stylus.prod %>"
 
   dev:
     options:
@@ -29,4 +21,4 @@ module.exports =
       "include css":  true
       use: autoprefixerPlugin
 
-    files: stylusFiles
+    files: "<%= app_files.stylus.dev %>"

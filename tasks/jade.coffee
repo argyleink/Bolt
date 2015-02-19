@@ -14,7 +14,7 @@ module.exports =
     options:
       data:
         dev: true
-        js: "<%= vendor_files.js %>"
+        bower: "<%= vendor_files.bower %>"
       pretty: true
       client: false
       basedir: 'app'

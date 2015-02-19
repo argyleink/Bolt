@@ -19,8 +19,8 @@ module.exports = (grunt) ->
   grunt.registerTask "default", [
     "asciify:headline"
     "clean" 
-    "concurrent:dev_StylusJade" 
-    "copy"
+    "concurrent:dev_StylusJadeUglify" 
+    "copy:dev"
     "notify:appstarted"
     "connect:dev"
     "browserSync"
@@ -41,14 +41,14 @@ module.exports = (grunt) ->
   grunt.registerTask "dev", [
     "clean"
     "concurrent:dev_StylusJadeUglify" 
-    "copy"
+    "copy:dev"
   ]
 
   grunt.registerTask "test", [
     "concurrent:dev_StylusJadeUglify"
     "concurrent:prod_StylusJadeUglify"
     # "concurrent:shrink"
-    "copy"
+    "copy:dev"
   ]
   
   # for prod use, minify all js files, html is already compressed 
@@ -57,7 +57,7 @@ module.exports = (grunt) ->
   grunt.registerTask "prod", [
     "clean"
     "concurrent:prod_StylusJadeUglify"
-    "copy"
+    "copy:prod"
     "concurrent:shrink"
     "notify:prod"
     "connect:prod"
@@ -69,7 +69,7 @@ module.exports = (grunt) ->
   grunt.registerTask "heroku", [
     "clean"
     "concurrent:prod_StylusJadeUglify"
-    "copy"
+    "copy:prod"
     "concurrent:shrink"
     "asciify:build"
   ]

@@ -14,13 +14,12 @@ module.exports = (grunt) ->
   meta:
     banner:
       "/**\n" +
-      " * <%= pkg.name %> - v<%= pkg.version %>\n" +
-      " * <%= pkg.homepage %>\n" + " *\n" +
-      " * Copyright (c) <%= grunt.template.today(\"yyyy\") %> <%= pkg.author %>\n" +
-      " */\n"
+      "  <%= pkg.name %> - v<%= pkg.version %>\n" +
+      "  Copyright (c) <%= grunt.template.today(\"yyyy\") %> <%= pkg.author %>\n" +
+      "**/\n"
 
   app_dir: "app"
-  bower_dir: "app/js/bower"
+  bower_dir: "js/bower"
 
   ###
   The `build_dir` folder is where our projects are compiled during
@@ -52,7 +51,7 @@ module.exports = (grunt) ->
       ]
       # load polyfill libs, then use them in shiv.js
       polyfills: [
-        "<%= bower_dir %>/device-detect.js/device-detect.js"
+        "<%= app_dir %>/<%= bower_dir %>/device-detect.js/device-detect.js"
         "app/js/shiv.js"
       ]
     # JADE dev/prod files
@@ -79,15 +78,14 @@ module.exports = (grunt) ->
     # STYLUS dev/prod files
     stylus: 
       dev: [
-        "<%= dev_build_dir %>/styles/app.css":   "<%= app_dir %>/styles/master.styl"
+        "<%= dev_build_dir %>/styles/app.css":      "<%= app_dir %>/styles/master.styl"
         # below you can create your own additional css files for browser hacks, polyfills, etc
         "<%= dev_build_dir %>/styles/ios.css":      "<%= app_dir %>/styles/browser/ios.styl"
         "<%= dev_build_dir %>/styles/ie10.css":     "<%= app_dir %>/styles/browser/ie10.styl"
         "<%= dev_build_dir %>/styles/android.css":  "<%= app_dir %>/styles/browser/android.styl"
       ]
       prod: [
-        "<%= prod_build_dir %>/styles/app.css":   "<%= app_dir %>/styles/master.styl"
-        # below you can create your own additional css files for browser hacks, polyfills, etc
+        "<%= prod_build_dir %>/styles/app.css":      "<%= app_dir %>/styles/master.styl"
         "<%= prod_build_dir %>/styles/ios.css":      "<%= app_dir %>/styles/browser/ios.styl"
         "<%= prod_build_dir %>/styles/ie10.css":     "<%= app_dir %>/styles/browser/ie10.styl"
         "<%= prod_build_dir %>/styles/android.css":  "<%= app_dir %>/styles/browser/android.styl"
@@ -121,7 +119,7 @@ module.exports = (grunt) ->
     ]
     css: [
       # note! file will be auto imported to your stylesheet, path is relative to master.styl in app/styles/
-      "../../<%= bower_dir %>/flexboxgrid/dist/flexboxgrid.css"
+      "../../<%= app_dir %>/<%= bower_dir %>/flexboxgrid/dist/flexboxgrid.css"
     ]
     assets: [
       "robots.txt"

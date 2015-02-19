@@ -1,5 +1,6 @@
 module.exports =
-  dev_StylusJade: [
+  dev_StylusJadeUglify: [
+    "uglify:dev"
     "stylus:dev"
     "jade:dev"
     "shell:clientjade"

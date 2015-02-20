@@ -1,12 +1,18 @@
 autoprefixerPlugin = [
   () -> require('autoprefixer-stylus')(
-    browsers: 'last 2 versions', 'ie 8', 'ie 9'
+    browsers: [
+      'last 2 versions'
+      '> 5%'
+      # 'ie 8'
+      # 'ie 9'
+    ]
   )
 ]
 
 module.exports =
   prod:
     options:
+      banner:         "<%= meta.banner %>"
       compress:       true
       linenos:        false
       "include css":  true

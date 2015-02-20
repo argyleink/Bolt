@@ -1,6 +1,6 @@
 module.exports = manifest:
   options:
-    basePath: 'dist/'
+    basePath:  "<%= prod_build_dir %>/"
     timestamp: true
   src: [
     '*.html'
@@ -8,4 +8,4 @@ module.exports = manifest:
     'styles/*.css'
     'img/*.{jpg,gif,png,ico,svg,jpeg}'
   ]
-  dest: 'dist/manifest.appcache'
+  dest: '<%= prod_build_dir %>/manifest.appcache'

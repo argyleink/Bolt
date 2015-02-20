@@ -4,5 +4,5 @@ module.exports =
       expand: true
       cwd: "app/img/"
       src: ["**/*.svg"]
-      dest: "dist/img/"
+      dest: "<%= build_dir %>/img/"
     ]

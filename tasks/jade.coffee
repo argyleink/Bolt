@@ -8,11 +8,11 @@ module.exports =
       client: false
       basedir: 'app'
 
-    files: "<%= app_files.jade.dev %>"
+    files: "<%= app_files.jade %>"
 
   prod:
     options:
       data:
         dev: false
 
-    files: "<%= app_files.jade.prod %>"
+    files: "<%= app_files.jade %>"

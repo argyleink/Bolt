@@ -13,7 +13,7 @@ module.exports =
       define:         bower: "<%= vendor_files.css %>"
       use:            autoprefixerPlugin
 
-    files: "<%= app_files.stylus.prod %>"
+    files: "<%= app_files.stylus %>"
 
   dev:
     options:
@@ -23,4 +23,4 @@ module.exports =
       define:         bower: "<%= vendor_files.css %>"
       use:            autoprefixerPlugin
 
-    files: "<%= app_files.stylus.dev %>"
+    files: "<%= app_files.stylus %>"

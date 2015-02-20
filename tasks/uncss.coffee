@@ -1,5 +1,5 @@
 module.exports = dist:
   files: 
-    'dist/styles/master.css': [
-      'dist/*.html'
+    '<%= build_dir %>/styles/master.css': [
+      '<%= build_dir %>/*.html'
     ]

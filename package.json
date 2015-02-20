@@ -29,7 +29,6 @@
     "grunt-contrib-stylus": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
-    "grunt-jade-inheritance": "git://github.com/argyleink/grunt-jade-inheritance.git",
     "grunt-manifest": "*",
     "grunt-newer": "*",
     "grunt-notify": "*",

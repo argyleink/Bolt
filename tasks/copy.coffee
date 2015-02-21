@@ -25,6 +25,7 @@ module.exports =
   prod:
     files: [
       # prod mostly just copies assets (.txt, .mov, .mp3, etc)
+      # things that dont get crunched but are assets that need served
       expand: true
       cwd:    "<%= app_dir %>/"
       src:    "<%= vendor_files.assets %>"

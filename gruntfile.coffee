@@ -40,8 +40,8 @@ module.exports = (grunt) ->
     "concurrent:shrink"
     "notify:prod"
     "connect:prod"
-    "watch"
     "shell:open_app"
+    "watch"
   ]
 
   grunt.registerTask "default", if grunt.option("prod") == true then prod else dev

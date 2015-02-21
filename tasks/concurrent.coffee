@@ -13,6 +13,7 @@ module.exports =
   ]
   shrink: [
     # "uncss"
+    "csso"
     "imagemin"
     "svgmin"
     "manifest"

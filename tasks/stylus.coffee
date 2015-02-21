@@ -12,8 +12,7 @@ autoprefixerPlugin = [
 module.exports =
   prod:
     options:
-      banner:         "<%= meta.banner %>"
-      compress:       true
+      compress:       false
       linenos:        false
       "include css":  true
       define:         bower: "<%= vendor_files.css %>"

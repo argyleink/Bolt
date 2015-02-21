@@ -29,6 +29,7 @@
     "grunt-contrib-stylus": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
+    "grunt-csso": "*",
     "grunt-manifest": "*",
     "grunt-newer": "*",
     "grunt-notify": "*",

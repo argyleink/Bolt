@@ -29,7 +29,8 @@ module.exports = (grunt) ->
         "app/js/*.js"
         "!app/js/shiv.js" # loaded before libs and app to polyfill, see below
       ]
-      # load polyfill libs, then use them in shiv.js
+      # load a browser detector, then use shiv.js to inject proper polyfill.js
+      # these will be combined and loaded in the <head>, see polyfill.jade
       polyfills: [
         "<%= app_dir %>/<%= bower_dir %>/device-detect.js/device-detect.js"
         "app/js/shiv.js"
@@ -37,10 +38,7 @@ module.exports = (grunt) ->
     jade: [
       expand: true
       cwd:    "<%= app_dir %>"
-      src:    [
-        "*.jade"
-        "!source/**/*.jade"
-      ]
+      src:    "*.jade"
       dest:   "<%= build_dir %>"
       ext:    ".html"
     ]

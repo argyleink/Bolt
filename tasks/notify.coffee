@@ -1,10 +1,10 @@
 module.exports =
-  appstarted:
+  dev:
     options:
-      title: "Build Success"
-      message: "Sweet, watchin files.."
+      title: "Dev build success"
+      message: "BrowserSync running"
 
   prod:
     options:
-      title: "Code is ugly!"
-      message: "You're ready to deploy"
+      title: "Prod build success"
+      message: "Code is ugly! Smoke test time."

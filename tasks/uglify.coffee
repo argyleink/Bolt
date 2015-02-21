@@ -7,7 +7,7 @@ module.exports =
       "<%= build_dir %>/js/app.min.js":         "<%= app_files.js.app %>"
       "<%= build_dir %>/js/polyfill.js":        "<%= app_files.js.polyfills %>"
       
-  # dev should be using jade imports for easy debug
+  # dev build is using jade imports for easy debug, see scripts.jade
   dev:
     options:
       mangle:           false

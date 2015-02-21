@@ -15,7 +15,7 @@
 		},
 		{
 			"name": "Grunt Prod: Build and serve a super crunched version of the site",
-			"shell_cmd": "grunt prod"
+			"shell_cmd": "grunt --prod"
 		},
 		{
 			"name": "Grunt Heroku: Super crunch the build, but don't serve or watch",
@@ -39,13 +39,13 @@
 		},
 		{
 			"follow_symlinks": true,
-			"name": "Tasks",
-			"path": "tasks"
+			"name": "Bower",
+			"path": "app/js/bower"
 		},
 		{
 			"follow_symlinks": true,
-			"name": "Bower Libs",
-			"path": "app/js/bower"
+			"name": "Tasks",
+			"path": "tasks"
 		},
 		{
 			"folder_exclude_patterns":

@@ -40,6 +40,9 @@ For awesome IDE organization and normalization of settings. Set your projects ta
 
 `grunt subl` will open it for you =)
 
+#### Easy Build config file
+See `build.coffee`. Manage all your scripts in 1 location: bower files, jade files, stylus, etc. This is simpler than having them scattered around, and it also enabled Jade and Stylus to iterate over the objects.
+
 #### Clean Grunt task architecture
 See the `tasks/` directory. All Grunt work is written in coffeescript because it's pretty, no other reason. Checkout the Gruntfile, notice no long file mess! Clean and easy to CRUD. Very easy task management, sharing, readability, etc.
 
@@ -83,7 +86,7 @@ Default task runs `grunt dev` but with notifications, a server, and BrowserSync.
 `grunt dev`  
 Legible js and css output, no server
 
-`grunt prod`  
+`grunt --prod`  
 Runs all tasks with super crunch options turned on, and also runs a server so you can test the build in browser. This will also include an appcache manifest, so your visitors will get a super cached browser experience. 
 
 `grunt heroku`  
@@ -110,12 +113,13 @@ Opens the `app.sublime-project` file. AKA `open app.sublime-project` or `subl ap
 - [Stylus](https://github.com/gruntjs/grunt-contrib-stylus): Compiles all stylus files
 - [Uglify](https://github.com/gruntjs/grunt-contrib-uglify): Crunches and combines javascript
 - [Uncss](https://github.com/addyosmani/grunt-uncss): Optional part of the prod build, can potentially reduce file size greatly
+- [CSSo](https://github.com/css/csso): Stylus doesnt do the best crunching, CSSo does amazing things to your css before sending it to production.
 - [Watch](https://github.com/gruntjs/grunt-contrib-watch): Runs tasks when certain files change
 
 ## Maintaining This
-There's not much to maintaining this build system. There's only a few pieces of manual management, and it's around your choices of Javascript and CSS. If you add a bower package, go update the uglify task `tasks/uglify.coffee`. It needs to know what new libs there are, and how to want to load them. You will also want to spend time looking at `app/includes/scripts.jade`. 
+There's not much to maintaining this build system. There's only a few pieces of manual management, and it's around your choices of Javascript and CSS. If you add a bower package, go update `build.coffee`. It needs to know what new libs there are, and how to want to load them. 
 
-For CSS, if you pull in a grid framework, for example. You'll want to update `app/styles/master.styl` to import that file. It's better that you manage your styles using stylus then importing lots of scripts into your page. But again, up to you. 
+For CSS, if you pull in a grid framework, for example. You'll want to update `build.coffee` to import that file. Stylus is setup to auto import the scripts you specify in the build config.  
 
 ## Thanks
 Nice of you to read this far lol, if you did. Hope this helps you build web apps like it has me. 

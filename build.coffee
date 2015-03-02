@@ -24,16 +24,16 @@ module.exports = (grunt) ->
       # this is the src order and crunched prod set of app logic/modules
       # remove the wild card to explicitly maintain src order
       app: [
-        "app/js/templates.js"
-        "app/js/app.js"
-        "app/js/*.js"
-        "!app/js/shiv.js" # loaded before libs and app to polyfill, see below
+        "<%= app_dir %>/js/templates.js"
+        "<%= app_dir %>/js/app.js"
+        "<%= app_dir %>/js/*.js"
+        "!<%= app_dir %>/js/shiv.js" # loaded before libs and app to polyfill, see below
       ]
       # load a browser detector, then use shiv.js to inject proper polyfill.js
       # these will be combined and loaded in the <head>, see polyfill.jade
       polyfills: [
         "<%= app_dir %>/<%= bower_dir %>/device-detect.js/device-detect.js"
-        "app/js/shiv.js"
+        "<%= app_dir %>/js/shiv.js"
       ]
     jade: [
       expand: true

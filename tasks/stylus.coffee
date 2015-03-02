@@ -1,5 +1,5 @@
 autoprefixerPlugin = [
-  () -> require('autoprefixer-stylus')(
+  -> require('autoprefixer-stylus')(
     browsers: [
       'last 2 versions'
       '> 5%'

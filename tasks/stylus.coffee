@@ -7,6 +7,7 @@ plugins = [
       # 'ie 9'
     ]
   )
+  # http://axis.netlify.com
   -> require('axis')()
 ]
 

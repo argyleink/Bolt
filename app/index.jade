@@ -1,43 +1,63 @@
 extends _jade/layouts/page
 
-//- use these if you like to control page titles and SEO descriptions
 block title
 	title Index Page
-
-block description
-	meta(name='description', content='Index page description')
-
-//- use this to append special css for a page or overwrite the css entirely
-//- block append css
-//- 	link(rel='stylesheet', href='path/to/your/file')
 
 block content
 	include _jade/includes/nav
 
 	header.text-center
-		h2 Bolt has completed :)
-		p.hint-text This isn't a pretty splash page, but you're going to delete it anyway!
-		p If you do delete all this, delete any stylus files you dont need too
+		include _jade/includes/svg/bolt
 
 	article
-		h2 Buttons
-		.btn Button 1
-		.btn.dark Button Dark
-		.btn.light Button Light
-	
-	article
-		h1 Title h1
-		h2 Title h2
-		h3 Title h3
-		h4 Title h4
-		h5 Title h5
-		h6 Title h6
+		section
+			h2 Getting Started
+			p.hint-text Bolt is a minimal boilerplate, but comes with assumptions:
+			
+			dl
+				dt: h5 Polyfills
+				dd Bolt polyfills before page render, so everything is in the <head> of the document.
 
-	article
-		h4 Jade Template List
-		p.hint-text I'm client-side Jade, fully qualified and ready for inheritance, mixins, etc.
-		section#list-template-example
+				dt: h5 Buttons
+				dd You need buttons right?
 
-//- use this to append or overwrite the js for a page
-//- block append js
-//- 	script(src='your/script.js')
+				dt: h5 Typography
+				dd Centralized typography styles are in typography.styl and hopes to be your go to place for managing type.
+
+				dt: h5 Mobile First
+				dd Bolt is crafted mobile first, from the breakpoints to the jade page setup, and more.
+
+				dt: h5 Bower
+				dd Managing your front end libraries with Bolt.
+
+				dt: h5 SVG
+				dd Planning on inlining some SVG?
+
+
+		section
+			h4 Buttons
+			p.hint-text You can delete buttons.styl, but this is what you start with
+			.btn .btn
+			.btn.dark .btn.dark
+			.btn.light .btn.light
+			.btn.narrow .btn.narrow
+			.btn.disabled .btn.disabled
+		
+		section
+			h4 Typography
+			p.hint-text Find all your font css handy in typography.styl
+
+			h1 Title h1
+			h2 Title h2
+			h3 Title h3
+			h4 Title h4
+			h5 Title h5
+			h6 Title h6
+
+		section
+			h4 Jade Client Templates
+			p.hint-text I'm client-side Jade, fully qualified and ready for inheritance, mixins, etc. I've been dropped here as an example. Delete the `templates` folder and remove the `shell:clientjade` task from your build commands.
+			#list-template-example
+
+	footer
+

@@ -1,4 +1,4 @@
-autoprefixerPlugin = [
+plugins = [
   -> require('autoprefixer-stylus')(
     browsers: [
       'last 2 versions'
@@ -7,6 +7,7 @@ autoprefixerPlugin = [
       # 'ie 9'
     ]
   )
+  -> require('axis')()
 ]
 
 module.exports =
@@ -16,7 +17,7 @@ module.exports =
       linenos:        false
       "include css":  true
       define:         bower: "<%= vendor_files.css %>"
-      use:            autoprefixerPlugin
+      use:            plugins
 
     files: "<%= app_files.stylus %>"
 
@@ -26,6 +27,6 @@ module.exports =
       linenos:        true
       "include css":  true
       define:         bower: "<%= vendor_files.css %>"
-      use:            autoprefixerPlugin
+      use:            plugins
 
     files: "<%= app_files.stylus %>"

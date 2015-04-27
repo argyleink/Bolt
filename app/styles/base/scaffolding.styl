@@ -2,15 +2,6 @@
 figure, header, section, article
   position:relative
 
-h1,h2,h3,h4,h5,h6
-  @extend .font-normal
-
-h1 > .icon
-  top:0.25rem
-
-a
-  text-decoration:none
-
 img
   max-width: 100%
   height:auto
@@ -24,26 +15,15 @@ textarea
   font-size: inherit
   line-height: inherit
 
-nav
-  @extend .sticky
-  left:0
-  right:0
-  top:0
-  width: 100%
-  z-index: 10
-  background:dark-background-color
-
-  > a
-    display:inline-block
-    padding:1rem 2rem
-    color:light-text-color
-    
-    &.active
-      color:brand-color
+// nav
 
 article
+  margin:0 auto
+  @media $tablet
+    max-width:700px
+
+section
   padding:2rem
-  @extend .clearfix
 
 figure
   @extend .text-center

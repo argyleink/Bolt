@@ -70,8 +70,8 @@ module.exports = (grunt) ->
   bower_base: if grunt.option("prod") == true then "app/" else ""
   vendor_files:
     bower: [
-      "<%= bower_base %><%= bower_dir %>/jquery/jquery.js"
-      "<%= bower_base %><%= bower_dir %>/jquery.finger/dist/jquery.finger.js"
+      "<%= bower_base %><%= bower_dir %>/velocity/velocity.js"
+      "<%= bower_base %><%= bower_dir %>/velocity/velocity.ui.js"
       "<%= bower_base %><%= bower_dir %>/flexboxgrid/js/index.js"
     ]
     css: [

@@ -1,0 +1,76 @@
+html
+  font-size:100%
+  line-height:1.25
+  font-family:sans-serif
+
+body, p
+  font-size:1rem
+
+p.lead
+  font-size:1.25rem
+  font-weight:lighter
+
+.font-thin
+  font-weight:100
+  font-weight:lighter
+
+.font-normal
+  font-weight:300
+
+.font-bold
+  font-weight:500
+  font-weight:bold
+
+h1,h2,h3,h4,h5,h6
+  @extend .font-normal
+  margin:1rem 0
+
+a
+  text-decoration:none
+
+h1
+  font-size:4rem
+  
+h2
+  font-size:3rem
+  
+h3
+  font-size:2.5rem
+  
+h4
+  font-size:2rem
+  
+h5
+  font-size:1.5rem
+  
+h6
+  font-size:1rem
+  
+.text-right
+  text-align:right
+
+.text-left
+  text-align: left
+
+.text-center
+  text-align: center
+
+.light-text
+  color: $light-text-color
+
+.dark-text
+  color: $dark-text-color
+  
+.hint-text
+  color:#999
+  font-size: 1.4rem
+  line-height: 2rem
+
+.highlight-text
+  color:white
+  border-bottom:1px dashed $brand-color
+
+.truncate
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis

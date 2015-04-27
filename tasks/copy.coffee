@@ -12,9 +12,9 @@ module.exports =
       dest:   "<%= build_dir %>"
     ,
       expand: true
-      cwd:    "<%= app_dir %>/img"
-      src:    ["*"]
-      dest:   "<%= build_dir %>/img"
+      cwd:    "<%= app_dir %>/assets"
+      src:    ["**/*"]
+      dest:   "<%= build_dir %>/assets"
     ,
       expand: true
       cwd:    "<%= app_dir %>/"

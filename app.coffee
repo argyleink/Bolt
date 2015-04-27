@@ -55,7 +55,7 @@ module.exports = (grunt) ->
 
 
   ###
-  The `vendor_files.js` property holds files to be automatically
+  The `vendor_files.bower` property holds files to be automatically
   concatenated and minified with our project source files.
 
   The `vendor_files.css` property holds any CSS files to be automatically

@@ -4,6 +4,7 @@ module.exports =
       data:
         dev: true
         bower: "<%= vendor_files.bower %>"
+        project: "<%= pkg %>"
       pretty: true
       client: false
       basedir: 'app'

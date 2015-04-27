@@ -6,6 +6,6 @@ module.exports = manifest:
     '*.html'
     'js/*'
     'styles/*.css'
-    'img/*.{jpg,gif,png,ico,svg,jpeg}'
+    'assets/**/*.{jpg,gif,png,ico,svg,jpeg}'
   ]
   dest: '<%= build_dir %>/manifest.appcache'

@@ -2,7 +2,7 @@ module.exports =
   images:
     files: [
       expand: true
-      cwd:    "<%= app_dir %>/img/"
+      cwd:    "<%= app_dir %>/assets/"
       src:    ["**/*.{jpg,png,gif,jpeg}"]
-      dest:   "<%= build_dir %>/img/"
+      dest:   "<%= build_dir %>/assets/"
     ]

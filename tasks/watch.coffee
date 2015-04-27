@@ -16,7 +16,7 @@ module.exports =
     tasks: ["uglify:dev"]
 
   images:
-    files: ["<%= app_dir %>/img/**/*"]
+    files: ["<%= app_dir %>/assets/**/*"]
     tasks: ["newer:copy:dev"]
 
   html:

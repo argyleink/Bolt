@@ -10,7 +10,7 @@ module.exports = (grunt) ->
   tasks = require("load-grunt-configs")(grunt, config: src: "tasks/*.coffee")
 
   # loads file paths and other build configurations
-  buildConfig = require("./build.coffee")(grunt)
+  buildConfig = require("./app.coffee")(grunt)
 
   # Merge all tasks and build config together and then init
   grunt.initConfig grunt.util._.extend(tasks, buildConfig)

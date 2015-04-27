@@ -16,9 +16,8 @@
     "tests"
   ],
   "devDependencies": {
-    "jquery": "*",
-    "jquery.finger": "*",
     "device-detect.js": "*",
-    "flexboxgrid": "*"
+    "flexboxgrid": "*",
+    "velocity": "*"
   }
 }

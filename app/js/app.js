@@ -2,7 +2,12 @@ var App = {};
 App.ModuleTemplate = (function(){
 
   var appName             = 'Jade and Stylus rule'
-    , listViewContainer   = $('#list-template-example');
+    , listViewContainer   = document.getElementById('list-template-example');
+
+  Velocity(document.querySelectorAll('#bolt-logo path'), 'transition.expandIn', {
+    drag: true,
+    stagger: 100
+  })
 
   function privateMethod() {
 
@@ -15,7 +20,7 @@ App.ModuleTemplate = (function(){
   function renderJadeList() {
     // http://projects.jga.me/clientjade/
     jade.render(
-      listViewContainer[0],     // DOM Node
+      listViewContainer,     // DOM Node
       'list',                   // Template name
       {
         items: [

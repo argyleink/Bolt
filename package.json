@@ -35,7 +35,6 @@
     "grunt-notify": "*",
     "grunt-shell": "*",
     "grunt-svgmin": "*",
-    "grunt-uncss": "*",
     "jit-grunt": "*",
     "load-grunt-configs": "*",
     "time-grunt": "*"

@@ -12,7 +12,6 @@ module.exports =
     "shell:clientjade"
   ]
   shrink: [
-    # "uncss"
     "csso"
     "imagemin"
     "svgmin"

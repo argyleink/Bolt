@@ -1,13 +1,17 @@
 html
-  font-size:100%
-  line-height:1.25
-  font-family:sans-serif
+  fs:100%
+  line-height:1.5
+  font-family:'Roboto', sans-serif
+  color:$text-color
+  // -webkit-font-smoothing: antialiased
+  // font-smoothing: antialiased
 
 body, p
-  font-size:1rem
+  font-weight:300
+  fs:1.1rem
 
 p.lead
-  font-size:1.25rem
+  fs:1.3rem
   font-weight:lighter
 
 .font-thin
@@ -23,28 +27,29 @@ p.lead
 
 h1,h2,h3,h4,h5,h6
   @extend .font-normal
+  color:white
   margin:1rem 0
 
 a
-  text-decoration:none
+  link()
 
 h1
-  font-size:4rem
+  fs:4rem
   
 h2
-  font-size:3rem
+  fs:3rem
   
 h3
-  font-size:2.5rem
+  fs:2.5rem
   
 h4
-  font-size:2rem
+  fs:2rem
   
 h5
-  font-size:1.5rem
+  fs:1.5rem
   
 h6
-  font-size:1rem
+  fs:1rem
   
 .text-right
   text-align:right
@@ -62,9 +67,7 @@ h6
   color: $dark-text-color
   
 .hint-text
-  color:#999
-  font-size: 1.4rem
-  line-height: 2rem
+  color: $light-text-color
 
 .highlight-text
   color:white

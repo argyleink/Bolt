@@ -1,4 +1,8 @@
 plugins = [
+  # http://axis.netlify.com
+  -> require('axis')()
+
+  # https://www.npmjs.com/package/autoprefixer-stylus
   -> require('autoprefixer-stylus')(
     browsers: [
       'last 2 versions'
@@ -7,8 +11,6 @@ plugins = [
       # 'ie 9'
     ]
   )
-  # http://axis.netlify.com
-  -> require('axis')()
 ]
 
 module.exports =

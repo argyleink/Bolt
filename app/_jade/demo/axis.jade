@@ -1,0 +1,32 @@
+include ../mixins/link
+
+dt 
+  h3 Nib, Autoprefixer & Axis
+  p.hint-text Bolt leverages Nib and Axis for behind the scenes, easy CSS styling. Together, neither of them impact your stylesheet weight at all, until you use one of their mixins. Then, we have Autoprefixer, which will shrink your file down, and remove old browser syntax support (unless you want it).
+
+dd: section 
+  h5.text-center Need this?
+
+  p: b YES: 
+
+  div.push-bottom
+    code Nib
+    |  -> 
+    +link('Docs', 'http://nibstyl.us/', true)
+    div Is a tool for simple prefixes, gradients, positioning, etc.
+
+  div.push-bottom
+    code Axis
+    |  -> 
+    +link('Docs', 'http://axis.netlify.com/', true)
+    div A magical utility belt for Stylus, adding conveniences and solutions for common UI concepts.
+
+  div.push-bottom
+    code Autoprefixer
+    |  -> 
+    +link('Docs', 'https://www.npmjs.com/package/autoprefixer-stylus', true)
+    div Will scrub the created styles, and add/remove whatever is needed to support the chosen browsers in <code>tasks/stylus.coffee</code>.
+
+dd: section
+  b NO: 
+  div Axis is a plugin being used by the Stylus compiler, if you want to save Grunt memory, you're welcome to remove it from <code>tasks/stylus.coffee</code> plugin array. Autoprefixer is done the same way, as a plugin to the compilation step. Remove it from the array if you don't need/want that build step. Lastly, Nib can be removed by deleting it's import line from styles/master.styl.

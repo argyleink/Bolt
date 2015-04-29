@@ -1,18 +1,3 @@
-plugins = [
-  # http://axis.netlify.com
-  -> require('axis')()
-
-  # https://www.npmjs.com/package/autoprefixer-stylus
-  -> require('autoprefixer-stylus')(
-    browsers: [
-      'last 2 versions'
-      '> 5%'
-      # 'ie 8'
-      # 'ie 9'
-    ]
-  )
-]
-
 module.exports =
   prod:
     options:
@@ -20,7 +5,7 @@ module.exports =
       linenos:        false
       "include css":  true
       define:         bower: "<%= vendor_files.css %>"
-      use:            plugins
+      use:            "<%= app_files.stylus_plugins %>"
 
     files: "<%= app_files.stylus %>"
 
@@ -30,6 +15,6 @@ module.exports =
       linenos:        true
       "include css":  true
       define:         bower: "<%= vendor_files.css %>"
-      use:            plugins
+      use:            "<%= app_files.stylus_plugins %>"
 
     files: "<%= app_files.stylus %>"

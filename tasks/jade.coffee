@@ -15,5 +15,6 @@ module.exports =
     options:
       data:
         dev: false
+        project: "<%= pkg %>"
 
     files: "<%= app_files.jade %>"

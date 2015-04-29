@@ -15,5 +15,4 @@ module.exports =
     "csso"
     "imagemin"
     "svgmin"
-    "manifest"
   ]

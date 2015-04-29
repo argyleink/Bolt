@@ -49,6 +49,20 @@ module.exports = (grunt) ->
       "<%= build_dir %>/styles/ie10.css":     "<%= app_dir %>/styles/browser/ie10.styl"
       "<%= build_dir %>/styles/android.css":  "<%= app_dir %>/styles/browser/android.styl"
     ]
+    stylus_plugins: [
+      # http://axis.netlify.com
+      -> require('axis')()
+
+      # https://www.npmjs.com/package/autoprefixer-stylus
+      -> require('autoprefixer-stylus')(
+        browsers: [
+          'last 2 versions'
+          '> 5%'
+          # 'ie 8'
+          # 'ie 9'
+        ]
+      )
+    ]
 
   # test_files:
   #   js: [ "tests/" ]

@@ -17,7 +17,7 @@ module.exports = (grunt) ->
 
   # grab option, set default to dev if no option passed
   # for prod use `grunt --prod`
-  option = if grunt.option("prod") == true then "prod" else "dev"
+  env = if grunt.option("prod") == true then "prod" else "dev"
 
   ###
   grunt
@@ -33,9 +33,9 @@ module.exports = (grunt) ->
   grunt.registerTask "default", [
     "asciify:headline"
     "clean" 
-    "concurrent:#{option}_StylusJadeUglify" 
-    "copy:#{option}"
-    "notify:#{option}"
+    "concurrent:#{env}_StylusJadeUglify" 
+    "copy:#{env}"
+    "notify:#{env}"
     "connect"
     "browserSync"
     "watch"
@@ -46,7 +46,7 @@ module.exports = (grunt) ->
   grunt.registerTask "serve", [
     "asciify:headline"
     "shell:open_app"
-    "connect:#{option}"
+    "connect:#{env}"
     "watch"
   ]
 

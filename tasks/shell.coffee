@@ -1,6 +1,6 @@
 module.exports =
   clientjade:
-    command: "node_modules/clientjade/bin/clientjade app/templates > app/js/templates.js"
+    command: "node_modules/clientjade/bin/clientjade app/_jade/client-templates > app/js/templates.js"
 
   open_app:
     command: "open 'http://localhost:3030'"

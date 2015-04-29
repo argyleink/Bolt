@@ -24,5 +24,5 @@ module.exports =
     tasks: ["jade:dev"]
 
   templates:
-    files: ["<%= app_dir %>/templates/**/*.jade", "<%= app_dir %>/_jade/**/*.jade"]
+    files: ["<%= app_dir %>/_jade/client-templates/**/*.jade", "<%= app_dir %>/_jade/**/*.jade"]
     tasks: ["shell:clientjade"]

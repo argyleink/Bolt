@@ -9,32 +9,10 @@ block content
 
 	article
 		section
-			p.lead 
-				| Bolt is a static site build tool, inspired by 
-				+link('Google Web Starter Kit', 'https://developers.google.com/web/starter-kit/', true)
-				| , 
-				+link('Roots', 'http://roots.cx/', true) 
-				| , and the 
-				+link('HTML5 MBP', 'https://github.com/h5bp/html5-boilerplate', true)
-				| . Focusing on best practices for page speed, mobile performance, and automated deployments. This Grunt based toolchain gets you on the fast track for rapid web app creation. 
+			include _jade/demo/intro
 
 		section
-			h5.text-center What's Included
-			p.lead 
-				| Bolt comes with ready with 
-				+link('Jade', 'http://jade-lang.com/', true)
-				| , 
-				+link('Stylus', 'https://learnboost.github.io/stylus/', true)
-				| , 
-				+link('Bower', 'http://bower.io/', true)
-				| , 
-				+link('Axis', 'http://axis.netlify.com/#gradients', true)
-				| , 
-				| and all synced and served hot with 
-				+link('BrowserSync', 'http://www.browsersync.io/', true)
-				| . This ain't no huge gruntfile either, you'll be managing easy small chunks from a central config coffeescript file. Booyah.
-
-			p.lead These tools can help you build nearly anything for the web. So let me guide you through a few use cases and features, so you can get the most out of Bolt.
+			include _jade/demo/included
 
 		section
 			h1.text-center: u Features
@@ -49,10 +27,5 @@ block content
 				include _jade/demo/buttons
 				include _jade/demo/templates
 				include _jade/demo/cruft
-
-		section
-			h4.text-center Jade Client Templates
-			p.hint-text I'm client-side Jade, fully qualified and ready for shared inheritance, mixins, etc with this static build system. I've been rendered here as an example, see template-example.js for the code that did this.
-			#list-template-example
 
 	footer

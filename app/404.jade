@@ -5,24 +5,19 @@ html.no-js(lang='en')
     title Page Not Found :(
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     style.
-      ::-moz-selection {
-        background: #b3d4fc;
-        text-shadow: none;
-      }
-
-      ::selection {
-        background: #b3d4fc;
-        text-shadow: none;
-      }
-
       html {
-        padding: 30px 10px;
-        font-size: 20px;
+        font-size: 1.25rem;
         line-height: 1.4;
         color: #737373;
         background: #f0f0f0;
+        text-align: ;
         -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
+      }
+
+      html, body {
+        height:100%;
+        margin:0;
       }
 
       html,
@@ -31,21 +26,14 @@ html.no-js(lang='en')
       }
 
       body {
-        max-width: 500px;
-        width: 500px;
-        padding: 30px 20px 50px;
-        border: 1px solid #b3b3b3;
-        border-radius: 4px;
-        margin: 0 auto;
-        box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
-        background: #fcfcfc;
+        display:flex;
+        align-items:center;
       }
 
       h1 {
         margin: 0 10px;
         font-size: 50px;
         text-align: center;
-        color:red;
       }
 
       h1 span {
@@ -68,7 +56,11 @@ html.no-js(lang='en')
       .container {
         max-width: 380px;
         width: 380px;
-        margin: 0 auto;
+        margin: auto;
+        background:white;
+        padding:2rem;
+        box-shadow: 0 0 1rem 0 rgba(0,0,0,0.15);
+        border-radius:1rem;
       }
 
       /* google search */

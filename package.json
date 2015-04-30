@@ -1,5 +1,5 @@
 {
-  "name": "App",
+  "name": "Bolt",
   "version": "0.0.3",
   "author": "Adam Argyle",
   "private": false,
@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "autoprefixer-stylus": "*",
+    "axis": "*",
     "bower": "*",
     "clientjade": "git://github.com/argyleink/clientjade.git",
     "grunt-asciify": "*",
@@ -29,13 +30,12 @@
     "grunt-contrib-stylus": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
-    "grunt-jade-inheritance": "git://github.com/argyleink/grunt-jade-inheritance.git",
+    "grunt-csso": "*",
     "grunt-manifest": "*",
     "grunt-newer": "*",
     "grunt-notify": "*",
     "grunt-shell": "*",
     "grunt-svgmin": "*",
-    "grunt-uncss": "*",
     "jit-grunt": "*",
     "load-grunt-configs": "*",
     "time-grunt": "*"

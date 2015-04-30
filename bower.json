@@ -1,7 +1,7 @@
 {
-  "name": "Adam Argyle - Portfolio",
+  "name": "Bolt",
   "version": "0.0.1",
-  "homepage": "https://github.com/argyleink/project-grunt.jade.stylus",
+  "homepage": "https://github.com/argyleink/Bolt",
   "authors": [
     "Adam Argyle <atom@argyleink.com>"
   ],
@@ -11,13 +11,13 @@
     "**/.*",
     "node_modules",
     "bower_components",
+    "app/js/bower",
     "test",
     "tests"
   ],
   "devDependencies": {
-    "jquery": "*",
-    "jquery.finger": "*",
-    "scriptjs": "~2.5.7",
-    "device-detect.js": "*"
+    "device-detect.js": "*",
+    "flexboxgrid": "*",
+    "velocity": "*"
   }
 }

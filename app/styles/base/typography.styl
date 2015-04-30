@@ -1,32 +1,79 @@
 html
-  font-size:100%
-  line-height:1.25
-  font-family:sans-serif
+  fs:100%
+  line-height:1.5
+  font-family:'Roboto', sans-serif
+  color:$text-color
+  // -webkit-font-smoothing: antialiased
+  // font-smoothing: antialiased
 
 body, p
-	font-size:1rem
+  font-weight:300
+  fs:1.1rem
 
 p.lead
-	font-size:1.25rem
-	font-weight:lighter
+  fs:1.3rem
+  font-weight:lighter
+
+.font-thin
+  font-weight:100
+  font-weight:lighter
+
+.font-normal
+  font-weight:300
+
+.font-bold
+  font-weight:500
+  font-weight:bold
 
 h1,h2,h3,h4,h5,h6
-	margin:1rem 0
+  @extend .font-normal
+  color:white
+  margin:1rem 0
+
+a
+  link()
 
 h1
-	font-size:4rem
-	
+  fs:4rem
+  
 h2
-	font-size:3.25rem
-	
+  fs:3rem
+  
 h3
-	font-size:2.75rem
-	
+  fs:2.5rem
+  
 h4
-	font-size:2.3rem
-	
+  fs:2rem
+  
 h5
-	font-size:1.8rem
-	
+  fs:1.5rem
+  
 h6
-	font-size:1.25rem
+  fs:1rem
+  
+.text-right
+  text-align:right
+
+.text-left
+  text-align: left
+
+.text-center
+  text-align: center
+
+.light-text
+  color: $light-text-color
+
+.dark-text
+  color: $dark-text-color
+  
+.hint-text
+  color: $light-text-color
+
+.highlight-text
+  color:white
+  border-bottom:1px dashed $brand-color
+
+.truncate
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis

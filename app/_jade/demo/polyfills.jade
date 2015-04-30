@@ -1,0 +1,40 @@
+.spacer
+  h3 Polyfills
+  dt 
+    p.hint-text You know you want to use modern features, don't lie. Bolt automates some of the common problems: 
+    ul
+      li Fixes for Firefox
+      li js polyfill for Android
+      li Detect CSS sticky and add new CSS (progressive enhancement)
+      li Detect SVG, replace with png (graceful degradation)
+      li etc, Bolt's ready for any of it 
+
+  dd: section 
+    h5.text-center Need this?
+    p: b YES: 
+
+    div.push-bottom
+      code _jade/includes/polyfill.jade
+      div Script import location, you shouldn't need to modify this at all.
+
+    div.push-bottom
+      code js/bower/device-detect.js/device-detect.js
+      div Browser sniffing module, simple boolean checks for features and browsers. Find it here https://github.com/argyleink/Mobile-Detection.
+
+    div.push-bottom
+      code styles/browser/*
+      div Each file in this folder get's turned into a css file in the build directory. On line 48 of app.coffee, you'll find these css files listed so they can be auto imported into the master stylesheet. If you add another browser that you want to create special css fixes for, create a new .styl file for it, then add the file to the app.coffee array, and you're good to go!
+
+    div.push-bottom
+      code js/shiv.js
+      div This is where you'll have the control to do the js polyfilling. Here you can utilize device-detect.js and determine whether or not your visiting client needs a polyfill or style adjustment. Be confident that the modifications will happen client side, but never be visible to the user. You'll also see that this is where the custom css for Android, iOS, Windows, etc styles are loaded. 
+
+    div.push-bottom
+      code tasks/uglify.coffee
+      |  && 
+      code app.coffee
+      div For definitions on what to you want to polyfill.
+
+  dd: section
+    b NO: 
+    div See the above answer and script locations for "yes", and gut them out! Remove polyfill.jade from the project, and remove the import from page.jade. Remove device detect from bower.json, and also delete shiv.js. Then, modify uglify.coffee and remove polyfill.js creation scripts. And lastly, remove from app.coffee lines 30 and 34-37.

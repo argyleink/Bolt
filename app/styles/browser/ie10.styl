@@ -3,4 +3,10 @@
 // fixes responsive images that have max-width:100%
 img
   width:100%
-  
+
+// mobile browser fix
+@media all and (orientation:portrait)
+  @-ms-viewport
+    user-zoom: fixed
+    max-zoom: 1
+    min-zoom: 1  

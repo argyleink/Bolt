@@ -1,3 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,700,400)
+
 @require "nib" // Nib is awesome: http://visionmedia.github.io/nib/
+@require "mixins/*"
 @require "base/*"
 @require "modules/*"
+
+for path in bower
+  @import path

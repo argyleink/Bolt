@@ -33,12 +33,15 @@ This project's default setup is for deploying static sites to be hosted somewher
 
 ## Features
 #### Separate Prod and Dev builds.
-Huge because dev builds produce legible debuggable code, and prod builds produce super tiny crunched and concatenated code, and super cache with a dynamically generated appcache. Easily test both builds locally before deployment. Know for a fact that you're deploying a solid build. I go as far as using non-minified libraries from Bower too, so that debugging my libs is possible. 
+Huge because dev builds produce legible debuggable code, and prod builds produce super tiny crunched and concatenated code, and super cache with a dynamically generated appcache. Easily test both builds locally before deployment. Know for a fact that you're deploying a solid build. I go as far as using non-minified libraries from Bower too, so that debugging my libs is possible. Builds also don't share a destination directory, each build has it's own. I find this better than wiping and rebuilding only 1 directory.
 
 #### Sublime Text project file
 For awesome IDE organization and normalization of settings. Set your projects tab indentation spacing, folder structure, etc. I've got it setup to hide all files that you shouldn't be editing, group all the config files, and more. I find this valuable.
 
 `grunt subl` will open it for you =)
+
+#### Easy Build config file
+See `app.coffee`. Manage all your scripts in 1 location: bower files, jade files, stylus, etc. This is simpler than having them scattered around, and it also enabled Jade and Stylus to receive config data and use it in your templates or functions.
 
 #### Clean Grunt task architecture
 See the `tasks/` directory. All Grunt work is written in coffeescript because it's pretty, no other reason. Checkout the Gruntfile, notice no long file mess! Clean and easy to CRUD. Very easy task management, sharing, readability, etc.
@@ -59,14 +62,10 @@ Powered by [Watch](https://github.com/gruntjs/grunt-contrib-watch), [Connect](ht
 #### Manage your Javascript like a boss
 **Grunt + [Bower](bower.io) = awesome things** for your web app development. This project uses [Bower](bower.io) to manage front end assets, which I've found handles 95% of my use cases. You'll find everything installed from bower in `app/js/bower/`. From there, `tasks/uglify.coffee` makes a `lib.min.js` bundle for use in your app. Personally, I like to bundle my libs together (since they rarely change), and my app logic (since it changes a lot) separately. You can of course change this to whatever you want, just open up `tasks/uglify.coffee` and tell it how you want it.
 
-This project also offers a solution for the %5 that falls outside bower's reach. Just drop any libraries into `app/js/libs` and they'll get scooped up into the `lib.min.js` file automagically. 
-
-Also, this project comes with an [async script loader](http://www.dustindiaz.com/scriptjs) setup. So load scripts non blocking like a boss, and schedule or create module dependencies. 
-
 #### Manage your styles like a boss
 I prefer [Stylus](http://learnboost.github.io/stylus/) because it let's you write to the modern spec, unprefixed, and output really tight well formed CSS. I especially like the [@extend](http://learnboost.github.io/stylus/docs/extend.html) feature, that saves me lines of CSS by grouping selectors. Stylus also let's you easily import any CSS library, since it allows valid CSS to run through it's processor. I often put libraries pulled from Bower, into my `app/styles/master.styl` file, and let Stylus include and output 1 CSS file. 
 
-This implementation also comes with [Nib](http://visionmedia.github.io/nib/) and is post-processed by [Autoprefixer](https://github.com/postcss/autoprefixer). Open up `tasks/stylus.coffee` to specify which target browsers you want to support in your CSS. This is a really powerful way to write minimal amounts of CSS, but output very powerful and compliant CSS. Autoprefixer removes all the cruft that Nib applies too. If you need IE7 support though, either remove Autoprefixr or specify the browsers you want to support! So rad!
+This implementation also comes with [Nib](http://visionmedia.github.io/nib/) and [Axis](http://axis.netlify.com/). The result is post-processed by [Autoprefixer](https://github.com/postcss/autoprefixer). Open up `tasks/stylus.coffee` to specify which target browsers you want to support in your CSS. This is a really powerful way to write minimal amounts of CSS, but output very powerful and compliant CSS. Autoprefixer removes all the cruft that Nib applies too. If you need IE7 support though, either remove Autoprefixr or specify the browsers you want to support! So rad!
 
 **Browser hacks** are no fun, but we all write them. We want a site to look uniform across browsers. I've included in this project my personal preferred clientside method of fixing styles for browsers. It stuck for me becuase it's done in a way that prevents [FOUT](http://www.paulirish.com/2009/fighting-the-font-face-fout/) or other CSS adjustments, since the JS script `app/js/detect-and-fill.js` is evaluated before any other scripts are loaded, and it's loaded intentionally blocking. It blocks, detects which browser, and appends a script to the dom for immediate loading. So since this is all setup, you can now easily, on the client, fill iOS or Android layout issues, without causing any jank, and written easily with stylus. Enjoy. The other best alternative here, is server side detection and templating. Do this if you got the chops =), all of it is fun right!? This clientside way is pretty awesome though I've experienced. Never serve CSS to a browser that it won't use, block page painting until the new CSS is loaded, and lastly, do it all with vanilla js so there's no libs to load to fill, keeping it quick.
 
@@ -83,7 +82,7 @@ Default task runs `grunt dev` but with notifications, a server, and BrowserSync.
 `grunt dev`  
 Legible js and css output, no server
 
-`grunt prod`  
+`grunt --prod`  
 Runs all tasks with super crunch options turned on, and also runs a server so you can test the build in browser. This will also include an appcache manifest, so your visitors will get a super cached browser experience. 
 
 `grunt heroku`  
@@ -109,13 +108,13 @@ Opens the `app.sublime-project` file. AKA `open app.sublime-project` or `subl ap
 - [Shell](https://github.com/sindresorhus/grunt-shell): Run custom shell commands from grunt, this can do all sorts of good stuff
 - [Stylus](https://github.com/gruntjs/grunt-contrib-stylus): Compiles all stylus files
 - [Uglify](https://github.com/gruntjs/grunt-contrib-uglify): Crunches and combines javascript
-- [Uncss](https://github.com/addyosmani/grunt-uncss): Optional part of the prod build, can potentially reduce file size greatly
+- [CSSo](https://github.com/css/csso): Stylus doesnt do the best crunching, CSSo does amazing things to your css before sending it to production.
 - [Watch](https://github.com/gruntjs/grunt-contrib-watch): Runs tasks when certain files change
 
 ## Maintaining This
-There's not much to maintaining this build system. There's only a few pieces of manual management, and it's around your choices of Javascript and CSS. If you add a bower package, go update the uglify task `tasks/uglify.coffee`. It needs to know what new libs there are, and how to want to load them. You will also want to spend time looking at `app/includes/scripts.jade`. 
+There's not much to maintaining this build system. There's only a few pieces of manual management, and it's around your choices of Javascript and CSS. If you add a bower package, go update `app.coffee`. It needs to know what new libs there are, and how to want to load them. 
 
-For CSS, if you pull in a grid framework, for example. You'll want to update `app/styles/master.styl` to import that file. It's better that you manage your styles using stylus then importing lots of scripts into your page. But again, up to you. 
+For CSS, if you pull in a grid framework, for example. You'll want to update `app.coffee` to import that file. Stylus is setup to auto import the scripts you specify in the build config.  
 
 ## Thanks
 Nice of you to read this far lol, if you did. Hope this helps you build web apps like it has me. 

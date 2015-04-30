@@ -15,7 +15,7 @@
 		},
 		{
 			"name": "Grunt Prod: Build and serve a super crunched version of the site",
-			"shell_cmd": "grunt prod"
+			"shell_cmd": "grunt --prod"
 		},
 		{
 			"name": "Grunt Heroku: Super crunch the build, but don't serve or watch",
@@ -34,8 +34,13 @@
 		},
 		{
 			"follow_symlinks": true,
-			"name": "Dist",
-			"path": "dist"
+			"name": "Builds",
+			"path": "build"
+		},
+		{
+			"follow_symlinks": true,
+			"name": "Bower",
+			"path": "app/js/bower"
 		},
 		{
 			"follow_symlinks": true,
@@ -43,15 +48,10 @@
 			"path": "tasks"
 		},
 		{
-			"follow_symlinks": true,
-			"name": "Bower Libraries",
-			"path": "app/js/bower"
-		},
-		{
 			"folder_exclude_patterns":
 			[
 				"app",
-				"dist",
+				"build",
 				"tasks",
 				"node_modules"
 			],
@@ -64,6 +64,6 @@
 	{
 		"tab_size": 2,
 		"translate_tabs_to_spaces": true,
-		"binary_file_patterns": ["dist/*", "node_modules/*", "app/js/bower/*"]
+		"binary_file_patterns": ["build/*", "node_modules/*", "app/js/bower/*"]
 	}
 }

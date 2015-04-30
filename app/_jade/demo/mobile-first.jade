@@ -1,0 +1,33 @@
+.spacer
+  h3 Mobile First
+  dt 
+    p.hint-text You should be building this way already, but Bolt's got your back if you're new. Mobile first means you need to have your browser window in a small mobile sized viewport for the first version of the build. Bolt's CSS is oriented around this, below I'll breakdown where this is happening and show you where you can change it.
+
+  dd: section
+    h5.text-center Need this?
+
+    p: b YES: 
+
+    div.push-bottom
+      code styles/base/_vars.styl
+      div This file manages all your CSS vars, so they can be easily shared to all your stylesheets. It houses some really convenient breakpoints, modify them if you like:
+        ul
+          li phone (min-width: 480px)
+          li phablet (min-width: 768px)
+          li tablet (min-width: 1024px)
+          li laptop (min-width: 1440px)
+          li desktop (min-width: 1920px)
+          li portrait (orientation:portrait)
+          li landscape (orientation:landscape)
+
+    div.push-bottom
+      code _jade/includes/mobile/*
+      div These are all helper jade files for including the proper mobile meta data in a project, if you want to achieve the "mobile web app" status. This includes add to home screen, icons, brand colors, etc. 
+
+    div.push-bottom
+      code _jade/includes/head.jade
+      div This is where all those helper jade files are being included.
+
+  dd: section
+    b NO: 
+    div Remove the includes from _jade/includes/head.jade, and delete the includes/mobile folder from the project.

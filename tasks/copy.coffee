@@ -1,22 +1,33 @@
-module.exports = dev:
-  files: [
+module.exports = 
+  dev:
+    files: [
       expand: true
-      cwd:    "app/js"
-      src:    ["*.js"]
-      dest:   "dist/js"
+      cwd:    "<%= app_dir %>/js"
+      src:    ["*.js", "!shiv.js"]
+      dest:   "<%= build_dir %>/js"
     ,
       expand: true
-      cwd:    "app/js/bower/device-detect.js"
-      src:    ["device-detect.js"]
-      dest:   "dist/js"
+      cwd:    "<%= app_dir %>"
+      src:    "<%= vendor_files.bower %>"
+      dest:   "<%= build_dir %>"
     ,
       expand: true
-      cwd:    "app/img"
-      src:    ["*"]
-      dest:   "dist/img"
+      cwd:    "<%= app_dir %>/assets"
+      src:    ["**/*"]
+      dest:   "<%= build_dir %>/assets"
     ,
       expand: true
-      cwd:    "app/"
-      src:    ["robots.txt", "manifest.json"]
-      dest:   "dist/"
-  ]
+      cwd:    "<%= app_dir %>/"
+      src:    "<%= vendor_files.assets %>"
+      dest:   "<%= build_dir %>/"
+    ]
+
+  prod:
+    files: [
+      # prod mostly just copies assets (.txt, .mov, .mp3, etc)
+      # things that dont get crunched but are assets that need served
+      expand: true
+      cwd:    "<%= app_dir %>/"
+      src:    "<%= vendor_files.assets %>"
+      dest:   "<%= build_dir %>/"
+    ]

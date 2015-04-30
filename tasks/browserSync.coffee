@@ -2,9 +2,9 @@ module.exports =
   dev:
   	bsFiles:
   		src: [
-  			"dist/styles/*"
-  			"dist/*.html"
-        "dist/js/lib.min.js"
+  			"<%= build_dir %>/styles/*"
+  			"<%= build_dir %>/*.html"
+        "<%= build_dir %>/js/lib.min.js"
   		]
 
   options:

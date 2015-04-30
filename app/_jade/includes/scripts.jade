@@ -1,24 +1,14 @@
 if dev
-  //- async script loader to sequence libs and app logic and keep things fast
-  //- using this with appcache is a little overkill, but whatever! it's all setup already
-  script(src='js/script.js')
+  //- load libs from build.coffee vendor_files object array
+  each path in bower
+    script(src=path)
 
-  script.
-    $script(['js/lib.min.js', 'js/templates.js'], function(){
-      $script([
-        //- all your app scripts go here
-        'js/app.js'
-      ]);
-    });
-
-  //- Remote Debugging with Weinre, uncomment and swap your comp's IP to enable
-  //- TODO: make an IP var that's passed in from jade.coffee and use it here for dynamic IP
-  //- script(src='http://10.1.11.13:8081/target/target-script-min.js#anonymous')
+  script(src='js/templates.js')
+  script(src='js/app.js')
+  //- more of your app scripts here!
+  script(src='js/template-example.js')
   
 else
-  script(src='js/script.js')
-  script.
-    $script('js/lib.min.js', function(){
-      //- uglify.coffee bundles all scripts together
-      $script('js/app.min.js');
-    });
+  //- dont let libs get too big =)
+  script(src='js/lib.min.js')
+  script(src='js/app.min.js', async)

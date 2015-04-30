@@ -1,0 +1,29 @@
+.spacer 
+  h3 Bower
+  dt
+    p.hint-text Bolt uses Bower & Grunt to combo the management of your front end package dependencies. By utilizing what's already been setup, you'll get nice minified, concatenated, and turbo crunched files, served hot n ready. NPM is used to pull in Bower for automated builds, so you aren't required to install Bower globally.
+    p.hint-text By default, Bolt has included 2 libraries for you to see as examples: VelocityJS and Flexboxgrid. Velocity has 2 JS files we are interested in, and Flexboxgrid has 1 CSS and 1 JS file. Bolt bundles these up and served them with this demo page. 
+
+  dd: section 
+    h5.text-center Need this?
+
+    p: b YES: 
+
+    div.push-bottom
+      code app.coffee
+      div At the bottom of the file, you'll find a 'vendor_files' object. When you add or remove Bower packages, you'll want to update the css or bower files with the location of the lib's file you need. Sometimes you'll be importing CSS and sometimes you need JS. Centrally manage all of it in app.coffee. I've tried automated Bower/Grunt tools, but I find them to not cover all my edge cases. 
+
+    div.push-bottom
+      code Automation
+      div Bolt has been part of many automated build systems like Heroku, Jenkins and Codeship. That's why a local npm version of Bower is included in Bolt, so Bower doesn't need to be installed globally. If you don't want to integrate with an automated build system, simply remove the .gitignore line that prevents the build/ folder from being checked in to version control. Now you're checking in the static site. 
+
+  dd: section
+    b NO: 
+    div Then let's remove all of it's traces.
+      ul
+        li Delete bower.json and .bowerrc from the root of the project
+        li Delete the js/bower folder
+        li Remove the last 2 lines from styles/master.styl
+        li Remove the bower copy object from tasks/copy.coffee
+        li Remove line 6 from uglify.coffee
+        li Delete libs from tasks/watch.coffee

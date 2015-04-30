@@ -1,29 +1,30 @@
 // Brand and style colors
-light-text-color=          hsl(0, 0%, 90%)
-text-color=                hsl(0, 0%, 100%)
-dark-text-color=           hsl(0, 0%, 20%)
-brand-color=               hsl(181, 100%, 37%)
-dark-brand-color=          hsl(187, 100%, 21%)
-darker-brand-color=        hsl(187, 100%, 13%)
-brand-background-color=    hsl(0, 0%, 8%)
-dark-background-color=     rgb(5,5,5)
+$light-text-color=          hsl(0, 0%, 40%)
+$text-color=                hsl(0, 0%, 80%)
+$dark-text-color=           hsl(0, 0%, 20%)
 
-// Animation custom ease
-super-ease-out=            cubic-bezier(0,.60,0,1)
-bounce=                    cubic-bezier(0.175, 0.885, 0.32, 1.275)
+$brand-color=               hsl(181, 100%, 37%)
+$dark-brand-color=          darken($brand-color, 15%)
+$darker-brand-color=        darken($brand-color, 30%)
+$light-brand-color=         lighten($brand-color, 15%)
+$lighter-brand-color=       lighten($brand-color, 30%)
 
-// Our custom break points (matches values of Bootstrap 3)
-phone=                     "(min-width: 480px)"
-tablet=                    "(min-width: 768px)"
-laptop=                    "(min-width: 992px)"
-desktop=                   "(min-width: 1200px)"
+$brand-background-color=    hsl(0, 0%, 0%)
 
-// So media queries don't overlap when required, provide a maximum
-phone-small=               "(max-width: 340px)"
-phone-max=                 "(max-width: 480px)"
-tablet-max=                "(max-width: 767px)"
-laptop-max=                "(max-width: 991px)"
-desktop-max=               "(max-width: 1199px)"
+// Mobile First Custom Break Points
+$phone=                     "(min-width: 480px)"
+$phablet=                   "(min-width: 768px)"
+$tablet=                    "(min-width: 1024px)"
+$laptop=                    "(min-width: 1440px)"
+$desktop=                   "(min-width: 1920px)"
 
-portrait=                  "(orientation:portrait)"
-landscape=                 "(orientation:landscape)"
+$portrait=                  "(orientation:portrait)"
+$landscape=                 "(orientation:landscape)"
+
+// Complimentary Queries
+$phone-small=               "(max-width: 340px)"
+$phone-max=                 "(max-width: 480px)"
+$phablet-max=               "(max-width: 768px)"
+$tablet-max=                "(max-width: 1024px)"
+$laptop-max=                "(max-width: 1440px)"
+$desktop-max=               "(max-width: 1920px)"

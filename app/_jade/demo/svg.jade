@@ -1,0 +1,21 @@
+.spacer
+  h3 SVG
+  dt 
+    p.hint-text Inline SVG is a fun new practice, that enables you to do things like mask, clip, etc. Very powerful fun stuff. Bolt let's you use jade svg in your markup, without littering it with the crazy xml style svg garbage.
+
+  dd: section 
+    h5.text-center Need this?
+
+    p: b YES: 
+
+    div.push-bottom
+      code _jade/includes/svg
+      div This is just a handy location for you to store your inline SVG's as jade includes. I found it handy as my inline SVG grew, this made it manageable.
+
+    div.push-bottom
+      code tasks/svgmin
+      div All the images, including SVG, are compressed during a production build. SVG goes through a sanitiziation, losing cruft code inside the file. Cool stuff. 
+
+  dd: section
+    b NO: 
+    div Just remove delete _jade/includes/svg folder

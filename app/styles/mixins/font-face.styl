@@ -1,0 +1,25 @@
+file(name, ext, path)
+  path + '/' + name + '.' + ext
+
+font-face(family, font=family, path='fonts')
+  @font-face
+    font-family family
+    src url(file(font, 'eot', path))
+    src url(file(font, 'eot?#iefix', path)) format("embedded-opentype"),
+      url(file(font, 'woff', path)) format("woff"),
+      url(file(font, 'ttf', path)) format("truetype"),
+      url(file(font, 'svg#' + family, path)) format("svg")
+    font-weight normal
+    font-style normal
+
+font-face-inline(family, font=family, path='fonts')
+  @font-face
+    font-family family
+    src url(file(font, 'eot?', path)) format("embedded-opentype")
+  @font-face
+    font-family family
+    src data-url(file(font, 'woff', path)) format("woff"),
+      data-url(file(font, 'ttf', path)) format("truetype"),
+      url(file(font, 'svg#' + family, path)) format("svg")
+    font-weight normal
+    font-style normal

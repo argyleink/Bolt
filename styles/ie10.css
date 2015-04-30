@@ -1,0 +1,10 @@
+img {
+  width: 100%;
+}
+@media all and (orientation: portrait) {
+  @-ms-viewport {
+    user-zoom: fixed;
+    max-zoom: 1;
+    min-zoom: 1;
+  }
+}

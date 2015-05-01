@@ -11,7 +11,11 @@ footer
   transform:rotate(180deg)
   
 #bolt-logo
-  max-width:25vw
+  max-width:75vw
+  @media $phone
+    max-width:50vw
+  @media $phablet
+    max-width:25vw
   filter:drop-shadow(0 0 10px hsla(0,0%,0%,40%))
   path
     fill:white

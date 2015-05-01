@@ -106,7 +106,7 @@ Opens the `app.sublime-project` file. AKA `open app.sublime-project` or `subl ap
 - [Manifest](https://github.com/gunta/grunt-manifest): Create an appcache manifest automatically
 - [Notify](https://github.com/dylang/grunt-notify): Custom notifications when build jobs complete
 - [Shell](https://github.com/sindresorhus/grunt-shell): Run custom shell commands from grunt, this can do all sorts of good stuff
-- [Stylus](https://github.com/gruntjs/grunt-contrib-stylus): Compiles all stylus files
+- [Stylus](https://github.com/gruntjs/grunt-contrib-stylus): Compiles all stylus files, with source maps during dev.
 - [Uglify](https://github.com/gruntjs/grunt-contrib-uglify): Crunches and combines javascript
 - [CSSo](https://github.com/css/csso): Stylus doesnt do the best crunching, CSSo does amazing things to your css before sending it to production.
 - [Watch](https://github.com/gruntjs/grunt-contrib-watch): Runs tasks when certain files change

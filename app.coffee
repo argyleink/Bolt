@@ -38,7 +38,11 @@ module.exports = (grunt) ->
     jade: [
       expand: true
       cwd:    "<%= app_dir %>"
-      src:    "*.jade"
+      src:    [
+        "**/*.jade", 
+        "!_jade/**/*", 
+        "!templates/**/*"
+      ]
       dest:   "<%= build_dir %>"
       ext:    ".html"
     ]

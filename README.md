@@ -15,14 +15,14 @@ This project's default setup is for deploying static sites to be hosted somewher
 > NPM (will come with node.js download from link above)
 
 ##### Have [Grunt](http://gruntjs.com/)  
-`npm install -g grunt-cli`
+`npm i -g grunt-cli`
 
 ##### Optional [Bower](http://bower.io/)  
-`npm install -g bower`
+`npm i -g bower`
 > A local copy of Bower is included in this system, for the Heroku integration aspects of this system. If you dont like Bower or don't plan to deploy to Heroku, then don't worry about Bower. But if you do like Bower, then do your thang. Just update `tasks/uglify.coffee` and point to the js file you want from the project.
 
 ##### **Install Bolt's required Node modules**:  
-`npm install`  
+`npm i`  
 > This will install all node modules, bower modules, run grunt and auto open the build in your default browser. Hot and ready to update when things change. See `package.json` for more.
 
 ##### **Open the project in Sublime:** `grunt subl`  

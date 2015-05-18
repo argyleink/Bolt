@@ -30,7 +30,7 @@ module.exports = (grunt) ->
   ###
 
   grunt.registerTask "default", "Master task", ->
-    grunt.task.run "clean" 
+    grunt.task.run "clean"
     grunt.task.run "concurrent:#{env}_StylusJadeUglify" 
 
     if env == 'prod' then grunt.task.run ["concurrent:shrink", "manifest"]
@@ -38,11 +38,11 @@ module.exports = (grunt) ->
     grunt.task.run "copy:#{env}"
     grunt.task.run "notify:#{env}"
     grunt.task.run "connect:#{env}"
+    grunt.task.run "asciify:headline"
 
     if env != 'prod' then grunt.task.run "browserSync"
     if env == 'prod' then grunt.task.run "shell:open_#{env}"
 
-    grunt.task.run "asciify:headline"
     grunt.task.run "watch"
 
   # serve either dev or prod directory

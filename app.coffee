@@ -94,7 +94,6 @@ module.exports = (grunt) ->
     files.css = files.css.map (path) -> path.replace __dirname + bower_base + '', ''
     files.dev_css = files.css.map (path) -> path.replace 'js/', ''
 
-    console.log files
     return files
   )()
 

@@ -3,7 +3,7 @@ module.exports =
     options:
       data:
         dev: true
-        bower: "<%= vendor_files.bower %>"
+        bower: "<%= bower_files.js %>"
         project: "<%= pkg %>"
       pretty: true
       client: false

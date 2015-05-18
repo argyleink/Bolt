@@ -1,5 +1,4 @@
 # This file contains all configuration for the build process.
-
 module.exports = (grunt) ->
 
   pkg: grunt.file.readJSON("./package.json")
@@ -15,7 +14,6 @@ module.exports = (grunt) ->
   # change these once, works everywhere =)
   # choose your own directory structure, bower folder, etc
   app_dir:        "app"
-  bower_dir:      "js/bower"
   build_dir:      "build/" + if grunt.option("prod") == true then "www" else "dev"
 
   # This is a collection of files for reference in our tasks
@@ -32,20 +30,25 @@ module.exports = (grunt) ->
       # load a browser detector, then use shiv.js to inject proper polyfill.js
       # these will be combined and loaded in the <head>, see polyfill.jade
       polyfills: [
-        "<%= app_dir %>/<%= bower_dir %>/device-detect.js/device-detect.js"
+        "<%= app_dir %>/js/bower/device-detect.js/device-detect.js"
         "<%= app_dir %>/js/shiv.js"
       ]
+
+    # The `assets` property holds any assets to be copied along
+    # with our app's assets: key files, whatever
+    assets: [
+      "robots.txt"
+      "manifest.json"
+    ]
+
     jade: [
       expand: true
       cwd:    "<%= app_dir %>"
-      src:    [
-        "**/*.jade", 
-        "!_jade/**/*", 
-        "!templates/**/*"
-      ]
+      src:    "*.jade"
       dest:   "<%= build_dir %>"
       ext:    ".html"
     ]
+
     stylus: [
       "<%= build_dir %>/styles/app.css":      "<%= app_dir %>/styles/master.styl"
       # below you can create your own additional css files for browser hacks, polyfills, etc
@@ -53,6 +56,7 @@ module.exports = (grunt) ->
       "<%= build_dir %>/styles/ie10.css":     "<%= app_dir %>/styles/browser/ie10.styl"
       "<%= build_dir %>/styles/android.css":  "<%= app_dir %>/styles/browser/android.styl"
     ]
+
     stylus_plugins: [
       # http://axis.netlify.com
       -> require('axis')()
@@ -68,34 +72,31 @@ module.exports = (grunt) ->
       )
     ]
 
+  # use wiredep to grab bower target package files
+  bower_files: (-> 
+    files = require("wiredep")(
+      # checkout the options section of https://github.com/stephenplusplus/grunt-wiredep
+      exclude: [/jquery/]
+    )
+    bower_base = if grunt.option("prod") == true then "app/" else "/app/"
+
+    # the path is absolute (ick), fix it
+    replaceBase = (path) -> path.replace __dirname + bower_base, ''
+
+    # The `bower_files.js` property holds files to be automatically
+    # concatenated and minified with our project source files.
+    files.js = files.js.map (path) -> path.replace __dirname + bower_base, ''
+
+    # The `bower_files.css` property holds any CSS files to be automatically
+    # included in our app. File will be auto imported to your stylus stylesheet, path should be 
+    # relative to master.styl in app/styles/. Stylus is currently setup to auto read 
+    # these and include them in app.css
+    files.css = files.css.map (path) -> path.replace __dirname + bower_base + '', ''
+    files.dev_css = files.css.map (path) -> path.replace 'js/', ''
+
+    console.log files
+    return files
+  )()
+
   # test_files:
   #   js: [ "tests/" ]
-
-
-  ###
-  The `vendor_files.bower` property holds files to be automatically
-  concatenated and minified with our project source files.
-
-  The `vendor_files.css` property holds any CSS files to be automatically
-  included in our app. File will be auto imported to your stylus stylesheet, path should be 
-  relative to master.styl in app/styles/. Stylus is currently setup to auto read 
-  these and include them in app.css
-
-  The `vendor_files.assets` property holds any assets to be copied along
-  with our app's assets: media, music, etc
-  ###
-
-  bower_base: if grunt.option("prod") == true then "app/" else ""
-  vendor_files:
-    bower: [
-      "<%= bower_base %><%= bower_dir %>/velocity/velocity.js"
-      "<%= bower_base %><%= bower_dir %>/velocity/velocity.ui.js"
-      "<%= bower_base %><%= bower_dir %>/flexboxgrid/js/index.js"
-    ]
-    css: [
-      "../../<%= app_dir %>/<%= bower_dir %>/flexboxgrid/dist/flexboxgrid.css"
-    ]
-    assets: [
-      "robots.txt"
-      "manifest.json"
-    ]

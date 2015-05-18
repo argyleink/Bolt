@@ -38,6 +38,7 @@
     "grunt-svgmin": "*",
     "jit-grunt": "*",
     "load-grunt-configs": "*",
-    "time-grunt": "*"
+    "time-grunt": "*",
+    "wiredep": "*"
   }
 }

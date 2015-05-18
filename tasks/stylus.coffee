@@ -3,7 +3,7 @@ module.exports =
     options:
       compress:       false
       "include css":  true
-      define:         bower: "<%= vendor_files.css %>"
+      define:         bower: "<%= bower_files.css %>"
       use:            "<%= app_files.stylus_plugins %>"
 
     files: "<%= app_files.stylus %>"
@@ -11,8 +11,7 @@ module.exports =
   dev:
     options:
       compress:       false
-      "include css":  true
-      define:         bower: "<%= vendor_files.css %>"
+      define:         bower: "<%= bower_files.dev_css %>"
       use:            "<%= app_files.stylus_plugins %>"
       sourcemap:      inline: true
 

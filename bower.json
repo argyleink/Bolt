@@ -1,6 +1,6 @@
 {
   "name": "Bolt",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/argyleink/Bolt",
   "authors": [
     "Adam Argyle <atom@argyleink.com>"
@@ -10,12 +10,9 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "app/js/bower",
-    "test",
-    "tests"
+    "app/js/bower"
   ],
-  "devDependencies": {
+  "dependencies": {
     "device-detect.js": "*",
     "flexboxgrid": "*",
     "velocity": "*"

@@ -8,8 +8,13 @@ module.exports =
     ,
       expand: true
       cwd:    "<%= app_dir %>"
-      src:    "<%= vendor_files.bower %>"
+      src:    "<%= bower_files.js %>"
       dest:   "<%= build_dir %>"
+    ,
+      expand: true
+      cwd:    "<%= app_dir %>/js"
+      src:    "<%= bower_files.dev_css %>"
+      dest:   "<%= build_dir %>/styles"
     ,
       expand: true
       cwd:    "<%= app_dir %>/assets"
@@ -18,7 +23,7 @@ module.exports =
     ,
       expand: true
       cwd:    "<%= app_dir %>/"
-      src:    "<%= vendor_files.assets %>"
+      src:    "<%= app_files.assets %>"
       dest:   "<%= build_dir %>/"
     ]
 
@@ -28,6 +33,6 @@ module.exports =
       # things that dont get crunched but are assets that need served
       expand: true
       cwd:    "<%= app_dir %>/"
-      src:    "<%= vendor_files.assets %>"
+      src:    "<%= app_files.assets %>"
       dest:   "<%= build_dir %>/"
     ]

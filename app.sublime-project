@@ -44,6 +44,11 @@
 		},
 		{
 			"follow_symlinks": true,
+			"name": "npm",
+			"path": "node_modules"
+		},
+		{
+			"follow_symlinks": true,
 			"name": "Tasks",
 			"path": "tasks"
 		},

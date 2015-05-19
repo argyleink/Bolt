@@ -63,7 +63,7 @@ module.exports = (grunt) ->
   
   grunt.registerTask "test", [
     "concurrent:dev_StylusJadeUglify"
-    "concurrent:prod_StylusJadeUglify"
+    # "concurrent:prod_StylusJadeUglify"
     # "concurrent:shrink"
     "copy:dev"
   ]

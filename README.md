@@ -18,11 +18,41 @@ This project's default setup is for creating static sites to be hosted somewhere
 ##### **Install Bolt's required Node modules**:  
 `npm i`  
 
-#### Build static sites like a boss
-[Jade](http://jade-lang.com/) everywhere! Why learn 2-3 templating languages when you could be learning/using 1? [Jade](http://jade-lang.com/) is used in this build process for general HTML site generation and [Client side templates](http://projects.jga.me/clientjade/). Writes perfect HTML for you, clean when in dev mode. And perfectly crunched your HTML in production, getting rid of all white space, which can be critical. 
+## Build Features
+- Dev builds are extremely legible, source mapped, and ready for debugging with your tools `grunt`
+- Production builds squish the crap out [images,css,html,js,svg] `grunt --prod`
+- Dev and Prod builds have their own output directory, they don't share a `dist/` folder
+- Very fast, [concurrent Grunt builds](https://github.com/argyleink/Bolt/blob/master/tasks/concurrent.coffee), with jit a plugin for really fast watch task running
+- Concise [Grunt main file](https://github.com/argyleink/Bolt/blob/master/gruntfile.coffee)
+- [Grunt tasks](https://github.com/argyleink/Bolt/tree/master/tasks) are individual, short, easy as hell to read
+- [Configuration file](https://github.com/argyleink/Bolt/blob/master/app.coffee) keeps project assets and plugins centralized
+- Bower libs go straight into jade and stylus for you
+- [BrowserSync](http://www.browsersync.io) dev server syncs all your clicks, scrolls, and more during development
+- BrowserSync live reload and hot css pushes for really rad fast front end crafting
+- BrowserSync Weinre remote inspect built in
+- Externally accessible server
+- [Auto generated](https://github.com/argyleink/Bolt/blob/master/tasks/manifest.coffee) HTML5 appcache for production builds
+- Autoprefixed stylus
+- 2 powerful stylus mixin libraries [Nib](http://nibstyl.us) and [Axis](http://axis.netlify.com) (will never bloat your file with crap you aren't using)
+- Git tagging and releasing `grunt bump`
+- Easily create custom [build notifications](https://github.com/argyleink/Bolt/blob/master/tasks/notify.coffee)
+- Customize your crunched files comment banner
+- Ready to run custom [shell commands](https://github.com/argyleink/Bolt/blob/master/tasks/shell.coffee)
+- Concurrent image crunching
+- [Sublime project file](https://github.com/argyleink/Bolt/blob/master/app.sublime-project) for easy project editing and standards establishment
 
-#### Bower Automation
-**Grunt + [Bower](bower.io) = awesome things** for your web app development. This project uses [Bower](bower.io) to manage front end assets, which I've found handles 95% of my use cases. You'll find everything installed from bower in `app/js/bower/`, as well as automatically injected into your project js/styles.
+#### Bolt Extras
+- [Mobile first](https://github.com/argyleink/Bolt/blob/master/app/styles/base/_vars.styl)
+- Flexbox grid and animation library preloaded
+- [Browser hack](https://github.com/argyleink/Bolt/tree/master/app/styles/browser) ready
+- [Polyfill](https://github.com/argyleink/Bolt/blob/master/app/js/shiv.js) ready
+- Jade [clientside templating](https://github.com/argyleink/Bolt/tree/master/app/_jade/client-templates) ready (Jade all the things!)
+- Extensable [Jade page](https://github.com/argyleink/Bolt/blob/master/app/_jade/layouts/page.jade) structure
+- Great [Stylus base](https://github.com/argyleink/Bolt/tree/master/app/styles)
+- Tons of [mobile header](https://github.com/argyleink/Bolt/tree/master/app/_jade/includes/mobile) and icons, tested and ready
+- HTML5 [manifest.json](https://github.com/argyleink/Bolt/blob/master/app/manifest.json)
+- 404 page
+- [Robots.txt](https://github.com/argyleink/Bolt/blob/master/app/robots.txt)
 
 ## Inspiration
 - [Roots](http://roots.cx/)

@@ -12,6 +12,7 @@
     "node_modules",
     "app/js/bower"
   ],
+  "main": "app/js/app.js",
   "dependencies": {
     "device-detect.js": "*",
     "flexboxgrid": "*",

@@ -17,7 +17,10 @@
     "autoprefixer-stylus": "*",
     "axis": "*",
     "bower": "*",
+    "bower-webpack-plugin": "^0.1.8",
     "clientjade": "git://github.com/argyleink/clientjade.git",
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.9.2",
     "grunt-asciify": "*",
     "grunt-browser-sync": "*",
     "grunt-bump": "*",
@@ -36,10 +39,16 @@
     "grunt-notify": "*",
     "grunt-shell": "*",
     "grunt-svgmin": "*",
+    "grunt-webpack": "^1.0.8",
+    "jade": "^1.9.2",
     "jade-inheritance": "^0.2.0",
+    "jade-loader": "^0.7.1",
     "jit-grunt": "*",
     "load-grunt-configs": "*",
+    "node-libs-browser": "^0.5.0",
+    "stylus-loader": "^1.1.1",
     "time-grunt": "*",
+    "webpack": "^1.9.7",
     "wiredep": "*"
   }
 }

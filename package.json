@@ -36,6 +36,7 @@
     "grunt-notify": "*",
     "grunt-shell": "*",
     "grunt-svgmin": "*",
+    "jade-inheritance": "^0.2.0",
     "jit-grunt": "*",
     "load-grunt-configs": "*",
     "time-grunt": "*",

@@ -31,6 +31,7 @@ This project's default setup is for creating static sites to be hosted somewhere
 - BrowserSync live reload and hot css pushes for really rad fast front end crafting
 - BrowserSync Weinre remote inspect built in
 - Externally accessible server
+- Proper [Jade inheritance](https://github.com/paulyoung/jade-inheritance) compilation, so 1 file changed doesn't require the whole project to compile
 - [Auto generated](https://github.com/argyleink/Bolt/blob/master/tasks/manifest.coffee) HTML5 appcache for production builds
 - Autoprefixed stylus
 - 2 powerful stylus mixin libraries [Nib](http://nibstyl.us) and [Axis](http://axis.netlify.com) (will never bloat your file with crap you aren't using)

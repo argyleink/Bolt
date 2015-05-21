@@ -6,11 +6,17 @@ module.exports = (grunt) ->
   # while watching, only load the dep needed to take the grunt action
   require("jit-grunt")(grunt)
 
-  # load your tasks, allows them to be in separate files for cleanliness
-  tasks = require("load-grunt-configs")(grunt, config: src: "tasks/*.coffee")
-
   # loads file paths and other build configurations
   buildConfig = require("./app.coffee")(grunt)
+
+  # load your tasks, allows them to be in separate files for cleanliness
+  tasks = require("load-grunt-configs")(grunt, config: src: [
+    "tasks/*.coffee"
+    "!tasks/jade-inheritance.coffee"
+  ])
+
+  # load special jade tool so just what changed is processed
+  require("./tasks/jade-inheritance.coffee")(grunt, buildConfig)
 
   # Merge all tasks and build config together and then init
   grunt.initConfig grunt.util._.extend(tasks, buildConfig)

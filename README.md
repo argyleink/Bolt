@@ -14,6 +14,7 @@ This project's default setup is for creating static sites to be hosted somewhere
 - Have [Node.js](http://nodejs.org/) and NPM
 - Have [Grunt](http://gruntjs.com/)
 - Have [Bower](http://bower.io/)
+- See the [Wiki](https://github.com/argyleink/Bolt/wiki)
 
 ##### **Install Bolt's required Node modules**:  
 `npm i`  
@@ -41,6 +42,9 @@ This project's default setup is for creating static sites to be hosted somewhere
 - Ready to run custom [shell commands](https://github.com/argyleink/Bolt/blob/master/tasks/shell.coffee)
 - Concurrent image crunching
 - [Sublime project file](https://github.com/argyleink/Bolt/blob/master/app.sublime-project) for easy project editing and standards establishment
+- Grunt [Heroku](https://github.com/argyleink/Bolt/wiki/Deployments) task for easy CI integration `grunt heroku`
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 #### Bolt Extras
 - [Mobile first](https://github.com/argyleink/Bolt/blob/master/app/styles/base/_vars.styl)

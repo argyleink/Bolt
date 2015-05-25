@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="https://dl.dropboxusercontent.com/u/6515442/hipsterlogogenerator_1422411720676.png"/>
-  Logo courtesy of <a href="http://www.hipsterlogogenerator.com/">HipsterLogoGenerator.com</a>
+  <a href="http://www.hipsterlogogenerator.com/">
+    <img src="https://dl.dropboxusercontent.com/u/6515442/hipsterlogogenerator_1422411720676.png"/>
+  </a>
 </p>
 
 # Goal

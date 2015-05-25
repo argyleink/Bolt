@@ -1,6 +1,7 @@
-![bolt logo](https://dl.dropboxusercontent.com/u/6515442/hipsterlogogenerator_1422411720676.png)  
-Logo courtesy of [HipsterLogoGenerator.com](http://www.hipsterlogogenerator.com/)
-
+<p align="center">
+  <img src="https://dl.dropboxusercontent.com/u/6515442/hipsterlogogenerator_1422411720676.png"/>
+  Logo courtesy of <a href="http://www.hipsterlogogenerator.com/">HipsterLogoGenerator.com</a>
+</p>
 
 # Goal
 Offer a FAST, Grunt based, rather un-opinionated build system. Use it for whatever. The project seed I've made here is a cache heavy, smart loading, mobile first, front end static site project for ya. It comes with [Jade](http://jade-lang.com/) & [Stylus](http://learnboost.github.io/stylus/) as defaults, but swap it for whatever you want, easily. Or want more than 1 preprocessor, it's ready. At the end of the day, it's [Grunt](http://gruntjs.com/), do whatever you want. 

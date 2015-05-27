@@ -10,12 +10,13 @@ Offer a FAST, Grunt based, rather un-opinionated build system. Use it for whatev
 ![Build Status](https://travis-ci.org/argyleink/Bolt.svg?branch=master)
 
 ## Overview
-This project's default setup is for creating static sites to be hosted somewhere on the web. This could be a webview hybrid app, single page app, marketing site, who cares. This tool comes with all the tips, tricks, meta data, and automated tasks that help you build quick and efficient across browsers.
+This project's default setup is for creating static sites to be hosted somewhere on the web. This could be a webview hybrid app, single page app, marketing site, who cares. This tool comes with all the tips, tricks, meta data, and automated tasks that help you build quick and efficient front ends across browsers.
 
 #### Quickstart
 - Have [Node.js](http://nodejs.org/) and NPM
 - Have [Grunt](http://gruntjs.com/)
 - Have [Bower](http://bower.io/)
+- Optionally have the [Bolt CLI](https://github.com/argyleink/Bolt-cli)
 - See the [Wiki](https://github.com/argyleink/Bolt/wiki)
 
 ##### **Install Bolt's required Node modules**:  
@@ -45,6 +46,7 @@ This project's default setup is for creating static sites to be hosted somewhere
 - Concurrent image crunching
 - [Sublime project file](https://github.com/argyleink/Bolt/blob/master/app.sublime-project) for easy project editing and standards establishment
 - Grunt [Heroku](https://github.com/argyleink/Bolt/wiki/Deployments) task for easy CI integration `grunt heroku`
+- [CLI](https://github.com/argyleink/Bolt-cli) for easy setup of new projects `bolt new my_app`
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 

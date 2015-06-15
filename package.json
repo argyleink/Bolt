@@ -34,6 +34,7 @@
     "grunt-manifest": "*",
     "grunt-newer": "*",
     "grunt-notify": "*",
+    "grunt-purifycss": "*",
     "grunt-shell": "*",
     "grunt-svgmin": "*",
     "jade-inheritance": "^0.2.0",

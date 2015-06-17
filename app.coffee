@@ -73,29 +73,7 @@ module.exports = (grunt) ->
     ]
 
   # use wiredep to grab bower target package files
-  bower_files: (-> 
-    files = require("wiredep")(
-      # checkout the options section of https://github.com/stephenplusplus/grunt-wiredep
-      exclude: [/jquery/]
-    )
-    bower_base = if grunt.option("prod") == true then "app/" else "/app/"
-
-    # the path is absolute (ick), fix it
-    replaceBase = (path) -> path.replace __dirname + bower_base, ''
-
-    # The `bower_files.js` property holds files to be automatically
-    # concatenated and minified with our project source files.
-    files.js = files.js.map (path) -> path.replace __dirname + bower_base, ''
-
-    # The `bower_files.css` property holds any CSS files to be automatically
-    # included in our app. File will be auto imported to your stylus stylesheet, path should be 
-    # relative to master.styl in app/styles/. Stylus is currently setup to auto read 
-    # these and include them in app.css
-    files.css = files.css.map (path) -> path.replace __dirname + bower_base + '', ''
-    files.dev_css = files.css.map (path) -> path.replace 'js/', ''
-
-    return files
-  )()
+  bower_files: require('./server/bower-deps.js')
 
   # test_files:
   #   js: [ "tests/" ]

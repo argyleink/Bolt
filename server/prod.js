@@ -18,8 +18,8 @@ app
   .use(router.routes())
   .use(serve('./build/www/'))
 
-// router.get('/', function*() {
-//   this.render('index', {})
-// })
+router.get('/', function*() {
+  this.render('index', {})
+})
 
-app.listen(3000)
+app.listen(3031)

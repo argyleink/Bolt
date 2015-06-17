@@ -13,13 +13,14 @@ app
       dev:      true,
       project:  packageJson,
       bower:    bowerDeps.js
-    }
+    },
+    noCache:      true
   }))
   .use(router.routes())
   .use(serve('./build/dev/'))
 
-// router.get('/', function*() {
-//   this.render('index', {})
-// })
+router.get('/', function*() {
+  this.render('index', {})
+})
 
-app.listen(3000)
+app.listen(3030)

@@ -3,10 +3,10 @@ module.exports =
   	bsFiles:
   		src: [
   			"<%= build_dir %>/styles/*"
-  			"<%= build_dir %>/*.html"
+  			"<%= app_dir %>/**/*.jade"
         "<%= build_dir %>/js/lib.min.js"
   		]
 
   options:
   	watchTask: true
-  	proxy: "0.0.0.0:3030"
+  	proxy: "localhost:3030"

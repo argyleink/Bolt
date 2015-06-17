@@ -19,10 +19,6 @@ module.exports =
     files: ["<%= app_dir %>/assets/**/*"]
     tasks: ["newer:copy:dev"]
 
-  html:
-    files: ["<%= app_dir %>/**/*.jade", "!<%= app_dir %>/templates/**/*.jade"]
-    tasks: ["jade:dev"]
-
   templates:
     files: ["<%= app_dir %>/_jade/client-templates/**/*.jade", "<%= app_dir %>/_jade/**/*.jade"]
     tasks: ["shell:clientjade"]

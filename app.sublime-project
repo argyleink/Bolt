@@ -33,6 +33,14 @@
 			"path": "app"
 		},
 		{
+			"file_exclude_patterns":[
+				"*.html"
+			],
+			"follow_symlinks": true,
+			"name": "Server",
+			"path": "server"
+		},
+		{
 			"follow_symlinks": true,
 			"name": "Builds",
 			"path": "build"
@@ -56,6 +64,7 @@
 			"folder_exclude_patterns":
 			[
 				"app",
+				"server",
 				"build",
 				"tasks",
 				"node_modules"

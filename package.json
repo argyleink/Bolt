@@ -39,6 +39,10 @@
     "grunt-svgmin": "*",
     "jade-inheritance": "^0.2.0",
     "jit-grunt": "*",
+    "koa": "^0.21.0",
+    "koa-jade": "^1.1.0",
+    "koa-router": "^5.1.2",
+    "koa-static": "^1.4.9",
     "load-grunt-configs": "*",
     "time-grunt": "*",
     "wiredep": "*"

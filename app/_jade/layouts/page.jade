@@ -1,5 +1,5 @@
 doctype html
-html(manifest = dev ? '' : 'manifest.appcache')
+html(manifest = dev ? '' : 'manifest.appcache', browser=visitor.browser.name)
   include ../includes/head
     
   block title

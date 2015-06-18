@@ -19,8 +19,10 @@ module.exports =
   dev_serve: [
     "watch"
     "nodemon:dev"
+    "node-inspector"
   ]
   prod_serve: [
     "watch"
     "nodemon:prod"
+    "node-inspector"
   ]

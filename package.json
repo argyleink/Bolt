@@ -33,6 +33,7 @@
     "grunt-csso": "*",
     "grunt-manifest": "*",
     "grunt-newer": "*",
+    "grunt-node-inspector": "*",
     "grunt-nodemon": "*",
     "grunt-notify": "*",
     "grunt-purifycss": "*",
@@ -45,6 +46,7 @@
     "koa-router": "*",
     "koa-static": "*",
     "load-grunt-configs": "*",
+    "snifferjs": "*",
     "time-grunt": "*",
     "wiredep": "*"
   }

@@ -2,6 +2,7 @@ var app           = require('koa')()
   , router        = require('koa-router')()
   , jade          = require('koa-jade')
   , serve         = require('koa-static')
+  , sniffer       = require('snifferjs')
   
   , packageJson   = require('../package.json')
   , bowerDeps     = require('./bower-deps')
@@ -19,8 +20,10 @@ app
   .use(router.routes())
   .use(serve('./build/dev/'))
 
-router.get('/', function*() {
-  this.render('index', {})
+router.get('/', function*(next) {
+  this.render('index', {
+    visitor: sniffer(this.request.headers['user-agent'])
+  })
 })
 
 app.listen(3030)

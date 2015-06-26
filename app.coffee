@@ -73,7 +73,7 @@ module.exports = (grunt) ->
     ]
 
   # use wiredep to grab bower target package files
-  bower_files: require('./server/bower-deps.js')
+  bower_files: require('./server/bower-deps.coffee')(grunt, __dirname)
 
   # test_files:
   #   js: [ "tests/" ]

@@ -39,7 +39,7 @@ module.exports = (grunt) ->
     grunt.task.run "clean"
     grunt.task.run "concurrent:#{env}_StylusJadeUglify" 
 
-    if env == 'prod' then grunt.task.run ["purifycss"]
+    # if env == 'prod' then grunt.task.run ["purifycss"]
     if env == 'prod' then grunt.task.run ["concurrent:shrink", "manifest"]
 
     grunt.task.run "copy:#{env}"

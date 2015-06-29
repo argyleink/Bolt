@@ -24,5 +24,4 @@ module.exports =
   prod_serve: [
     "watch"
     "nodemon:prod"
-    "node-inspector"
   ]

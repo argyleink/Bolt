@@ -1,5 +1,4 @@
-module.exports = (__dirname) ->
-  dir   = __dirname + '/app/'
+module.exports = (dir) ->
   files = require("wiredep")(exclude: [/jquery/])
 
   # the path is absolute (ick), fix it

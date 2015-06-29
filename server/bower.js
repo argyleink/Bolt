@@ -1,6 +1,5 @@
-module.exports = function(__dirname) {
-  var dir   = __dirname + '/app/'
-    , files = require("wiredep")({exclude: [/jquery/]})
+module.exports = function(dir) {
+  var files = require("wiredep")({exclude: [/jquery/]})
 
   // the path is absolute (ick), fix it
   var replaceBase = (path => path.replace(dir, ''))

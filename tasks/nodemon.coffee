@@ -1,18 +1,23 @@
 module.exports =
   dev:
-    script: 'server/dev.js'
+    script: 'server/server.js'
     options:
       env:
         NODE_ENV:     'development'
         NODE_CONFIG:  'dev'
-      nodeArgs: ['--harmony', '--debug']
+      nodeArgs: [
+        '--harmony'
+        '--debug'
+      ]
       watch: ['server']
 
   prod:
-    script: 'server/prod.js'
+    script: 'server/server.js'
     options:
       env:
         NODE_ENV:     'production'
         NODE_CONFIG:  'prod'
-      nodeArgs: ['--harmony']
+      nodeArgs: [
+        '--harmony'
+      ]
       watch: ['server']

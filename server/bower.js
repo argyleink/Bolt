@@ -1,8 +1,8 @@
-module.exports = function(dir) {
+module.exports = dir => {
   var files = require("wiredep")({exclude: [/jquery/]})
 
   // the path is absolute (ick), fix it
-  var replaceBase = (path => path.replace(dir, ''))
+  var replaceBase = path => path.replace(dir, '')
 
   // The `bower_files.js` property holds files to be automatically
   // concatenated and minified with our project source files.

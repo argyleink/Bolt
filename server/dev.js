@@ -5,7 +5,7 @@ var app           = require('koa')()
   , sniffer       = require('snifferjs')
   
   , packageJson   = require('../package.json')
-  , bowerDeps     = require('./bower-deps')
+  , bowerDeps     = require('./bower')(__dirname.slice(0, __dirname.indexOf('/server')))
 
 app
   .use(jade.middleware({

@@ -7,10 +7,11 @@ var app           = require('koa')()
   
   , env           = process.env.NODE_CONFIG || 'dev'
   , packageJson   = require('../package.json')
+  , isDev         = env === 'dev'
   , baseDir       = __dirname.slice(0, __dirname.indexOf('/server'))
-  , bowerDeps     = require('./bower')(baseDir + (process.env.NODE_CONFIG === 'dev' ? '/app/' : 'app/'))
-  , buildDir      = './build/'+ (env === 'dev' ? 'dev' : 'www') +'/'
-  , port          = env === 'dev' ? 3030 : 3031
+  , bowerDeps     = require('./bower')(baseDir + (isDev ? '/app/' : 'app/'))
+  , buildDir      = './build/'+ (isDev ? 'dev' : 'www') +'/'
+  , port          = isDev ? 3030 : 3031
 
 app
   .use(jade.middleware({
@@ -20,7 +21,7 @@ app
       project:  packageJson,
       bower:    bowerDeps.js
     },
-    noCache:      true
+    noCache:      isDev ? true:false
   }))
   .use(router.routes())
   .use(serve(buildDir))

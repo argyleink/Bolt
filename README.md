@@ -5,6 +5,8 @@
 </p>
 
 # Goal
+
+[![Join the chat at https://gitter.im/argyleink/Bolt](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/argyleink/Bolt?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Offer a FAST, Grunt based, rather un-opinionated build system. Use it for whatever. The project seed I've made here is a cache heavy, smart loading, mobile first, front end static site project for ya. It comes with [Jade](http://jade-lang.com/) & [Stylus](http://learnboost.github.io/stylus/) as defaults, but swap it for whatever you want, easily. Or want more than 1 preprocessor, it's ready. At the end of the day, it's [Grunt](http://gruntjs.com/), do whatever you want. 
 
 ![Build Status](https://travis-ci.org/argyleink/Bolt.svg?branch=master)

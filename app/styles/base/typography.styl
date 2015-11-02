@@ -1,22 +1,24 @@
 html
-  fs:100%
+  font-size:100%
   line-height:1.5
-  font-family:'Roboto', sans-serif
+  font-family:$main-font-family
   color:$text-color
-  // -webkit-font-smoothing: antialiased
-  // font-smoothing: antialiased
+  -webkit-font-smoothing: antialiased
+  font-smoothing: antialiased
 
 body, p
   font-weight:300
-  fs:1.1rem
+  font-size:1.1rem
+  color: $text-color
 
 p.lead
-  fs:1.3rem
+  font-size:1.3rem
   font-weight:lighter
 
 .font-thin
   font-weight:100
   font-weight:lighter
+  font-family:$main-light-font-family
 
 .font-normal
   font-weight:300
@@ -27,30 +29,27 @@ p.lead
 
 h1,h2,h3,h4,h5,h6
   @extend .font-normal
-  color:white
+  color:$text-color
   margin:1rem 0
 
-a
-  link()
-
 h1
-  fs:4rem
-  
+  font-size:4rem
+
 h2
-  fs:3rem
-  
+  font-size:3rem
+
 h3
-  fs:2.5rem
-  
+  font-size:2.5rem
+
 h4
-  fs:2rem
-  
+  font-size:2rem
+
 h5
-  fs:1.5rem
-  
+  font-size:1.5rem
+
 h6
-  fs:1rem
-  
+  font-size:1rem
+
 .text-right
   text-align:right
 
@@ -65,13 +64,6 @@ h6
 
 .dark-text
   color: $dark-text-color
-  
-.hint-text
-  color: $light-text-color
-
-.highlight-text
-  color:white
-  border-bottom:1px dashed $brand-color
 
 .truncate
   white-space: nowrap

@@ -1,12 +1,7 @@
 extends _jade/layouts/page
 
 block content
-  article: section
-    h1 Bolt is working and ready!
+  section.text-center: h2.text-thin Bolt is working and ready!
 
-    //- node for client side jade template example to render into
-    //- see js/template-example.js
-    //- Bolt lets you use the same templates for static site generation as you do in your client templates
-    //- shared mixins, vars, etc
-    //- if you wanted, you could render the same jade on the server too!
-    #list-template-example
+  article: section
+    include _jade/includes/client-template-example

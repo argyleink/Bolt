@@ -1,3 +1,4 @@
+var App = App || {};
 App.ModuleTemplate = (function(){
 
   var foo = 'bar';

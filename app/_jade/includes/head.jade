@@ -2,7 +2,7 @@ head
   meta(charset='utf-8')
   meta(http-equiv='X-UA-Compatible', content='IE=edge')
   meta(
-    name='viewport', 
+    name='viewport',
     content='initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'
   )
   link(rel='icon', type='image/png', href='assets/icons/favicon.ico')
@@ -10,7 +10,10 @@ head
 
   //- Start Mobile Meta
   include mobile/handheld
-  include mobile/android-homescreen
-  include mobile/apple-homescreen
-  include mobile/ms-homescreen
-  include mobile/windows-phone-8
+
+  //- use the below imports if you're supporting "add to homescreen" ability
+  //
+    include mobile/android-homescreen
+    include mobile/apple-homescreen
+    include mobile/ms-homescreen
+    include mobile/windows-phone-8

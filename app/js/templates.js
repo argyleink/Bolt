@@ -1,5 +1,36 @@
-!function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.jade=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-'use strict';
+
+jade = (function(exports){
+/*!
+ * Jade - runtime
+ * Copyright(c) 2010 TJ Holowaychuk <tj@vision-media.ca>
+ * MIT Licensed
+ */
+
+/**
+ * Lame Array.isArray() polyfill for now.
+ */
+
+if (!Array.isArray) {
+  Array.isArray = function(arr){
+    return '[object Array]' == Object.prototype.toString.call(arr);
+  };
+}
+
+/**
+ * Lame Object.keys() polyfill for now.
+ */
+
+if (!Object.keys) {
+  Object.keys = function(obj){
+    var arr = [];
+    for (var key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        arr.push(key);
+      }
+    }
+    return arr;
+  }
+}
 
 /**
  * Merge two attribute objects giving precedence
@@ -14,13 +45,6 @@
  */
 
 exports.merge = function merge(a, b) {
-  if (arguments.length === 1) {
-    var attrs = a[0];
-    for (var i = 1; i < a.length; i++) {
-      attrs = merge(attrs, a[i]);
-    }
-    return attrs;
-  }
   var ac = a['class'];
   var bc = b['class'];
 
@@ -29,7 +53,9 @@ exports.merge = function merge(a, b) {
     bc = bc || [];
     if (!Array.isArray(ac)) ac = [ac];
     if (!Array.isArray(bc)) bc = [bc];
-    a['class'] = ac.concat(bc).filter(nulls);
+    ac = ac.filter(nulls);
+    bc = bc.filter(nulls);
+    a['class'] = ac.concat(bc).join(' ');
   }
 
   for (var key in b) {
@@ -44,103 +70,14 @@ exports.merge = function merge(a, b) {
 /**
  * Filter null `val`s.
  *
- * @param {*} val
- * @return {Boolean}
+ * @param {Mixed} val
+ * @return {Mixed}
  * @api private
  */
 
 function nulls(val) {
-  return val != null && val !== '';
+  return val != null;
 }
-
-/**
- * join array as classes.
- *
- * @param {*} val
- * @return {String}
- */
-exports.joinClasses = joinClasses;
-function joinClasses(val) {
-  return (Array.isArray(val) ? val.map(joinClasses) :
-    (val && typeof val === 'object') ? Object.keys(val).filter(function (key) { return val[key]; }) :
-    [val]).filter(nulls).join(' ');
-}
-
-/**
- * Render the given classes.
- *
- * @param {Array} classes
- * @param {Array.<Boolean>} escaped
- * @return {String}
- */
-exports.cls = function cls(classes, escaped) {
-  var buf = [];
-  for (var i = 0; i < classes.length; i++) {
-    if (escaped && escaped[i]) {
-      buf.push(exports.escape(joinClasses([classes[i]])));
-    } else {
-      buf.push(joinClasses(classes[i]));
-    }
-  }
-  var text = joinClasses(buf);
-  if (text.length) {
-    return ' class="' + text + '"';
-  } else {
-    return '';
-  }
-};
-
-
-exports.style = function (val) {
-  if (val && typeof val === 'object') {
-    return Object.keys(val).map(function (style) {
-      return style + ':' + val[style];
-    }).join(';');
-  } else {
-    return val;
-  }
-};
-/**
- * Render the given attribute.
- *
- * @param {String} key
- * @param {String} val
- * @param {Boolean} escaped
- * @param {Boolean} terse
- * @return {String}
- */
-exports.attr = function attr(key, val, escaped, terse) {
-  if (key === 'style') {
-    val = exports.style(val);
-  }
-  if ('boolean' == typeof val || null == val) {
-    if (val) {
-      return ' ' + (terse ? key : key + '="' + key + '"');
-    } else {
-      return '';
-    }
-  } else if (0 == key.indexOf('data') && 'string' != typeof val) {
-    if (JSON.stringify(val).indexOf('&') !== -1) {
-      console.warn('Since Jade 2.0.0, ampersands (`&`) in data attributes ' +
-                   'will be escaped to `&amp;`');
-    };
-    if (val && typeof val.toISOString === 'function') {
-      console.warn('Jade will eliminate the double quotes around dates in ' +
-                   'ISO form after 2.0.0');
-    }
-    return ' ' + key + "='" + JSON.stringify(val).replace(/'/g, '&apos;') + "'";
-  } else if (escaped) {
-    if (val && typeof val.toISOString === 'function') {
-      console.warn('Jade will stringify dates in ISO form after 2.0.0');
-    }
-    return ' ' + key + '="' + exports.escape(val) + '"';
-  } else {
-    if (val && typeof val.toISOString === 'function') {
-      console.warn('Jade will stringify dates in ISO form after 2.0.0');
-    }
-    return ' ' + key + '="' + val + '"';
-  }
-};
 
 /**
  * Render the given attributes object.
@@ -148,28 +85,42 @@ exports.attr = function attr(key, val, escaped, terse) {
  * @param {Object} obj
  * @param {Object} escaped
  * @return {String}
+ * @api private
  */
-exports.attrs = function attrs(obj, terse){
-  var buf = [];
 
-  var keys = Object.keys(obj);
+exports.attrs = function attrs(obj, escaped){
+  var buf = []
+    , terse = obj.terse;
 
-  if (keys.length) {
-    for (var i = 0; i < keys.length; ++i) {
+  delete obj.terse;
+  var keys = Object.keys(obj)
+    , len = keys.length;
+
+  if (len) {
+    buf.push('');
+    for (var i = 0; i < len; ++i) {
       var key = keys[i]
         , val = obj[key];
 
-      if ('class' == key) {
-        if (val = joinClasses(val)) {
-          buf.push(' ' + key + '="' + val + '"');
+      if ('boolean' == typeof val || null == val) {
+        if (val) {
+          terse
+            ? buf.push(key)
+            : buf.push(key + '="' + key + '"');
         }
+      } else if (0 == key.indexOf('data') && 'string' != typeof val) {
+        buf.push(key + "='" + JSON.stringify(val) + "'");
+      } else if ('class' == key && Array.isArray(val)) {
+        buf.push(key + '="' + exports.escape(val.join(' ')) + '"');
+      } else if (escaped && escaped[key]) {
+        buf.push(key + '="' + exports.escape(val) + '"');
       } else {
-        buf.push(exports.attr(key, val, false, terse));
+        buf.push(key + '="' + val + '"');
       }
     }
   }
 
-  return buf.join('');
+  return buf.join(' ');
 };
 
 /**
@@ -181,13 +132,11 @@ exports.attrs = function attrs(obj, terse){
  */
 
 exports.escape = function escape(html){
-  var result = String(html)
-    .replace(/&/g, '&amp;')
+  return String(html)
+    .replace(/&(?!(\w+|\#\d+);)/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
-  if (result === '' + html) return html;
-  else return result;
 };
 
 /**
@@ -200,18 +149,11 @@ exports.escape = function escape(html){
  * @api private
  */
 
-exports.rethrow = function rethrow(err, filename, lineno, str){
-  if (!(err instanceof Error)) throw err;
-  if ((typeof window != 'undefined' || !filename) && !str) {
-    err.message += ' on line ' + lineno;
-    throw err;
-  }
-  try {
-    str = str || require('fs').readFileSync(filename, 'utf8')
-  } catch (ex) {
-    rethrow(err, null, lineno)
-  }
+exports.rethrow = function rethrow(err, filename, lineno){
+  if (!filename) throw err;
+
   var context = 3
+    , str = require('fs').readFileSync(filename, 'utf8')
     , lines = str.split('\n')
     , start = Math.max(lineno - context, 0)
     , end = Math.min(lines.length, lineno + context);
@@ -232,71 +174,71 @@ exports.rethrow = function rethrow(err, filename, lineno, str){
   throw err;
 };
 
-},{"fs":2}],2:[function(require,module,exports){
+  return exports;
 
-},{}]},{},[1])(1)
-});
+})({});
+
 jade.templates = {};
 jade.render = function(node, template, data) {
   var tmp = jade.templates[template](data);
   node.innerHTML = tmp;
 };
-jade.renderString = function(template, data) {
-  return jade.templates[template](data);
-};
-jade.templates["list"] = function(locals) {
+
+jade.templates["list"] = function(locals, attrs, escape, rethrow, merge
+/**/) {
+attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
-var jade_mixins = {};
-var jade_interp;
-;var locals_for_with = (locals || {});(function (items, undefined) {
-jade_mixins["detailItem"] = function(data){
-var block = (this && this.block), attributes = (this && this.attributes) || {};
-buf.push("<dt><h5>" + (jade.escape(null == (jade_interp = data.title) ? "" : jade_interp)) + "</h5></dt>");
+with (locals || {}) {
+var interp;
+var detailItem_mixin = function(data){
+var block = this.block, attributes = this.attributes || {}, escaped = this.escaped || {};
+buf.push('<dt><h5>');
+var __val__ = data.title
+buf.push(escape(null == __val__ ? "" : __val__));
+buf.push('</h5></dt>');
 // iterate data.details
 ;(function(){
-  var $$obj = data.details;
-  if ('number' == typeof $$obj.length) {
+  if ('number' == typeof data.details.length) {
+    for (var $index = 0, $$l = data.details.length; $index < $$l; $index++) {
+      var detail = data.details[$index];
 
-    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
-      var detail = $$obj[$index];
-
-buf.push("<dd class=\"hint-text\">" + (jade.escape(null == (jade_interp = detail) ? "" : jade_interp)) + "</dd>");
+buf.push('<dd class="hint-text">');
+var __val__ = detail
+buf.push(escape(null == __val__ ? "" : __val__));
+buf.push('</dd>');
     }
-
   } else {
-    var $$l = 0;
-    for (var $index in $$obj) {
-      $$l++;      var detail = $$obj[$index];
+    for (var $index in data.details) {
+      var detail = data.details[$index];
 
-buf.push("<dd class=\"hint-text\">" + (jade.escape(null == (jade_interp = detail) ? "" : jade_interp)) + "</dd>");
-    }
-
+buf.push('<dd class="hint-text">');
+var __val__ = detail
+buf.push(escape(null == __val__ ? "" : __val__));
+buf.push('</dd>');
+   }
   }
 }).call(this);
 
 };
-buf.push("<dl>");
+buf.push('<dl>');
 // iterate items
 ;(function(){
-  var $$obj = items;
-  if ('number' == typeof $$obj.length) {
+  if ('number' == typeof items.length) {
+    for (var $index = 0, $$l = items.length; $index < $$l; $index++) {
+      var item = items[$index];
 
-    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
-      var item = $$obj[$index];
-
-jade_mixins["detailItem"](item);
+detailItem_mixin(item);
     }
-
   } else {
-    var $$l = 0;
-    for (var $index in $$obj) {
-      $$l++;      var item = $$obj[$index];
+    for (var $index in items) {
+      var item = items[$index];
 
-jade_mixins["detailItem"](item);
-    }
-
+detailItem_mixin(item);
+   }
   }
 }).call(this);
 
-buf.push("</dl>");}.call(this,"items" in locals_for_with?locals_for_with.items:typeof items!=="undefined"?items:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined));;return buf.join("");
+buf.push('</dl>');
+}
+return buf.join("");
 }

@@ -1,4 +1,4 @@
-var App = {};
+var App = App || {};
 App.TemplateExample = (function(){
 
   var listViewContainer = document.getElementById('list-template-example');

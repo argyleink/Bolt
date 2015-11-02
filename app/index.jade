@@ -1,33 +1,12 @@
 extends _jade/layouts/page
-include _jade/mixins/link
 
 block content
-	include _jade/includes/nav
+  article: section
+    h1 Bolt is working and ready!
 
-	header.text-center
-		include _jade/includes/svg/bolt
-
-	article
-		section
-			include _jade/demo/intro
-
-		section
-			include _jade/demo/included
-
-		section
-			h1.text-center: u Features
-			
-			dl.checklist
-				include _jade/demo/mobile-first
-				include _jade/demo/axis
-				include _jade/demo/polyfills
-				include _jade/demo/typography
-				include _jade/demo/svg
-				include _jade/demo/buttons
-				include _jade/demo/templates
-				include _jade/demo/cruft
-
-		section.text-center
-			include _jade/demo/by
-
-	footer
+    //- node for client side jade template example to render into
+    //- see js/template-example.js
+    //- Bolt lets you use the same templates for static site generation as you do in your client templates
+    //- shared mixins, vars, etc
+    //- if you wanted, you could render the same jade on the server too!
+    #list-template-example

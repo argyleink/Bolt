@@ -13,8 +13,6 @@
     "app/js/bower"
   ],
   "dependencies": {
-    "device-detect.js": "*",
-    "flexboxgrid": "*",
-    "velocity": "*"
+    "flexboxgrid": "*"
   }
 }

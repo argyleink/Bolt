@@ -5,8 +5,12 @@ module.exports =
     files:
       "<%= build_dir %>/js/lib.min.js":         "<%= bower_files.js %>"
       "<%= build_dir %>/js/app.min.js":         "<%= app_files.js.app %>"
-      "<%= build_dir %>/js/polyfill.js":        "<%= app_files.js.polyfills %>"
-      
+      # if you want 1 output file, use the below setup
+      # "<%= build_dir %>/js/app.min.js": [
+      #   "<%= bower_files.js %>"
+      #   "<%= app_files.js.app %>"
+      # ]
+
   # dev build is using jade imports for easy debug, see scripts.jade
   dev:
     options:
@@ -15,5 +19,3 @@ module.exports =
       beautify:         true
       preserveComments: 'all'
       sourceMap:        true
-    files:
-      "<%= build_dir %>/js/polyfill.js":        "<%= app_files.js.polyfills %>"

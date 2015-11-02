@@ -38,6 +38,7 @@
     "jade-inheritance": "^0.2.1",
     "jit-grunt": "^0.9.1",
     "load-grunt-configs": "^0.4.3",
+    "quaff": "^1.1.0",
     "time-grunt": "^1.2.2",
     "wiredep": "^2.2.2"
   }

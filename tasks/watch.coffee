@@ -1,7 +1,6 @@
 module.exports =
   options:
     livereload: false
-    spawn: false
 
   css:
     files: ["<%= app_dir %>/styles/**/*.styl"]
@@ -20,7 +19,11 @@ module.exports =
     tasks: ["newer:copy:dev"]
 
   html:
-    files: ["<%= app_dir %>/**/*.jade", "!<%= app_dir %>/templates/**/*.jade"]
+    files: [
+      "<%= app_dir %>/**/*.jade",
+      "data/**/*",
+      "!<%= app_dir %>/templates/**/*.jade"
+    ]
     tasks: ["jade:dev"]
 
   templates:

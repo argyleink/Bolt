@@ -17,10 +17,17 @@ module.exports =
   html:
     files: [
       "<%= dirs.base %>/**/*.jade",
-      "data/**/*",
       "!<%= dirs.base %>/client-templates/**/*.jade"
     ]
     tasks: ["jade:dev"]
+    options:
+      nospawn: true
+
+  data:
+    files: "data/**/*"
+    tasks: ["jade:dev"]
+    options:
+      nospawn: false
 
   templates:
     files: ["<%= dirs.base %>/_jade/client-templates/**/*.jade"]

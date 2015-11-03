@@ -13,7 +13,7 @@ module.exports = (grunt) ->
   ])
 
   # load special jade tool so just what changed is processed
-  require("./tasks/jade-inheritance.coffee")(grunt, buildConfig)
+  require("./tasks/jade-inheritance.coffee")(grunt)
 
   # Merge all tasks and build config together and then init
   grunt.initConfig grunt.util._.extend(tasks, buildConfig)

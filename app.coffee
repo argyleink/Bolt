@@ -6,6 +6,7 @@ module.exports = (grunt) ->
   dirs:
     base:   "app"
     build:  "build/" + if grunt.option("prod") then "www" else "dev"
+    bower:  "/js/bower"
 
   # This is the comment that is placed at the top of compiled files
   banner:
@@ -17,7 +18,14 @@ module.exports = (grunt) ->
   # This is a collection of files for reference in our tasks
   app:
     js:
-      lib: []
+      ###
+        bower libs, downloaded libs, etc.
+        Manually managed now, since bower main files are not dependable
+      ###
+      lib: [
+        # "<%= dirs.bower %>/js/templates.js"
+      ]
+      # app js files
       src: [
         "<%= dirs.base %>/js/templates.js"
         "<%= dirs.base %>/js/template-example.js"
@@ -25,8 +33,9 @@ module.exports = (grunt) ->
       ]
 
     css:
+      # path is relative to deployed styles/ directory
       lib: [
-        "../js/bower/flexboxgrid/dist/flexboxgrid.css"
+        "..<%= dirs.bower %>/flexboxgrid/dist/flexboxgrid.css"
       ]
 
     ###
@@ -38,6 +47,9 @@ module.exports = (grunt) ->
       "manifest.json"
     ]
 
+    ###
+      Below manage your preprocessor file locations and files
+    ###
     jade: [
       expand: true
       cwd:    "<%= dirs.base %>"

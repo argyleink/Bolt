@@ -1,7 +1,7 @@
 module.exports = (grunt) ->
-
   require("time-grunt")(grunt)
   require("jit-grunt")(grunt)
+  require("./jade-inheritance.coffee")(grunt)
 
   # loads file paths and other build configurations
   buildConfig = require("./app.coffee")(grunt)
@@ -9,11 +9,7 @@ module.exports = (grunt) ->
   # load your tasks, allows them to be in separate files for cleanliness
   tasks = require("load-grunt-configs")(grunt, config: src: [
     "tasks/*.coffee"
-    "!tasks/jade-inheritance.coffee"
   ])
-
-  # load special jade tool so just what changed is processed
-  require("./tasks/jade-inheritance.coffee")(grunt)
 
   # Merge all tasks and build config together and then init
   grunt.initConfig grunt.util._.extend(tasks, buildConfig)
@@ -33,15 +29,21 @@ module.exports = (grunt) ->
   ###
 
   grunt.registerTask "default", "Master task", ->
-    grunt.task.run ["clean", "shell:clientjade"]
-    grunt.task.run "concurrent:#{env}_Preprocessors"
+    grunt.task.run [
+      "clean"
+      "shell:clientjade"
+      "stylus:#{env}"
+      "jade:#{env}"
+    ]
 
     if env == "prod" then grunt.task.run ["purifycss", "concurrent:shrink", "manifest"]
 
-    grunt.task.run "copy:#{env}"
-    grunt.task.run "notify:#{env}"
-    grunt.task.run "connect:#{env}"
-    grunt.task.run "asciify:headline"
+    grunt.task.run [
+      "copy:#{env}"
+      "notify:#{env}"
+      "connect:#{env}"
+      # "asciify:headline"
+    ]
 
     if env != "prod" then grunt.task.run "browserSync"
     if env == "prod" then grunt.task.run "shell:open_#{env}"

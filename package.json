@@ -9,9 +9,6 @@
     "type": "git",
     "url": "https://github.com/argyleink/Bolt"
   },
-  "scripts": {
-    "postinstall": "node_modules/.bin/bower i && grunt"
-  },
   "devDependencies": {
     "autoprefixer-stylus": "^0.8.1",
     "clientjade": "^0.1.1",
@@ -39,7 +36,6 @@
     "jit-grunt": "^0.9.1",
     "load-grunt-configs": "^0.4.3",
     "quaff": "^1.1.0",
-    "time-grunt": "^1.2.2",
-    "wiredep": "^2.2.2"
+    "time-grunt": "^1.2.2"
   }
 }

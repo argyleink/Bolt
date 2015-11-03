@@ -59,7 +59,11 @@ module.exports = (grunt) ->
     ]
 
     stylus: [
-      "<%= dirs.build %>/styles/app.css":"<%= dirs.base %>/styles/master.styl"
+      "<%= dirs.build %>/styles/app.css":      "<%= dirs.base %>/styles/master.styl"
+      # below you can create your own additional css files for browser hacks, polyfills, etc
+      # "<%= dirs.build %>/styles/ios.css":      "<%= dirs.base %>/styles/browser/ios.styl"
+      # "<%= dirs.build %>/styles/ie10.css":     "<%= dirs.base %>/styles/browser/ie10.styl"
+      # "<%= dirs.build %>/styles/android.css":  "<%= dirs.base %>/styles/browser/android.styl"
     ]
 
     stylus_plugins: [

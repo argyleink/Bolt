@@ -24,7 +24,7 @@ module.exports =
       nospawn: true
 
   data:
-    files: "data/**/*"
+    files: "<%= dirs.base %>/data/**/*"
     tasks: ["jade:dev"]
     options:
       nospawn: false

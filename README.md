@@ -53,7 +53,6 @@ This project's default setup is for creating static sites to be hosted somewhere
 - YAML data files are fed directly into your static site template system as JSON
 - [Mobile first](https://github.com/argyleink/Bolt/blob/master/app/styles/base/_vars.styl)
 - [Flexboxgrid](http://flexboxgrid.com/) library preloaded
-- Jade [clientside templating](https://github.com/argyleink/Bolt/tree/master/app/_jade/client-templates) ready (Jade all the things!)
 - Extensable [Jade page](https://github.com/argyleink/Bolt/blob/master/app/_jade/layouts/page.jade) structure
 - Great [Stylus base](https://github.com/argyleink/Bolt/tree/master/app/styles)
 - Tons of [mobile header](https://github.com/argyleink/Bolt/tree/master/app/_jade/includes/mobile) and icons, tested and ready

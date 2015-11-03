@@ -1,5 +1,5 @@
-module.exports = 
-  dev:
+module.exports =
+  build:
     files: [
-      src: ["<%= build_dir %>/**/*"]
+      src: ["<%= dirs.build %>/**/*"]
     ]

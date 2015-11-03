@@ -1,17 +1,14 @@
 module.exports =
-  dev_StylusJadeUglify: [
-    "uglify:dev"
+  dev_Preprocessors: [
     "stylus:dev"
     "jade:dev"
-    "shell:clientjade"
   ]
-  prod_StylusJadeUglify: [
-    "uglify:prod"
+  prod_Preprocessors: [
     "stylus:prod"
     "jade:prod"
-    "shell:clientjade"
   ]
   shrink: [
+    "uglify:prod"
     "csso"
     "imagemin"
     "svgmin"

@@ -33,8 +33,8 @@ module.exports = (grunt) ->
   ###
 
   grunt.registerTask "default", "Master task", ->
-    grunt.task.run ["clean"]
-    grunt.task.run "concurrent:#{env}_StylusJadeUglify"
+    grunt.task.run ["clean", "shell:clientjade"]
+    grunt.task.run "concurrent:#{env}_Preprocessors"
 
     if env == "prod" then grunt.task.run ["purifycss", "concurrent:shrink", "manifest"]
 

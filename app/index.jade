@@ -1,33 +1,12 @@
 extends _jade/layouts/page
-include _jade/mixins/link
 
 block content
-	include _jade/includes/nav
+  header.row.center-xs.middle-xs
+    h2.col-xs.text-thin Bolt is working and ready!
 
-	header.text-center
-		include _jade/includes/svg/bolt
-
-	article
-		section
-			include _jade/demo/intro
-
-		section
-			include _jade/demo/included
-
-		section
-			h1.text-center: u Features
-			
-			dl.checklist
-				include _jade/demo/mobile-first
-				include _jade/demo/axis
-				include _jade/demo/polyfills
-				include _jade/demo/typography
-				include _jade/demo/svg
-				include _jade/demo/buttons
-				include _jade/demo/templates
-				include _jade/demo/cruft
-
-		section.text-center
-			include _jade/demo/by
-
-	footer
+  article: section
+    h5 Thanks for using it! Feedback is very welcome! Follow me on:
+    dl
+      each item in data.social
+        dt= item.name
+        dd: +link(item.username, item.url, true)

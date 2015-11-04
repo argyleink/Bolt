@@ -1,8 +1,8 @@
-module.exports = 
+module.exports =
   images:
     files: [
       expand: true
-      cwd:    "<%= app_dir %>/assets/"
-      src:    ["**/*.{jpg,png,gif,jpeg,ico}"]
-      dest:   "<%= build_dir %>/assets/"
+      cwd:    "<%= dirs.base %>/assets/"
+      src:    ["**/*.{jpg,png,gif,jpeg,ico,webp}"]
+      dest:   "<%= dirs.build %>/assets/"
     ]

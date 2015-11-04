@@ -1,14 +1,13 @@
 if dev
-  //- load libs from build.coffee vendor_files object array
-  each path in bower
+  //- load libs bower
+  each path in libs
     script(src=path)
 
-  script(src='js/templates.js')
-  script(src='js/app.js')
-  //- more of your app scripts here!
-  script(src='js/template-example.js')
-  
+  //- load app js files from app.coffee
+  //- little hacky, but need to remove the "app/" part of the file path, only during dev
+  each file in app_files.js.src
+    - file = file.substr(4, file.length)
+    script(src=file)
+
 else
-  //- dont let libs get too big =)
-  script(src='js/lib.min.js')
   script(src='js/app.min.js', async)

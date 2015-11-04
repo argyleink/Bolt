@@ -1,38 +1,39 @@
-module.exports = 
+module.exports =
   dev:
     files: [
+      # copy app js
       expand: true
-      cwd:    "<%= app_dir %>/js"
-      src:    ["*.js", "!shiv.js"]
-      dest:   "<%= build_dir %>/js"
+      cwd:    "<%= dirs.base %>/js"
+      src:    ["*.js"]
+      dest:   "<%= dirs.build %>/js"
     ,
+      # copy app bower js
       expand: true
-      cwd:    "<%= app_dir %>"
-      src:    "<%= bower_files.js %>"
-      dest:   "<%= build_dir %>"
+      cwd:    "<%= dirs.base %>"
+      src:    "<%= app.js.lib %>"
+      dest:   "<%= dirs.build %><%= dirs.bower %>"
     ,
+      # copy media/pictures/fonts
       expand: true
-      cwd:    "<%= app_dir %>/js"
-      src:    "<%= bower_files.dev_css %>"
-      dest:   "<%= build_dir %>/styles"
-    ,
-      expand: true
-      cwd:    "<%= app_dir %>/assets"
+      cwd:    "<%= dirs.base %>/assets"
       src:    ["**/*"]
-      dest:   "<%= build_dir %>/assets"
+      dest:   "<%= dirs.build %>/assets"
     ,
+      # copy app manifests, configs, crawlers, etc
       expand: true
-      cwd:    "<%= app_dir %>/"
-      src:    "<%= app_files.assets %>"
-      dest:   "<%= build_dir %>/"
+      cwd:    "<%= dirs.base %>/"
+      src:    "<%= app.assets %>"
+      dest:   "<%= dirs.build %>/"
     ]
 
   prod:
     files: [
-      # prod mostly just copies assets (.txt, .mov, .mp3, etc)
-      # things that dont get crunched but are assets that need served
+      ###
+        prod mostly just copies assets (.txt, .mov, .mp3, etc)
+        everything else is crunched and put in the build dir
+      ###
       expand: true
-      cwd:    "<%= app_dir %>/"
-      src:    "<%= app_files.assets %>"
-      dest:   "<%= build_dir %>/"
+      cwd:    "<%= dirs.base %>/"
+      src:    "<%= app.assets %>"
+      dest:   "<%= dirs.build %>/"
     ]

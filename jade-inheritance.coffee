@@ -1,18 +1,20 @@
-module.exports = (grunt, config) ->
+module.exports = (grunt) ->
   JadeInheritance   = require('jade-inheritance')
   changedFiles      = []
-  base_dir          = config.app_dir
-  jade_config       = config.app_files.jade[0]
 
   onChange = grunt.util._.debounce((->
+    options = grunt.config "jade.dev.options"
     dependantFiles = []
 
     changedFiles.forEach (filename) ->
-      inheritance = new JadeInheritance filename, base_dir, basedir: base_dir
+      inheritance = new JadeInheritance filename, options.basedir, options
       dependantFiles = dependantFiles.concat inheritance.files
+      console.log dependantFiles
 
-    jade_config.src = dependantFiles
-    grunt.config 'jade.compile.files', [ jade_config ]
+    config = grunt.config("jade.dev.files")[0]
+    config.src = dependantFiles
+    grunt.config 'jade.dev.files', [config]
+
     changedFiles = []
   ), 200)
 

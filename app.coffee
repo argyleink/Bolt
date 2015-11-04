@@ -27,7 +27,6 @@ module.exports = (grunt) ->
       ]
       # app js files
       src: [
-        "<%= dirs.base %>/js/template-example.js"
         "<%= dirs.base %>/js/app.js"
       ]
 
@@ -58,7 +57,7 @@ module.exports = (grunt) ->
     ]
 
     stylus: [
-      "<%= dirs.build %>/styles/app.css":      "<%= dirs.base %>/styles/master.styl"
+      "<%= dirs.build %>/styles/app.css":        "<%= dirs.base %>/styles/master.styl"
       # below you can create your own additional css files for browser hacks, polyfills, etc
       # "<%= dirs.build %>/styles/ios.css":      "<%= dirs.base %>/styles/browser/ios.styl"
       # "<%= dirs.build %>/styles/ie10.css":     "<%= dirs.base %>/styles/browser/ie10.styl"

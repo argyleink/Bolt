@@ -5,27 +5,30 @@
 </p>
 
 # Goal
-Offer a **fast**, Grunt based, malleable build system. Use it for any project architecture. The project seed I've made here is a cache heavy, smart loading, mobile first, front end static site seed. It comes with [Jade](http://jade-lang.com/) & [Stylus](http://learnboost.github.io/stylus/) as defaults, but swap it for whatever you want, no limits. Or want more than 1 preprocessor, it's ready. At the end of the day, it's [Grunt](http://gruntjs.com/), do whatever you want. Add tasks, take care of business.
+Offer a **fast**, Grunt based, data driven malleable static build system. Use it for any project architecture. 
+
+## Overview
+This project seed is cache heavy, smart loading, and mobile first out of the box. [Jade](http://jade-lang.com/) & [Stylus](http://learnboost.github.io/stylus/) are the preprocessor defaults, but swap it for whatever you want, no limits. Want more than 1 preprocessor, it's ready. At the end of the day, it's [Grunt](http://gruntjs.com/), do whatever you want. Add tasks, take care of business.
 
 ![Build Status](https://travis-ci.org/argyleink/Bolt.svg?branch=master)
 
-## Overview
-This project's default setup is for creating static sites to be hosted somewhere on the web. This could be a webview hybrid app, single page app, marketing site, who cares. This tool comes with all the tips, tricks, meta data, and automated tasks that help you build quick and efficient front ends across browsers.
+#### Required
+- [Node.js](http://nodejs.org/) and NPM
+- [Grunt](http://gruntjs.com/)
+- [Bower](http://bower.io/)
+- [Bolt CLI](https://github.com/argyleink/Bolt-cli): optional, but handy
 
 #### Quickstart
-- Have [Node.js](http://nodejs.org/) and NPM
-- Have [Grunt](http://gruntjs.com/)
-- Have [Bower](http://bower.io/)
-- Optionally have the [Bolt CLI](https://github.com/argyleink/Bolt-cli)
-- See the [Wiki](https://github.com/argyleink/Bolt/wiki)
-
-##### **Install Bolt's required Node modules**:  
-`npm i`  
+1. `npm i -g bolt-cli`: very small simple tool to install bolt into directories
+2. `bolt new my_site`: my_site should be replaced with your project name
+3. `cd bolt-test && npm i && bower i`: install bolt dependencies
+4. `grunt`: spin it up!
+5. See the [Wiki](https://github.com/argyleink/Bolt/wiki)
 
 ## Build Features
-- Dev builds are extremely legible, source mapped, and ready for debugging with your tools `grunt`
+- Dev builds are extremely legible, source mapped, and ready for debugging with your tools
 - Production builds squish the crap out [images,css,html,js,svg] `grunt --prod`
-- Dev and Prod builds have their own output directory, they don't share a `dist/` folder. No need for each environments build to squash the other.
+- Dev and Prod builds have their own output directory, they don't share a `dist/` folder. No need for one build to squash the other.
 - Very fast, [concurrent Grunt tasks](https://github.com/argyleink/Bolt/blob/master/tasks/concurrent.coffee), with jit a plugin for really fast watch task running
 - Concise [Grunt main file](https://github.com/argyleink/Bolt/blob/master/gruntfile.coffee)
 - [Grunt tasks](https://github.com/argyleink/Bolt/tree/master/tasks) are individual, short, easy as hell to read, and a breeze to create
@@ -35,9 +38,9 @@ This project's default setup is for creating static sites to be hosted somewhere
 - BrowserSync Weinre remote inspect built in
 - Externally accessible server
 - Proper [Jade inheritance](https://github.com/paulyoung/jade-inheritance) compilation, so 1 file changed doesn't require the whole project to compile
-- Data driven front end with YAML, powerful combo YAML & Jade
+- Data driven front end development with YAML and/or JSON
 - [Auto generated](https://github.com/argyleink/Bolt/blob/master/tasks/manifest.coffee) HTML5 appcache for production builds
-- Autoprefixed stylus
+- Autoprefixed Stylus
 - Git tagging and releasing `grunt bump`
 - Easily create custom [build notifications](https://github.com/argyleink/Bolt/blob/master/tasks/notify.coffee)
 - Customize your crunched files comment banner

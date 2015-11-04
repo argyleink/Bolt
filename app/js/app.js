@@ -1,8 +1,15 @@
 var App = App || {};
 App.Startup = (function(){
+  // private vars
+  var foo = 'bar';
 
-  window.onload = function(){
-    App.TemplateExample.render();
+  function privateMethod() {}
+
+  function publicMethod() {
+    return foo;
   }
 
+  return {
+    name: publicMethod
+  }
 })();

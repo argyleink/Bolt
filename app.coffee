@@ -27,7 +27,6 @@ module.exports = (grunt) ->
       ]
       # app js files
       src: [
-        "<%= dirs.base %>/js/templates.js"
         "<%= dirs.base %>/js/template-example.js"
         "<%= dirs.base %>/js/app.js"
       ]

@@ -31,7 +31,6 @@ module.exports = (grunt) ->
   grunt.registerTask "default", "Master task", ->
     grunt.task.run [
       "clean"
-      "shell:clientjade"
       "stylus:#{env}"
       "jade:#{env}"
     ]
@@ -42,7 +41,7 @@ module.exports = (grunt) ->
       "copy:#{env}"
       "notify:#{env}"
       "connect:#{env}"
-      # "asciify:headline"
+      "asciify:headline"
     ]
 
     if env != "prod" then grunt.task.run "browserSync"

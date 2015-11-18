@@ -4,9 +4,7 @@ if dev
     script(src=path)
 
   //- load app js files from app.coffee
-  //- little hacky, but need to remove the "app/" part of the file path, only during dev
   each file in app_files.js.src
-    - file = file.substr(4, file.length)
     script(src=file)
 
 else

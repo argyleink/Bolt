@@ -3,13 +3,13 @@ module.exports =
     files: [
       # copy app js
       expand: true
-      cwd:    "<%= dirs.base %>/js"
-      src:    ["*.js"]
-      dest:   "<%= dirs.build %>/js"
+      cwd:    "<%= dirs.base %>"
+      src:    "<%= app.js.src %>"
+      dest:   "<%= dirs.build %>"
     ,
       # copy app bower js
       expand: true
-      cwd:    "<%= dirs.base %>"
+      cwd:    "<%= dirs.base %><%= dirs.bower %>"
       src:    "<%= app.js.lib %>"
       dest:   "<%= dirs.build %><%= dirs.bower %>"
     ,

@@ -23,11 +23,11 @@ module.exports = (grunt) ->
         Manually managed now, since bower main files are not dependable
       ###
       lib: [
-        # "<%= dirs.bower %>/flexboxgrid/dist/file.js"
+        # "flexboxgrid/dist/file.js"
       ]
       # app js files
       src: [
-        "<%= dirs.base %>/js/app.js"
+        "js/app.js"
       ]
 
     css:

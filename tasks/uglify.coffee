@@ -7,6 +7,6 @@ module.exports =
         drop_console: true
     files:
       "<%= dirs.build %>/js/app.min.js": [
-        "<%= app.js.lib %>"
-        "<%= app.js.src %>"
+        "{<%= _prefixSrc(dirs.base, app.js.lib) %>}"
+        "{<%= _prefixSrc(dirs.base, app.js.src) %>}"
       ]

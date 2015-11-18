@@ -23,7 +23,7 @@ module.exports = (grunt) ->
         Manually managed now, since bower main files are not dependable
       ###
       lib: [
-        # "js/bower/flexboxgrid/dist/file.js"
+        # "js/bower/bower_package/bower_file_you_need.js"
       ]
       # app js files
       src: [
@@ -75,3 +75,6 @@ module.exports = (grunt) ->
         ]
       )
     ]
+
+  # helper to fix paths for uglify concat/minify task which has a picky config
+  _prefixSrc: (prefix, files) -> files.map (file) -> prefix + '/' + file

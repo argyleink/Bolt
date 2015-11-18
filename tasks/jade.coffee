@@ -4,7 +4,6 @@ module.exports =
     options:
       data:
         dev:        true
-        libs:       "<%= app.js.lib %>"
         project:    "<%= pkg %>"
         app_files:  "<%= app %>"
         data:       require("quaff")("app/data/")

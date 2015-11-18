@@ -9,9 +9,9 @@ module.exports =
     ,
       # copy app bower js
       expand: true
-      cwd:    "<%= dirs.base %><%= dirs.bower %>"
+      cwd:    "<%= dirs.base %>"
       src:    "<%= app.js.lib %>"
-      dest:   "<%= dirs.build %><%= dirs.bower %>"
+      dest:   "<%= dirs.build %>"
     ,
       # copy media/pictures/fonts
       expand: true

@@ -3,17 +3,19 @@ module.exports =
     options:
       compress:       false
       "include css":  true
-      define:         bower: "<%= app.css.lib %>"
+      "resolve url":  true
       use:            "<%= app.stylus_plugins %>"
+      define:
+        prod:   true
+        libs:   "<%= app.css.lib %>"
 
     files: "<%= app.stylus %>"
 
   dev:
     options:
       compress:       false
-      "include css":  true
-      define:         bower: "<%= app.css.lib %>"
       use:            "<%= app.stylus_plugins %>"
       sourcemap:      inline: true
+      define:         prod: false
 
     files: "<%= app.stylus %>"

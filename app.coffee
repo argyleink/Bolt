@@ -33,7 +33,7 @@ module.exports = (grunt) ->
     css:
       # path is relative to deployed styles/ directory
       lib: [
-        "..<%= dirs.bower %>/flexboxgrid/dist/flexboxgrid.css"
+        "js/bower/flexboxgrid/dist/flexboxgrid.css"
       ]
 
     ###

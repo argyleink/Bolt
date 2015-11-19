@@ -76,5 +76,11 @@ module.exports = (grunt) ->
       )
     ]
 
-  # helper to fix paths for uglify concat/minify task which has a picky config
-  _prefixSrc: (prefix, files) -> files.map (file) -> prefix + '/' + file
+  helpers:
+    prefixAndConcatProdJS: ->
+      config  = grunt.config.get "app"
+      dirs    = grunt.config.get "dirs"
+      # merge the arrays, then map paths with the base dir for uglify
+      return (
+        config.js.lib.concat config.js.src
+      ).map (file) -> dirs.base + '/' + file

@@ -6,4 +6,4 @@ module.exports =
       compress:
         drop_console: true
     files:
-      "<%= dirs.build %>/js/app.min.js":"<%= helpers.prefixAndConcatProdJS() %>"
+      "<%= dirs.build %>/js/app.js":"<%= helpers.prefixAndConcatProdJS() %>"

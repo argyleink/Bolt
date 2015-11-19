@@ -1,5 +1,5 @@
 if dev
-  //- load libs bower
+  //- load libs from app.coffee
   each path in app_files.js.lib
     script(src=path)
 
@@ -8,4 +8,4 @@ if dev
     script(src=file)
 
 else
-  script(src='js/app.min.js', async)
+  script(src='js/app.js', async)

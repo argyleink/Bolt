@@ -1,9 +1,8 @@
 module.exports =
   prod:
     options:
-      banner: "<%= banner %>"
-      screwIE8: true
-      compress:
-        drop_console: true
+      banner:     "<%= banner %>"
+      screwIE8:   true
+      compress:   drop_console: true
     files:
       "<%= dirs.build %>/js/app.js":"<%= helpers.prefixAndConcatProdJS() %>"

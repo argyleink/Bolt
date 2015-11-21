@@ -4,19 +4,13 @@ module.exports =
       # copy app js
       expand: true
       cwd:    "<%= dirs.base %>"
-      src:    "<%= app.js.src %>"
-      dest:   "<%= dirs.build %>"
-    ,
-      # copy app bower js
-      expand: true
-      cwd:    "<%= dirs.base %>"
-      src:    "<%= app.js.lib %>"
+      src:    "<%= app.js %>"
       dest:   "<%= dirs.build %>"
     ,
       # copy app bower css
       expand: true
       cwd:    "<%= dirs.base %>"
-      src:    "<%= app.css.lib %>"
+      src:    "<%= app.css %>"
       dest:   "<%= dirs.build %>"
     ,
       # copy media/pictures/fonts
@@ -28,18 +22,14 @@ module.exports =
       # copy app manifests, configs, crawlers, etc
       expand: true
       cwd:    "<%= dirs.base %>/"
-      src:    "<%= app.assets %>"
+      src:    "<%= app.resources %>"
       dest:   "<%= dirs.build %>/"
     ]
 
   prod:
     files: [
-      ###
-        prod mostly just copies assets (.txt, .mov, .mp3, etc)
-        everything else is crunched and put in the build dir
-      ###
       expand: true
       cwd:    "<%= dirs.base %>/"
-      src:    "<%= app.assets %>"
+      src:    "<%= app.resources %>"
       dest:   "<%= dirs.build %>/"
     ]

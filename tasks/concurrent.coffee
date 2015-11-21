@@ -1,6 +1,6 @@
 module.exports =
   shrink: [
-    "uglify:prod"
+    "uglify"
     "csso"
     "imagemin"
     "svgmin"

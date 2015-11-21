@@ -17,30 +17,20 @@ module.exports = (grunt) ->
 
   # This is a collection of files for reference in our tasks
   app:
-    js:
-      ###
-        bower libs, downloaded libs, etc.
-        Manually managed now, since bower main files are not dependable
-      ###
-      lib: [
-        # "js/bower/bower_package/bower_file_you_need.js"
-      ]
-      # app js files
-      src: [
-        "js/app.js"
-      ]
+    js: [
+      # "js/bower/bower_package/bower_file_you_need.js"
+      "js/app.js"
+    ]
 
-    css:
-      # path is relative to deployed styles/ directory
-      lib: [
-        "js/bower/flexboxgrid/dist/flexboxgrid.css"
-      ]
+    css: [
+      "js/bower/flexboxgrid/dist/flexboxgrid.css"
+    ]
 
     ###
-      The `assets` property holds any assets to be copied along
-      with our app's assets: key files, whatever
+      The `resources` property holds any resources to be copied along
+      with our app's resources: key files, whatever
     ###
-    assets: [
+    resources: [
       "robots.txt"
       "manifest.json"
     ]
@@ -64,23 +54,9 @@ module.exports = (grunt) ->
       # "<%= dirs.build %>/styles/android.css":  "<%= dirs.base %>/styles/browser/android.styl"
     ]
 
-    stylus_plugins: [
-      # https://www.npmjs.com/package/autoprefixer-stylus
-      -> require("autoprefixer-stylus")(
-        browsers: [
-          "last 2 versions"
-          "> 5%"
-          # "ie 8"
-          # "ie 9"
-        ]
-      )
-    ]
-
   helpers:
     prefixAndConcatProdJS: ->
       config  = grunt.config.get "app"
       dirs    = grunt.config.get "dirs"
       # merge the arrays, then map paths with the base dir for uglify
-      return (
-        config.js.lib.concat config.js.src
-      ).map (file) -> dirs.base + '/' + file
+      config.js.map (file) -> dirs.base + '/' + file

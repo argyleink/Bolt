@@ -1,11 +1,7 @@
 if dev
-  //- load libs from app.coffee
-  each path in app_files.js.lib
+  //- load js from app.coffee
+  each path in app_files.js
     script(src=path)
-
-  //- load app js files from app.coffee
-  each file in app_files.js.src
-    script(src=file)
 
 else
   script(src='js/app.js', async)

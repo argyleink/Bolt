@@ -1,0 +1,24 @@
+extends _jade/layouts/page
+//- This page demonstrates a few ways you can overwrite the page layout
+//- otherwise it's useless
+
+//- use these if you like to control page titles and SEO descriptions
+block title
+  title Demo Page
+
+block description
+  meta(name='description', content='Demo page unique description')
+
+block polyfill
+  //- nothing
+
+//- use this to append special css for a page or overwrite the css entirely
+//- block append css
+//-   link(rel='stylesheet', href='path/to/your/file')
+
+block content
+  header.text-center
+    h2 Simple Demo Page
+
+block scripts
+  script(src='js/bundle.js')

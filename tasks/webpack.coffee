@@ -5,6 +5,7 @@ module.exports =
     watch: false
     keepalive: false
     sourcemaps: true
+
     stats:
       colors: true
       modules: true
@@ -14,12 +15,18 @@ module.exports =
     entry: [
       './app/js/test.coffee'
       './app/_jade/client-templates/list.jade'
-      './app/js/app.js'
-    ]
+      # './app/js/app.js'
+    ].concat (-> 
+      files = require("wiredep")(
+        exclude: [/jquery/]
+      )
+      return files.js
+    )()
+
     output: 
-      path: 'build/dev'
-      filename: 'index.js'
-      sourceMapFilename: 'index.js.map'
+      path: 'build/dev/js'
+      filename: 'bundle.js'
+      sourceMapFilename: 'bundle.js.map'
 
     module:
       loaders: [
@@ -30,12 +37,6 @@ module.exports =
         loader: "coffee"
       ]
 
-    plugins: [
-      new webpack.ResolverPlugin [
-        new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-      ], ["normal", "loader"]
-    ]
-
   # coffee:
   #   watch: false
   #   keepalive: false
@@ -45,25 +46,32 @@ module.exports =
   #     reasons: true
 
   #   entry: './app/js/test.coffee'
-  #   output: filename: 'build/index.js'
+  #   output: filename: 'build/dev/js/index.js'
   #   module:
   #     loaders: [
   #       test: /\.coffee$/ 
   #       loader: "coffee"
   #     ]
 
-  stylus:
-    watch: false
-    keepalive: false
-    stats:
-      colors: true
-      modules: true
-      reasons: true
+  # stylus:
+  #   watch: false
+  #   keepalive: false
+  #   stats:
+  #     colors: true
+  #     modules: true
+  #     reasons: true
 
-    entry: './app/styles/master.styl'
-    output: filename: 'build/index.css'
-    module:
-      loaders: [
-        test: /\.styl$/ 
-        loader: "stylus"
-      ]
+  #   entry: './app/styles/master.styl'
+  #   output: filename: 'build/index.css'
+  #   module:
+  #     loaders: [
+  #       test: /\.styl$/ 
+  #       loader: "stylus"
+  #     ]
+  #   use: "<%= app_files.stylus_plugins %>"
+  #   define: bower: (-> 
+  #     files = require("wiredep")(
+  #       exclude: [/jquery/]
+  #     )
+  #     return files.css
+  #   )()

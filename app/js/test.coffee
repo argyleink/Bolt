@@ -1,2 +1,2 @@
-module.exports = ->
-  foo = "bar"
+foo = "bar"
+console.info foo

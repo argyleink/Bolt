@@ -53,6 +53,19 @@ module.exports = (grunt) ->
     serve either dev or prod directory
     run this if you've run prod or dev commands and want to serve the output
   ###
+  grunt.registerTask "packin", "Webpack task", ->
+    grunt.task.run "clean"
+    grunt.task.run "webpack" 
+    grunt.task.run "jade:dev"
+    grunt.task.run "stylus:dev"
+    grunt.task.run "copy:#{env}"
+    grunt.task.run "notify:#{env}"
+    grunt.task.run "connect:#{env}"
+    grunt.task.run "asciify:headline"
+    grunt.task.run "watch"
+
+  # serve either dev or prod directory
+  # run this if you've run prod or dev commands and want to serve the output
   grunt.registerTask "serve", [
     "shell:open_#{env}"
     "connect:#{env}"

@@ -1,11 +1,9 @@
-// import fonts or whatever, grunt+stylus will fetch and package this up
-@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,700,400)
+// if prod, include and inject css libraries so only 1 file is created
+if prod
+  for path in libs
+    @import url('../' + path)
 
-// same goes for grunt css deps, they'll auto show up here
-for path in bower
-  @import path
-
-@require "nib" // Nib is awesome: http://visionmedia.github.io/nib/
-@require "mixins/*"
-@require "base/*"
-@require "modules/*"
+@require "nib"          // Nib is awesome: http://visionmedia.github.io/nib/
+@require "mixins/*"     // bring in mixins
+@require "base/*"       // import base styles, ready for extending
+@require "modules/*"    // where most of your css should go for custom styles

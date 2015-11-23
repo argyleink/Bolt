@@ -1,17 +1,6 @@
 module.exports =
-  options:
-    logConcurrentOutput: true
-  dev_StylusJadeUglify: [
-    "uglify:dev"
-    "stylus:dev"
-    "shell:clientjade"
-  ]
-  prod_StylusJadeUglify: [
-    "uglify:prod"
-    "stylus:prod"
-    "shell:clientjade"
-  ]
   shrink: [
+    "uglify"
     "csso"
     "imagemin"
     "svgmin"
@@ -19,7 +8,7 @@ module.exports =
   dev_serve: [
     "watch"
     "nodemon:dev"
-    "node-inspector"
+    # "node-inspector"
   ]
   prod_serve: [
     "watch"

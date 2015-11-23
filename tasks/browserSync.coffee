@@ -1,12 +1,16 @@
 module.exports =
   dev:
-    bsFiles:
-      src: [
-        "<%= build_dir %>/styles/*"
-        "<%= app_dir %>/**/*.jade"
-        "<%= build_dir %>/js/lib.min.js"
-      ]
+  	bsFiles:
+  		src: [
+  			"<%= dirs.build %>/styles/*"
+  			"<%= dirs.build %>/*.html"
+        # "<%= dirs.build %>/js/**/*.js"
+  		]
 
-    options:
-      watchTask: true
-      proxy: "localhost:3030"
+  options:
+    # http://www.browsersync.io/docs/options/
+    watchTask:  true
+    proxy:      "localhost:3030"
+    notify:     false
+    online:     false
+    minify:     false

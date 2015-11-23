@@ -6,7 +6,7 @@ module.exports =
         NODE_ENV:     'development'
         NODE_CONFIG:  'dev'
       nodeArgs: [
-        '--harmony'
+        # '--harmony'
         '--debug'
       ]
       watch: ['server']
@@ -18,6 +18,6 @@ module.exports =
         NODE_ENV:     'production'
         NODE_CONFIG:  'prod'
       nodeArgs: [
-        '--harmony'
+        # '--harmony'
       ]
       watch: ['server']

@@ -52,7 +52,7 @@
 		},
 		{
 			"follow_symlinks": true,
-			"name": "npm",
+			"name": "Npm",
 			"path": "node_modules"
 		},
 		{

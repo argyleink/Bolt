@@ -22,7 +22,7 @@
     "grunt-contrib-imagemin": "^1.0.0",
     "grunt-contrib-jade": "^0.15.0",
     "grunt-contrib-stylus": "^0.22.0",
-    "grunt-contrib-uglify": "^0.10.1",
+    "grunt-contrib-uglify": "argyleink/grunt-contrib-uglify",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-csso": "^0.8.0",
     "grunt-manifest": "^0.4.4",

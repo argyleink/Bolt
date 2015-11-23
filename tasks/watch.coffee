@@ -1,6 +1,7 @@
 module.exports =
   options:
     livereload: false
+    spawn:      false
 
   css:
     files: ["<%= dirs.base %>/styles/**/*.styl"]
@@ -10,25 +11,18 @@ module.exports =
     files: ["<%= dirs.base %>/js/**/*.js"]
     tasks: ["newer:copy:dev"]
 
-  images:
+  assets:
     files: ["<%= dirs.base %>/assets/**/*"]
     tasks: ["newer:copy:dev"]
 
   html:
     files: [
-      "<%= dirs.base %>/**/*.jade",
-      "!<%= dirs.base %>/client-templates/**/*.jade"
+      "<%= dirs.base %>/**/*.jade"
     ]
     tasks: ["jade:dev"]
-    options:
-      nospawn: true
 
   data:
     files: "<%= dirs.base %>/data/**/*"
     tasks: ["jade:dev"]
     options:
-      nospawn: false
-
-  templates:
-    files: ["<%= dirs.base %>/_jade/client-templates/**/*.jade"]
-    tasks: ["shell:clientjade"]
+      spawn: true

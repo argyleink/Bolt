@@ -1,16 +1,15 @@
-var App = {};
+var App = App || {};
 App.Startup = (function(){
+  // private vars
+  var foo = 'bar';
 
-  var appName = 'Jade and Stylus rule';
+  function privateMethod() {}
 
-  Velocity(document.querySelectorAll('#bolt-logo path'), 'transition.expandIn', {
-    drag:     true,
-    stagger:  100,
-    delay:    500
-  });
-  
-  window.onload = function(){
-    App.TemplateExample.render();
+  function publicMethod() {
+    return foo;
   }
 
+  return {
+    name: publicMethod
+  }
 })();

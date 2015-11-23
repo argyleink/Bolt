@@ -14,8 +14,6 @@
   ],
   "main": "app/js/app.js",
   "dependencies": {
-    "device-detect.js": "*",
-    "flexboxgrid": "*",
-    "velocity": "*"
+    "flexboxgrid": "*"
   }
 }

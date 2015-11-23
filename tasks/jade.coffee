@@ -1,20 +1,21 @@
 module.exports =
   dev:
+    files:        "<%= app.jade %>"
     options:
       data:
-        dev: true
-        bower: "<%= bower_files.js %>"
-        project: "<%= pkg %>"
-      pretty: true
-      client: false
-      basedir: 'app'
-
-    files: "<%= app_files.jade %>"
+        dev:        true
+        project:    "<%= pkg %>"
+        app_files:  "<%= app %>"
+        data:       require("quaff")("app/data/")
+      pretty:     true
+      client:     false
+      basedir:    "<%= dirs.base %>"
 
   prod:
+    files:        "<%= app.jade %>"
     options:
       data:
-        dev: false
-        project: "<%= pkg %>"
-
-    files: "<%= app_files.jade %>"
+        dev:        false
+        project:    "<%= pkg %>"
+        app_files:  "<%= app %>"
+        data:       require("quaff")("app/data/")

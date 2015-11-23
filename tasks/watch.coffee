@@ -1,28 +1,28 @@
 module.exports =
   options:
     livereload: false
-    spawn: false
+    spawn:      false
 
   css:
-    files: ["<%= app_dir %>/styles/**/*.styl"]
+    files: ["<%= dirs.base %>/styles/**/*.styl"]
     tasks: ["stylus:dev"]
 
   js:
-    files: ["<%= app_dir %>/js/*.js"]
+    files: ["<%= dirs.base %>/js/**/*.js"]
     tasks: ["newer:copy:dev"]
 
-  libs:
-    files: ["<%= app_dir %>/js/bower/**/*.js", "<%= app_dir %>/js/libs/**/*.js"]
-    tasks: ["uglify:dev"]
-
-  images:
-    files: ["<%= app_dir %>/assets/**/*"]
+  assets:
+    files: ["<%= dirs.base %>/assets/**/*"]
     tasks: ["newer:copy:dev"]
 
   html:
-    files: ["<%= app_dir %>/**/*.jade", "!<%= app_dir %>/templates/**/*.jade"]
+    files: [
+      "<%= dirs.base %>/**/*.jade"
+    ]
     tasks: ["jade:dev"]
 
-  templates:
-    files: ["<%= app_dir %>/_jade/client-templates/**/*.jade", "<%= app_dir %>/_jade/**/*.jade"]
-    tasks: ["shell:clientjade"]
+  data:
+    files: "<%= dirs.base %>/data/**/*"
+    tasks: ["jade:dev"]
+    options:
+      spawn: true

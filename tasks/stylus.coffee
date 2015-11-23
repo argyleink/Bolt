@@ -1,18 +1,30 @@
+autoprefixer = -> require("autoprefixer-stylus")(
+  browsers: [
+    "last 2 versions"
+    "> 5%"
+    # "ie 8"
+    # "ie 9"
+  ]
+)
+
 module.exports =
   prod:
     options:
       compress:       false
       "include css":  true
-      define:         bower: "<%= bower_files.css %>"
-      use:            "<%= app_files.stylus_plugins %>"
+      "resolve url":  true
+      use:            [autoprefixer]
+      define:
+        prod:   true
+        libs:   "<%= app.css %>"
 
-    files: "<%= app_files.stylus %>"
+    files: "<%= app.stylus %>"
 
   dev:
     options:
       compress:       false
-      define:         bower: "<%= bower_files.dev_css %>"
-      use:            "<%= app_files.stylus_plugins %>"
+      use:            [autoprefixer]
       sourcemap:      inline: true
+      define:         prod: false
 
-    files: "<%= app_files.stylus %>"
+    files: "<%= app.stylus %>"

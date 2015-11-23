@@ -69,21 +69,17 @@ module.exports = (grunt) ->
     "copy:dev"
   ]
 
-  grunt.registerTask "test", [
-    # "concurrent:dev_StylusJadeUglify"
-    "concurrent:prod_StylusJadeUglify"
-    "concurrent:shrink"
-    "copy:dev"
-  ]
-
   ###
     hook into Heroku builds with this and the heroku grunt build pack
     runs your prod tasks, no server, you'll need to create a node static file server
   ###
   grunt.registerTask "heroku", [
     "clean"
-    "concurrent:prod_StylusJadeUglify"
-    "copy:prod"
+    "stylus:prod"
+    "jade:prod"
+    "purifycss"
     "concurrent:shrink"
+    "manifest"
+    "copy:prod"
     "asciify:build"
   ]

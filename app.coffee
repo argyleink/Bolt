@@ -53,10 +53,3 @@ module.exports = (grunt) ->
       # "<%= dirs.build %>/styles/ie10.css":     "<%= dirs.base %>/styles/browser/ie10.styl"
       # "<%= dirs.build %>/styles/android.css":  "<%= dirs.base %>/styles/browser/android.styl"
     ]
-
-  helpers:
-    prefixAndConcatProdJS: ->
-      config  = grunt.config.get "app"
-      dirs    = grunt.config.get "dirs"
-      # merge the arrays, then map paths with the base dir for uglify
-      config.js.map (file) -> dirs.base + '/' + file

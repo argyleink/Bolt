@@ -8,8 +8,7 @@ html.no-js(lang='en')
       html {
         font-size: 1.25rem;
         line-height: 1.4;
-        color: #737373;
-        background: #f0f0f0;
+        color: #111;
         text-align: ;
         -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
@@ -54,13 +53,15 @@ html.no-js(lang='en')
       }
 
       .container {
-        max-width: 380px;
-        width: 380px;
+        max-width: 550px;
+        width: 60vw;
         margin: auto;
-        background:white;
-        padding:2rem;
-        box-shadow: 0 0 1rem 0 rgba(0,0,0,0.15);
-        border-radius:1rem;
+      }
+
+      .smiley {
+        transform:rotate(90deg);
+        display:inline-block;
+        margin-left:2rem;
       }
 
       /* google search */
@@ -134,7 +135,7 @@ html.no-js(lang='en')
   body
     .container
       h1 Not found
-        span  :(
+        span.smiley  :(
       p Sorry, but the page you were trying to view does not exist.
       p: b It looks like this was the result of either:
       ul

@@ -1,6 +1,6 @@
 module.exports =
   dev:
-    script: 'server/server.js'
+    script: 'server/server.coffee'
     options:
       env:
         NODE_ENV:     'development'
@@ -12,7 +12,7 @@ module.exports =
       watch: ['server']
 
   prod:
-    script: 'server/server.js'
+    script: 'server/server.coffee'
     options:
       env:
         NODE_ENV:     'production'

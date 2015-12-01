@@ -33,7 +33,12 @@ module.exports = (grunt) ->
       "clean"
       "stylus:#{env}"
     ]
-    if env == "prod" then grunt.task.run ["purifycss", "concurrent:shrink", "manifest"]
+
+    if env == "prod" then grunt.task.run [
+      # "purifycss"
+      "concurrent:shrink"
+      "manifest"
+    ]
 
     grunt.task.run [
       "copy:#{env}"

@@ -22,14 +22,14 @@ app
       project:      packageJson
       app_files:    files
       data:         require('quaff')('app/data/')
-    noCache:      if isDev then true else false
+    noCache:      isDev
   ).middleware)
   .use(router.routes())
   .use(serve(buildDir))
   .use(error404)
 
 router.get '/', (next) ->
-  yield next
+  # yield next
   @render 'index', visitor: sniffer(@request.headers['user-agent'])
 
 app.listen port

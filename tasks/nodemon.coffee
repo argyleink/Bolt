@@ -19,5 +19,6 @@ module.exports =
         NODE_CONFIG:  'prod'
       nodeArgs: [
         # '--harmony'
+        # '--debug'
       ]
       watch: ['server']

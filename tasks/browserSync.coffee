@@ -3,7 +3,7 @@ module.exports =
   	bsFiles:
   		src: [
   			"<%= dirs.build %>/styles/*"
-  			"<%= dirs.build %>/*.html"
+  			"<%= dirs.base %>/**/*.jade"
         # "<%= dirs.build %>/js/**/*.js"
   		]
 

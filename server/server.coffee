@@ -6,9 +6,6 @@ sniffer         = require 'snifferjs'
 error404        = require './error404'
 
 env             = process.env.NODE_CONFIG or 'dev'
-packageJson     = require '../package.json'
-files           = require "../files"
-
 isDev           = env == 'dev'
 baseDir         = __dirname.slice(0, __dirname.indexOf('/server'))
 buildDir        = './build/' + (if isDev then 'dev' else 'www') + '/'
@@ -18,9 +15,9 @@ app
   .use(new jade(
     viewPath: './app/'
     locals:
-      dev: env      == 'dev'
-      project:      packageJson
-      app_files:    files
+      dev:          isDev
+      project:      require '../package.json'
+      app_files:    require "../files"
       data:         require('quaff')('app/data/')
     noCache:      isDev
   ).middleware)
@@ -29,6 +26,7 @@ app
   .use(error404)
 
 router.get '/', (next) ->
+  # commented out yield next since it's breaks the serving of appcache.manifest for some reason
   # yield next
   @render 'index', visitor: sniffer(@request.headers['user-agent'])
 

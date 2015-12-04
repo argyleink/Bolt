@@ -21,6 +21,10 @@ module.exports =
     ]
     tasks: ["jade:dev"]
 
+  client_templates:
+    files: "<%= dirs.base %>/_jade/client/*.jade"
+    tasks: ["jade:client"]
+
   data:
     files: "<%= dirs.base %>/data/**/*"
     tasks: ["jade:dev"]

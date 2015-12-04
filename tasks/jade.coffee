@@ -11,6 +11,12 @@ module.exports =
       client:     false
       basedir:    "<%= dirs.base %>"
 
+  client:
+    files:
+      "<%= dirs.base %>/js/templates.js":"app/_jade/client/*.jade"
+    options:
+      client:     true
+
   prod:
     files:        "<%= app.jade %>"
     options:

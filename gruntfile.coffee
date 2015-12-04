@@ -32,6 +32,7 @@ module.exports = (grunt) ->
     grunt.task.run [
       "clean"
       "stylus:#{env}"
+      "jade:client"
       "jade:#{env}"
     ]
 

@@ -19,6 +19,8 @@ module.exports = (grunt) ->
   app:
     js: [
       # "js/bower/bower_package/bower_file_you_need.js"
+      "js/lib/runtime.min.js"
+      "js/templates.js"
       "js/app.js"
     ]
 

@@ -4,4 +4,4 @@ node_js:
   - "4.0"
 before_install: npm install -g grunt-cli bower
 install: npm install
-post_install: grunt heroku
+post_install: grunt compile

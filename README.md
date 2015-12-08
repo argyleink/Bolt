@@ -48,10 +48,7 @@ This project seed is cache heavy, smart loading, and mobile first out of the box
 - Ready to run custom [shell commands](https://github.com/argyleink/Bolt/blob/master/tasks/shell.coffee)
 - Concurrent image crunching
 - [Sublime project file](https://github.com/argyleink/Bolt/blob/master/app.sublime-project) for easy project editing and standards establishment
-- Grunt [Heroku](https://github.com/argyleink/Bolt/wiki/Deployments) task for easy CI integration `grunt heroku`
 - [CLI](https://github.com/argyleink/Bolt-cli) for easy setup of new projects `bolt new my_app`
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 #### Bolt Extras
 - YAML data files are fed directly into your static site template system as JSON

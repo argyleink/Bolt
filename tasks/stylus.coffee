@@ -7,6 +7,14 @@ autoprefixer = -> require("autoprefixer-stylus")(
   ]
 )
 
+files = [
+  "<%= dirs.build %>/styles/app.css":        "<%= dirs.base %>/styles/master.styl"
+  # below you can create your own additional css files for browser hacks, polyfills, etc
+  # "<%= dirs.build %>/styles/ios.css":      "<%= dirs.base %>/styles/browser/ios.styl"
+  # "<%= dirs.build %>/styles/ie10.css":     "<%= dirs.base %>/styles/browser/ie10.styl"
+  # "<%= dirs.build %>/styles/android.css":  "<%= dirs.base %>/styles/browser/android.styl"
+]
+
 module.exports =
   prod:
     options:
@@ -18,7 +26,7 @@ module.exports =
         prod:   true
         libs:   "<%= app.css %>"
 
-    files: "<%= app.stylus %>"
+    files: files
 
   dev:
     options:
@@ -27,4 +35,4 @@ module.exports =
       sourcemap:      inline: true
       define:         prod: false
 
-    files: "<%= app.stylus %>"
+    files: files

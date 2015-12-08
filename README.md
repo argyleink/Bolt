@@ -61,6 +61,12 @@ This project seed is cache heavy, smart loading, and mobile first out of the box
 - 404 page
 - [Robots.txt](https://github.com/argyleink/Bolt/blob/master/app/robots.txt)
 
+#### Interesting Bolt Branches
+- koa: a server rendering seed
+- isomorphic: client side and static seed
+- remote-data: fetch remote data from an api and build a static site from it
+- webpack: webpack starter
+
 ## Inspiration
 - [Roots](http://roots.cx/)
 - [Yeoman](http://yeoman.io/)

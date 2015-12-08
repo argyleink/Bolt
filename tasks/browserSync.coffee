@@ -1,4 +1,4 @@
-module.exports =
+module.exports = 
   dev:
   	bsFiles:
   		src: [
@@ -12,6 +12,7 @@ module.exports =
     # http://www.browsersync.io/docs/options/
     watchTask:  true
     proxy:      "0.0.0.0:3030"
+    open:       "<%= options.openBrowser %>"
     notify:     false
     online:     false
     minify:     false

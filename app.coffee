@@ -22,17 +22,16 @@ module.exports = (grunt) ->
   # load in data from your package.json to be supplied to templates
   pkg: grunt.file.readJSON("./package.json")
   env: if grunt.cli.tasks[0] == "prod" then "www" else "dev"
-
-  # custom build options here, take grunt flags and pass them to tasks
-  options:
-    # grunt --dont-open
-    openBrowser: !grunt.option "dont-open"
-
   # choose your own directory structure, bower folder, etc
   dirs:
     base:   "app"
     build:  "build/<%= env %>" 
     bower:  "/js/bower"
+
+  # custom build options here, take grunt flags and pass them to tasks
+  options:
+    # grunt --dont-open
+    openBrowser: !grunt.option "dont-open"
 
   # Comment that is placed at the top of compiled files
   banner:

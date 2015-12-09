@@ -46,6 +46,7 @@ module.exports = (grunt) ->
     "connect:prod"
     "asciify:prod"
     "shell:open_prod"
+    "watch"
   ]
 
   ### QUICK SERVER

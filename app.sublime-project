@@ -10,15 +10,15 @@
 			"shell_cmd": "grunt prod"
 		},
 		{
-			"name": "Grunt Serve Dev",
-			"shell_cmd": "grunt --serve=dev"
+			"name": "Serve Dev",
+			"shell_cmd": "grunt serve --target=dev"
 		},
 		{
-			"name": "Grunt Serve Prod",
-			"shell_cmd": "grunt --serve=prod"
+			"name": "Serve Prod",
+			"shell_cmd": "grunt serve --target=prod"
 		},
 		{
-			"name": "Grunt Compile: Build prod, but don't watch or serve",
+			"name": "Compile: Build prod, but don't watch or serve",
 			"shell_cmd": "grunt compile"
 		}
 	],

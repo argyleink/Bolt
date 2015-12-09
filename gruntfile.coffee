@@ -50,13 +50,14 @@ module.exports = (grunt) ->
   ]
 
   ### QUICK SERVER
-    command: grunt --serve=dev || grunt --serve=prod
+    command: grunt serve --target=dev || grunt serve --target=prod
       serve either dev or prod directory
   ###
-  target = grunt.option "serve" or "dev"
+  target = grunt.option "target" or "dev"
   grunt.registerTask "serve", [
     "shell:open_#{target}"
     "connect:#{target}"
+    "watch"
   ]
 
   ### STATIC PRODUCTION BUILD (example)

@@ -29,7 +29,7 @@ This project seed is cache heavy, smart loading, and mobile first out of the box
 5. See the [Wiki](https://github.com/argyleink/Bolt/wiki)
 
 ## Build Features
-- Dev builds are extremely legible, source mapped, and ready for debugging with your tools
+- Dev builds are extremely legible, source mapped, and ready for debugging with your tools `grunt`
 - Production builds squish the crap out [images,css,html,js,svg] `grunt prod`
 - Dev and Prod builds have their own output directory, they don't share a `dist/` folder. No need for one build to squash the other.
 - Very fast, [concurrent Grunt tasks](https://github.com/argyleink/Bolt/blob/master/tasks/concurrent.coffee), with jit a plugin for really fast watch task running
@@ -51,6 +51,12 @@ This project seed is cache heavy, smart loading, and mobile first out of the box
 - Concurrent image crunching
 - [Sublime project file](https://github.com/argyleink/Bolt/blob/master/app.sublime-project) for easy project editing and standards establishment
 - [CLI](https://github.com/argyleink/Bolt-cli) for easy setup of new projects `bolt new my_app`
+
+#### Bolt Commands
+- `grunt`: dev server, no crunching, source maps, live reload, fast
+- `grunt prod`: prod server, turbo crunching, no maps, ready to test before tagging or pushing
+- `grunt compile`: all the features of prod, but no server, just the crunched output
+- `grunt serve --target=dev` or `grunt serve --target=prod`: serve previous builds
 
 #### Bolt Extras
 - YAML data files are fed directly into your static site template system as JSON

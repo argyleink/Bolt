@@ -32,7 +32,7 @@ This project seed is cache heavy, smart loading, and mobile first out of the box
 - Dev builds are extremely legible, source mapped, and ready for debugging with your tools `grunt`
 - Production builds squish the crap out [images,css,html,js,svg] `grunt prod`
 - Dev and Prod builds have their own output directory, they don't share a `dist/` folder. No need for one build to squash the other.
-- Very fast, [concurrent Grunt tasks](https://github.com/argyleink/Bolt/blob/master/tasks/concurrent.coffee), with jit a plugin for really fast watch task running
+- Very fast, with a jit plugin for really fast task running
 - Concise [Grunt main file](https://github.com/argyleink/Bolt/blob/master/gruntfile.coffee)
 - [Grunt tasks](https://github.com/argyleink/Bolt/tree/master/tasks) are individual, short, easy as hell to read, and a breeze to create
 - DRY [Configuration file](https://github.com/argyleink/Bolt/blob/master/app.coffee) keeps project assets and options centralized
@@ -48,7 +48,7 @@ This project seed is cache heavy, smart loading, and mobile first out of the box
 - Easily create custom [build notifications](https://github.com/argyleink/Bolt/blob/master/tasks/notify.coffee)
 - Customize your crunched files comment banner
 - Ready to run custom [shell commands](https://github.com/argyleink/Bolt/blob/master/tasks/shell.coffee)
-- Concurrent image crunching
+- Image crunching
 - [Sublime project file](https://github.com/argyleink/Bolt/blob/master/app.sublime-project) for easy project editing and standards establishment
 - [CLI](https://github.com/argyleink/Bolt-cli) for easy setup of new projects `bolt new my_app`
 

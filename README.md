@@ -8,7 +8,7 @@
 Offer a **fast**, Grunt based, data driven malleable static build system. Use it for any project architecture that makes html/css/js. 
 
 ## Overview
-This project seed is cache heavy, smart loading, and mobile first out of the box. [Jade](http://jade-lang.com/) & [Stylus](http://learnboost.github.io/stylus/) are the preprocessor defaults, but swap it for whatever you want, no limits. Want more than 1 preprocessor, it's ready. At the end of the day, it's [Grunt](http://gruntjs.com/), do whatever you want. Add tasks, take care of business.
+This project seed is cache heavy, smart loading, and mobile first out of the box. [Jade](http://jade-lang.com/) & [Stylus](http://learnboost.github.io/stylus/) are the preprocessor defaults, but swap it for whatever you want, no limits. Want more than 1 preprocessor, it's ready. Add tasks, take care of business.
 
 ![Build Status](https://travis-ci.org/argyleink/Bolt.svg?branch=master)
 [![Join the chat at https://gitter.im/argyleink/Bolt](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/argyleink/Bolt?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -27,6 +27,12 @@ This project seed is cache heavy, smart loading, and mobile first out of the box
 3. `cd bolt-test && npm i && bower i`: install bolt dependencies
 4. `grunt`: spin it up!
 5. See the [Wiki](https://github.com/argyleink/Bolt/wiki)
+
+or 
+
+1. `npm i`
+2. `bower i`
+3. `grunt`
 
 ## Build Features
 - Dev builds are extremely legible, source mapped, and ready for debugging with your tools `grunt`
@@ -54,6 +60,7 @@ This project seed is cache heavy, smart loading, and mobile first out of the box
 
 #### Bolt Commands
 - `grunt`: dev server, no crunching, source maps, live reload, fast
+- `grunt --dont-open`: dev time, but don't open it in a browser for me
 - `grunt prod`: prod server, turbo crunching, no maps, ready to test before tagging or pushing
 - `grunt compile`: all the features of prod, but no server, just the crunched output
 - `grunt serve --target=dev` or `grunt serve --target=prod`: serve previous builds
@@ -71,10 +78,10 @@ This project seed is cache heavy, smart loading, and mobile first out of the box
 - Pretty much a progressive web app starter
 
 #### Interesting Bolt Branches
-- koa: a server rendering seed
-- isomorphic: client side and static seed
-- remote-data: fetch remote data from an api and build a static site from it
-- webpack: webpack starter
+- **koa:** a server rendering seed
+- **isomorphic:** client side and static seed
+- **remote-data:** fetch remote data from an api and build a static site from it
+- **webpack:** webpack starter
 
 ## Inspiration
 - [Roots](http://roots.cx/)

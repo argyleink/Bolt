@@ -25,6 +25,7 @@ module.exports =
   prod:
     files: files
     options:
+      basedir: "<%= dirs.base %>"
       data:
         dev:        false
         project:    "<%= pkg %>"

@@ -30,7 +30,7 @@ module.exports = (grunt) ->
 
   ### PRODUCTION
     command: grunt prod
-      turbo crunch, minify all js files, let jade compress that html
+      turbo crunch
       serve it local for smoke testing before you deploy or push
   ###
   grunt.registerTask "prod", [
@@ -63,9 +63,9 @@ module.exports = (grunt) ->
   ]
 
   ### STATIC PRODUCTION BUILD (example)
-    command: grunt compile-prod
-      compile everything for prod but don't watch
-      comes in handy if you just want to output a static version, no server
+    command: grunt compile
+      turbo crunch but don't watch
+      static version, no server
   ###
   grunt.registerTask "compile", [
     "clean"

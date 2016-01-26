@@ -9,7 +9,7 @@ module.exports =
 
   js:
     files: ["<%= dirs.base %>/js/**/*.js"]
-    tasks: ["newer:copy:dev"]
+    tasks: ["newer:babel:dev"]
 
   assets:
     files: ["<%= dirs.base %>/assets/**/*"]

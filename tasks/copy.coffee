@@ -1,12 +1,6 @@
 module.exports =
   dev:
     files: [
-      # copy app js
-      expand: true
-      cwd:    "<%= dirs.base %>"
-      src:    "<%= app.js %>"
-      dest:   "<%= dirs.build %>"
-    ,
       # copy app bower css
       expand: true
       cwd:    "<%= dirs.base %>"

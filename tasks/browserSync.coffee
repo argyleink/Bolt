@@ -4,7 +4,7 @@ module.exports =
   		src: [
   			"<%= dirs.build %>/styles/*"
   			"<%= dirs.build %>/**/*.html"
-        # "<%= dirs.build %>/js/**/*.js"
+        "<%= dirs.build %>/js/**/*.js"
         "<%= dirs.build %>/js/lib.min.js"
   		]
 

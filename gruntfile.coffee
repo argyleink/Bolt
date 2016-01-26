@@ -20,6 +20,7 @@ module.exports = (grunt) ->
     "clean"
     "stylus:dev"
     "jade:dev"
+    "babel:dev"
     "copy:dev"
     "notify:dev"
     "connect:dev"

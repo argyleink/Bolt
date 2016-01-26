@@ -1,15 +1,15 @@
-var App = App || {};
+var App = App || {}
+
 App.Startup = (function(){
-  // private vars
-  var foo = 'bar';
+  const foo = 'bar'
 
   function privateMethod() {}
 
-  function publicMethod() {
-    return foo;
+  function name() {
+    return foo
   }
 
   return {
-    name: publicMethod
+    name
   }
-})();
+})()

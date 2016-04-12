@@ -21,7 +21,7 @@ module.exports = (grunt) ->
 
   # load in data from your package.json to be supplied to templates
   pkg: grunt.file.readJSON("./package.json")
-  env: if grunt.cli.tasks[0] is "prod" or "compile" then "www" else "dev"
+  env: if grunt.cli.tasks[0] is "prod" or grunt.cli.tasks[0] is "compile" then "www" else "dev"
   # choose your own directory structure, bower folder, etc
   dirs:
     base:   "app"

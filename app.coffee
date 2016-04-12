@@ -1,21 +1,5 @@
 module.exports = (grunt) ->
-  # load in data from your package.json to be supplied to templates
-  pkg: grunt.file.readJSON("./package.json")
-
-  # choose your own directory structure, bower folder, etc
-  dirs:
-    base:   "app"
-    build:  "build/" + if grunt.option("prod") then "www" else "dev"
-    bower:  "/js/bower"
-
-  # This is the comment that is placed at the top of compiled files
-  banner:
-    "/**\n" +
-    "  <%= pkg.name %> - v<%= pkg.version %>\n" +
-    "  Copyright (c) <%= grunt.template.today(\"yyyy\") %> <%= pkg.author %>\n" +
-    "**/\n"
-
-  # This is a collection of files for reference in our tasks
+  # Collection of files for reference in our tasks
   app:
     js: [
       # "js/bower/bower_package/bower_file_you_need.js"
@@ -35,24 +19,23 @@ module.exports = (grunt) ->
       "manifest.json"
     ]
 
-    ###
-      Below manage your preprocessor file locations and files
-    ###
-    jade: [
-      expand: true
-      cwd:    "<%= dirs.base %>"
-      src:    [
-        "**/*.jade"
-        "!_jade/**"
-      ]
-      dest:   "<%= dirs.build %>"
-      ext:    ".html"
-    ]
+  # load in data from your package.json to be supplied to templates
+  pkg: grunt.file.readJSON("./package.json")
+  env: if grunt.cli.tasks[0] is "prod" or grunt.cli.tasks[0] is "compile" then "www" else "dev"
+  # choose your own directory structure, bower folder, etc
+  dirs:
+    base:   "app"
+    build:  "build/<%= env %>" 
+    bower:  "/js/bower"
 
-    stylus: [
-      "<%= dirs.build %>/styles/app.css":        "<%= dirs.base %>/styles/master.styl"
-      # below you can create your own additional css files for browser hacks, polyfills, etc
-      # "<%= dirs.build %>/styles/ios.css":      "<%= dirs.base %>/styles/browser/ios.styl"
-      # "<%= dirs.build %>/styles/ie10.css":     "<%= dirs.base %>/styles/browser/ie10.styl"
-      # "<%= dirs.build %>/styles/android.css":  "<%= dirs.base %>/styles/browser/android.styl"
-    ]
+  # custom build options here, take grunt flags and pass them to tasks
+  options:
+    # grunt --dont-open
+    openBrowser: !grunt.option "dont-open"
+
+  # Comment that is placed at the top of compiled files
+  banner:
+    "/**\n" +
+    "  <%= pkg.name %> - v<%= pkg.version %>\n" +
+    "  Copyright (c) <%= grunt.template.today(\"yyyy\") %> <%= pkg.author %>\n" +
+    "**/\n"

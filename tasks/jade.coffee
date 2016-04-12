@@ -1,6 +1,17 @@
+files = [
+  expand: true
+  cwd:    "<%= dirs.base %>"
+  src:    [
+    "**/*.jade"
+    "!_jade/**"
+  ]
+  dest:   "<%= dirs.build %>"
+  ext:    ".html"
+]
+
 module.exports =
   dev:
-    files:        "<%= app.jade %>"
+    files: files
     options:
       data:
         dev:        true
@@ -12,8 +23,9 @@ module.exports =
       basedir:    "<%= dirs.base %>"
 
   prod:
-    files:        "<%= app.jade %>"
+    files: files
     options:
+      basedir: "<%= dirs.base %>"
       data:
         dev:        false
         project:    "<%= pkg %>"

@@ -1,5 +1,5 @@
 app/js/bower/
-build/
+build/dev
 node_modules/
 npm-debug.log
 app.sublime-workspace

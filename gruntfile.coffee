@@ -3,83 +3,78 @@ module.exports = (grunt) ->
   require("jit-grunt")(grunt)
   require("./jade-inheritance.coffee")(grunt)
 
-  # loads file paths and other build configurations
-  buildConfig = require("./app.coffee")(grunt)
-
   # load your tasks, allows them to be in separate files for cleanliness
   tasks = require("load-grunt-configs")(grunt, config: src: [
     "tasks/*.coffee"
   ])
 
-  # Merge all tasks and build config together and then init
-  grunt.initConfig grunt.util._.extend(tasks, buildConfig)
+  # Merge all tasks, build config together and then init
+  grunt.initConfig grunt.util._.extend(tasks, require("./app.coffee")(grunt))
 
-  # grab option, set default to dev if no option passed
-  env = if grunt.option("prod") == true then "prod" else "dev"
-
+  ### DEVELOPMENT (default)
+    command: grunt
+      - compile everything, run server, and watch
+      - nothing is smashed, source mapped, legible
   ###
-    grunt
-      compile everything, run server, and watch
-      nothing is smashed, find comments for line numbers in your precompressors
-      should be totally out of your way, just awesome automated-ness
-
-    grunt --prod
-      turbo crunch, minify all js files, let jade compress that html
-      serve it local for smoke testing your features before you deploy or commit
-  ###
-
-  grunt.registerTask "default", "Master task", ->
-    grunt.task.run [
-      "clean"
-      "stylus:#{env}"
-      "jade:#{env}"
-    ]
-
-    if env == "prod" then grunt.task.run ["purifycss", "concurrent:shrink", "manifest"]
-
-    grunt.task.run [
-      "copy:#{env}"
-      "notify:#{env}"
-      "connect:#{env}"
-      "asciify:headline"
-    ]
-
-    if env != "prod" then grunt.task.run "browserSync"
-    if env == "prod" then grunt.task.run "shell:open_#{env}"
-
-    grunt.task.run "watch"
-
-  ###
-    serve either dev or prod directory
-    run this if you've run prod or dev commands and want to serve the output
-  ###
-  grunt.registerTask "serve", [
-    "shell:open_#{env}"
-    "connect:#{env}"
+  grunt.registerTask "default", [
+    "clean"
+    "stylus:dev"
+    "jade:dev"
+    "copy:dev"
+    "notify:dev"
+    "connect:dev"
+    "asciify:dev"
+    "browserSync"
     "watch"
   ]
 
+  ### PRODUCTION
+    command: grunt prod
+      turbo crunch
+      serve it local for smoke testing before you deploy or push
   ###
-    compile everything for debug but don't watch
-    comes in handy if you just want to output a static dev version, no server
-  ###
-  grunt.registerTask "dev", [
-    "clean"
-    "concurrent:dev_StylusJadeUglify"
-    "copy:dev"
-  ]
-
-  ###
-    hook into Heroku builds with this and the heroku grunt build pack
-    runs your prod tasks, no server, you'll need to create a node static file server
-  ###
-  grunt.registerTask "heroku", [
+  grunt.registerTask "prod", [
     "clean"
     "stylus:prod"
     "jade:prod"
     "purifycss"
-    "concurrent:shrink"
+    "csso"
+    "uglify"
+    "image"
     "manifest"
     "copy:prod"
-    "asciify:build"
+    "notify:prod"
+    "connect:prod"
+    "asciify:prod"
+    "shell:open_prod"
+    "watch"
+  ]
+
+  ### QUICK SERVER
+    command: grunt serve --target=dev || grunt serve --target=prod
+      serve either dev or prod directory
+  ###
+  target = grunt.option "target" or "dev"
+  grunt.registerTask "serve", [
+    "shell:open_#{target}"
+    "connect:#{target}"
+    "watch"
+  ]
+
+  ### STATIC PRODUCTION BUILD (example)
+    command: grunt compile
+      turbo crunch but don't watch
+      static version, no server
+  ###
+  grunt.registerTask "compile", [
+    "clean"
+    "stylus:prod"
+    "jade:prod"
+    "purifycss"
+    "csso"
+    "uglify"
+    "image"
+    "manifest"
+    "copy:prod"
+    "asciify:done"
   ]

@@ -1,7 +1,7 @@
 if dev
   //- load js from app.coffee
   each path in app_files.js
-    script(src=path)
+    script(src='/#{path}')
 
 else
-  script(src='js/app.js', async)
+  script(src='/js/app.js', async)

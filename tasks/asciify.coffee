@@ -5,8 +5,20 @@ module.exports =
       font: 'speed'
       log: true
 
-  build:
-    text: 'Done'
+  dev:
+    text: 'DEV'
+    options:
+      font: 'speed'
+      log: true
+
+  prod:
+    text: 'PROD'
+    options:
+      font: 'speed'
+      log: true
+
+  done:
+    text: 'DONE'
     options:
       font: 'speed'
       log: true

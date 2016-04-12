@@ -6,20 +6,20 @@
 			"shell_cmd": "grunt"
 		},
 		{
-			"name": "Grunt Serve: Serve the dist/ directory",
-			"shell_cmd": "grunt serve"
-		},
-		{
-			"name": "Grunt Dev: Build for local dev, but don't watch or serve",
-			"shell_cmd": "grunt dev"
-		},
-		{
 			"name": "Grunt Prod: Build and serve a super crunched version of the site",
-			"shell_cmd": "grunt --prod"
+			"shell_cmd": "grunt prod"
 		},
 		{
-			"name": "Grunt Heroku: Super crunch the build, but don't serve or watch",
-			"shell_cmd": "grunt heroku"
+			"name": "Serve Dev",
+			"shell_cmd": "grunt serve --target=dev"
+		},
+		{
+			"name": "Serve Prod",
+			"shell_cmd": "grunt serve --target=prod"
+		},
+		{
+			"name": "Compile: Build prod, but don't watch or serve",
+			"shell_cmd": "grunt compile"
 		}
 	],
 	"folders":

@@ -5,21 +5,21 @@ module.exports = (grunt) ->
   changedFiles      = []
 
   onChange = grunt.util._.debounce((->
-    options         = grunt.config "jade.dev.options"
+    options         = grunt.config "pug.dev.options"
     dependantFiles  = []
 
     changedFiles.forEach (filename) ->
       inheritance     = new JadeInheritance filename, options.basedir, options
       dependantFiles  = dependantFiles.concat inheritance.files
 
-    config      = grunt.config("jade.dev.files")[0]
+    config      = grunt.config("pug.dev.files")[0]
     config.src  = dependantFiles
-    grunt.config "jade.dev.files", [config]
+    grunt.config "pug.dev.files", [config]
 
     changedFiles = []
   ), 200)
 
   grunt.event.on "watch", (action, filepath) ->
-    if filepath.includes ".jade"
+    if filepath.includes ".pug"
       changedFiles.push filepath
       onChange()

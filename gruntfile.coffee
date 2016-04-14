@@ -1,7 +1,7 @@
 module.exports = (grunt) ->
   require("time-grunt")(grunt)
   require("jit-grunt")(grunt)
-  require("./jade-inheritance.coffee")(grunt)
+  require("./pug-inheritance.coffee")(grunt)
 
   # load your tasks, allows them to be in separate files for cleanliness
   tasks = require("load-grunt-configs")(grunt, config: src: [
@@ -19,7 +19,7 @@ module.exports = (grunt) ->
   grunt.registerTask "default", [
     "clean"
     "stylus:dev"
-    "jade:dev"
+    "pug:dev"
     "copy:dev"
     "notify:dev"
     "connect:dev"
@@ -36,7 +36,7 @@ module.exports = (grunt) ->
   grunt.registerTask "prod", [
     "clean"
     "stylus:prod"
-    "jade:prod"
+    "pug:prod"
     "purifycss"
     "csso"
     "uglify"
@@ -69,7 +69,7 @@ module.exports = (grunt) ->
   grunt.registerTask "compile", [
     "clean"
     "stylus:prod"
-    "jade:prod"
+    "pug:prod"
     "purifycss"
     "csso"
     "uglify"

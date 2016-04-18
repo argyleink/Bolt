@@ -9,4 +9,8 @@ block content
     dl
       each item in data.social
         dt= item.name
-        dd: +link(item.username, item.url, true)
+        dd: +link({
+          text:   item.username,
+          url:    item.url,
+          blank:  true
+        })

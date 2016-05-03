@@ -2,8 +2,8 @@ files = [
   expand: true
   cwd:    "<%= dirs.base %>"
   src:    [
-    "**/*.jade"
-    "!_jade/**"
+    "**/*.pug"
+    "!_pug/**"
   ]
   dest:   "<%= dirs.build %>"
   ext:    ".html"

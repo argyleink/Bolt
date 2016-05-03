@@ -17,12 +17,12 @@ module.exports =
 
   html:
     files: [
-      "<%= dirs.base %>/**/*.jade"
+      "<%= dirs.base %>/**/*.pug"
     ]
-    tasks: ["jade:dev"]
+    tasks: ["pug:dev"]
 
   data:
     files: "<%= dirs.base %>/data/**/*"
-    tasks: ["jade:dev"]
+    tasks: ["pug:dev"]
     options:
       spawn: true

@@ -18,7 +18,7 @@
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-connect": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-jade": "^1.0.0",
+    "grunt-contrib-pug": "^1.0.0",
     "grunt-contrib-stylus": "^1.2.0",
     "grunt-contrib-uglify": "argyleink/grunt-contrib-uglify",
     "grunt-contrib-watch": "^1.0.0",

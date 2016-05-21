@@ -1,4 +1,4 @@
-extends _jade/layouts/page
+extends _pug/layouts/page
 
 block content
   header.row.center-xs.middle-xs
@@ -9,4 +9,8 @@ block content
     dl
       each item in data.social
         dt= item.name
-        dd: +link(item.username, item.url, true)
+        dd: +link({
+          text:   item.username,
+          url:    item.url,
+          blank:  true
+        })

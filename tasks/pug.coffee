@@ -17,7 +17,7 @@ module.exports =
         dev:        true
         project:    "<%= pkg %>"
         app_files:  "<%= app %>"
-        data:       require("quaff")("app/data/")
+        data:       require("quaff")("app/_data/")
       pretty:     true
       client:     false
       basedir:    "<%= dirs.base %>"
@@ -30,4 +30,4 @@ module.exports =
         dev:        false
         project:    "<%= pkg %>"
         app_files:  "<%= app %>"
-        data:       require("quaff")("app/data/")
+        data:       require("quaff")("app/_data/")

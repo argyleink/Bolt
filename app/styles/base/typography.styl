@@ -15,18 +15,6 @@ p.lead
   font-size:1.3rem
   font-weight:lighter
 
-.text-thin
-  font-weight:100
-  font-weight:lighter
-  font-family:$main-light-font-family
-
-.text-normal
-  font-weight:300
-
-.text-bold
-  font-weight:500
-  font-weight:bold
-
 h1,h2,h3,h4,h5,h6
   @extend .text-normal
   color:$text-color
@@ -50,20 +38,34 @@ h5
 h6
   font-size:1rem
 
-.text-right
-  text-align:right
+.text
+  // alignment helpers
+  &-right
+    text-align:right
+  &-left
+    text-align: left
+  &-center
+    text-align: center
+  
+  // weight helpers
+  &-thin
+    font-weight:100
+    font-weight:lighter
+    font-family:$main-light-font-family
 
-.text-left
-  text-align: left
+  &-normal
+    font-weight:300
 
-.text-center
-  text-align: center
+  &-bold
+    font-weight:500
+    font-weight:bold
 
-.text-light
-  color: $light-text-color
+  // color helpers
+  &-light
+    color: $light-text-color
 
-.text-dark
-  color: $dark-text-color
+  &-dark
+    color: $dark-text-color
 
 .truncate
   white-space: nowrap

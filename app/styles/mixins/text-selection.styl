@@ -1,0 +1,11 @@
+text-selection($color = $highlight-color, $text-color = null)
+
+  $text-color = (light($color) ? white : #494949) unless $text-color
+
+  &::-moz-selection
+    background: $color
+    color: $text-color
+
+  &::selection
+    background: $color
+    color: $text-color

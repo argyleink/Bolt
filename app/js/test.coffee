@@ -1,2 +1,3 @@
 foo = "bar"
-console.info foo
+console.info 
+alert 'foopa'

@@ -1,0 +1,10 @@
+if dev
+  //- load js from app.coffee
+  each path in app_files.js
+    script(src='/' + path)
+
+  script(src='/js/index.js')  
+  script(src='http://localhost:8080/webpack-dev-server.js')
+
+else
+  script(src='/js/app.js' async)

@@ -1,9 +1,9 @@
-module.exports =
+module.exports = 
   dev:
   	bsFiles:
   		src: [
   			"<%= dirs.build %>/styles/*"
-  			"<%= dirs.build %>/*.html"
+  			"<%= dirs.build %>/**/*.html"
         # "<%= dirs.build %>/js/**/*.js"
         "<%= dirs.build %>/js/lib.min.js"
   		]
@@ -11,7 +11,9 @@ module.exports =
   options:
     # http://www.browsersync.io/docs/options/
     watchTask:  true
-    proxy:      "0.0.0.0:3030"
+    server: 'build/dev'
+    # proxy:      "0.0.0.0:3030"
+    open:       "<%= options.openBrowser %>"
     notify:     false
     online:     false
     minify:     false

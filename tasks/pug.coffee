@@ -21,11 +21,13 @@ module.exports =
       pretty:     true
       client:     false
       basedir:    "<%= dirs.base %>"
+      extension:  ".pug"
 
   prod:
     files: files
     options:
-      basedir: "<%= dirs.base %>"
+      basedir:    "<%= dirs.base %>"
+      extension:  ".pug"
       data:
         dev:        false
         project:    "<%= pkg %>"

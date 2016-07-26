@@ -7,7 +7,7 @@ module.exports = (grunt) ->
     ]
 
     css: [
-      "js/bower/flexboxgrid/dist/flexboxgrid.css"
+      # "js/bower/bower_package/bower_file_you_need.css"
     ]
 
     ###

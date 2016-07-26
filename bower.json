@@ -1,6 +1,6 @@
 {
   "name": "Bolt",
-  "version": "0.0.2",
+  "version": "1",
   "homepage": "https://github.com/argyleink/Bolt",
   "authors": [
     "Adam Argyle <atom@argyleink.com>"
@@ -12,7 +12,5 @@
     "node_modules",
     "app/js/bower"
   ],
-  "dependencies": {
-    "flexboxgrid": "*"
-  }
+  "dependencies": {}
 }

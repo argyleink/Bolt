@@ -1,0 +1,25 @@
+.grid
+  display:flex
+  flex-wrap:wrap
+  
+  &.equal > *
+    flex:1 0 0
+  &.center
+    align-items:center  
+  &.no-wrap
+    flex-wrap:nowrap
+  &.reverse
+    flex-wrap:wrap-reverse
+  &.center-center
+    align-items:center
+    justify-content:center
+  &.aligned-bottom
+    justify-content:flex-end
+  &.equally-spread
+    justify-content:space-between
+  &.equal-height
+    align-items:stretch
+
+.rows
+  @extend .grid
+  flex-direction:column

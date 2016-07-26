@@ -1,7 +1,7 @@
 {
   "name": "Bolt",
   "description": "A static site seed built on Grunt",
-  "version": "1",
+  "version": "0.0.6",
   "author": "Adam Argyle",
   "private": false,
   "license": "MIT",

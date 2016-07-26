@@ -22,7 +22,6 @@ module.exports = (grunt) ->
     "pug:dev"
     "copy:dev"
     "notify:dev"
-    "connect:dev"
     "asciify:dev"
     "browserSync"
     "watch"

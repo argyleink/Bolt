@@ -4,14 +4,14 @@ module.exports =
   		src: [
   			"<%= dirs.build %>/styles/*"
   			"<%= dirs.build %>/**/*.html"
-        # "<%= dirs.build %>/js/**/*.js"
+        "<%= dirs.build %>/js/**/*.js"
         "<%= dirs.build %>/js/lib.min.js"
   		]
 
   options:
     # http://www.browsersync.io/docs/options/
     watchTask:  true
-    proxy:      "0.0.0.0:3030"
+    server:     "<%= dirs.build %>"
     open:       "<%= options.openBrowser %>"
     notify:     false
     online:     false

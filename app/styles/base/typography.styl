@@ -3,13 +3,13 @@ html
   line-height:1.5
   font-family:$main-font-family
   color:$text-color
-  -webkit-font-smoothing: antialiased
-  font-smoothing: antialiased
+  -webkit-font-smoothing:antialiased
+  font-smoothing:antialiased
 
 body, p
   font-weight:300
   font-size:1.1rem
-  color: $text-color
+  color:$text-color
 
 p.lead
   font-size:1.3rem
@@ -18,23 +18,19 @@ p.lead
 h1,h2,h3,h4,h5,h6
   font-weight:300
   color:$text-color
-  margin:1rem 0
+  margin:0
+  line-height:1.1
 
 h1
   font-size:4rem
-
 h2
   font-size:3rem
-
 h3
   font-size:2.5rem
-
 h4
   font-size:2rem
-
 h5
   font-size:1.5rem
-
 h6
   font-size:1rem
 
@@ -43,9 +39,9 @@ h6
   &-right
     text-align:right
   &-left
-    text-align: left
+    text-align:left
   &-center
-    text-align: center
+    text-align:center
   
   // weight helpers
   &-thin
@@ -62,12 +58,12 @@ h6
 
   // color helpers
   &-light
-    color: $light-text-color
+    color:$light-text-color
 
   &-dark
-    color: $dark-text-color
+    color:$dark-text-color
 
 .truncate
-  white-space: nowrap
-  overflow: hidden
-  text-overflow: ellipsis
+  white-space:nowrap
+  overflow:hidden
+  text-overflow:ellipsis

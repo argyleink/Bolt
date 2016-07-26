@@ -1,7 +1,7 @@
 autoprefixer = -> require("autoprefixer-stylus")(
   browsers: [
     "last 2 versions"
-    "> 5%"
+    # "> 5%"
     # "ie 8"
     # "ie 9"
   ]
@@ -34,5 +34,6 @@ module.exports =
       use:            [autoprefixer]
       sourcemap:      inline: true
       define:         prod: false
+      banner:         "<%= banner %>"
 
     files: files

@@ -1,10 +1,26 @@
 // try to keep this file about block level elements
 // and their high level/overall usage as a base component
+*
+  -webkit-tap-highlight-color:rgba(0, 0, 0, 0)
+  text-selection($brand-color, white)
+  box-sizing:border-box
+
+html
+  min-height:100%
+  background-color:$brand-background-color
+
+body
+  background-color:$brand-background-color
+  height:100%
+  overflow-y:auto
+  overflow-x:hidden
+  margin:0
+
 figure, header, section, article
   position:relative
 
 img
-  max-width: 100%
+  max-width:100%
   height:auto
   vertical-align:middle
 
@@ -12,9 +28,9 @@ input,
 button,
 select,
 textarea
-  font-family: inherit
-  font-size: inherit
-  line-height: inherit
+  font-family:inherit
+  font-size:inherit
+  line-height:inherit
 
 header
   height:40vh

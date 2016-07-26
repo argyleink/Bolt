@@ -1,7 +1,7 @@
 {
   "name": "Bolt",
   "description": "A static site seed built on Grunt",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Adam Argyle",
   "private": false,
   "license": "MIT",
@@ -10,7 +10,7 @@
     "url": "https://github.com/argyleink/Bolt"
   },
   "devDependencies": {
-    "autoprefixer-stylus": "^0.9.2",
+    "autoprefixer-stylus": "^0.9.4",
     "grunt": "^1.0.1",
     "grunt-asciify": "^0.2.2",
     "grunt-browser-sync": "^2.2.0",
@@ -29,9 +29,9 @@
     "grunt-notify": "^0.4.5",
     "grunt-purifycss": "^0.1.1",
     "grunt-shell": "^1.2.1",
-    "jade-inheritance": "^0.2.1",
     "jit-grunt": "^0.10.0",
     "load-grunt-configs": "^0.4.3",
+    "pug-inheritance": "^1.2.0",
     "quaff": "^2.0.0",
     "time-grunt": "^1.3.0"
   }

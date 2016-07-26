@@ -16,23 +16,22 @@ This project seed is cache heavy, smart loading, and mobile first out of the box
 #### Required
 - [Node.js](http://nodejs.org/) and NPM
 - [Grunt](http://gruntjs.com/)
-- [Bower](http://bower.io/)
 
 #### Optional (but handy)
 - [Bolt CLI](https://github.com/argyleink/Bolt-cli)
+- [Bower](http://bower.io/)
 
 #### Quickstart
 1. `npm i -g bolt-cli`: very small simple tool to install bolt into directories
 2. `bolt new my_site`: my_site should be replaced with your project name
-3. `cd bolt-test && npm i && bower i`: install bolt dependencies
+3. `cd bolt-test && npm i`: install bolt dependencies
 4. `grunt`: spin it up!
 5. See the [Wiki](https://github.com/argyleink/Bolt/wiki)
 
 or 
 
 1. `npm i`
-2. `bower i`
-3. `grunt`
+2. `grunt`
 
 ## Build Features
 - Dev builds are extremely legible, source mapped, and ready for debugging with your tools `grunt`

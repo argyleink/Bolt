@@ -1,7 +1,7 @@
-# function runs over watched jade files and send only a changed tree of files to the task
+# function runs over watched pug files and sends only a changed tree of files to the task
 # this prevents your whole app from compiling on 1 file change, only necessary views compile!
 module.exports = (grunt) ->
-  JadeInheritance   = require "jade-inheritance"
+  JadeInheritance   = require "pug-inheritance"
   changedFiles      = []
 
   onChange = grunt.util._.debounce((->

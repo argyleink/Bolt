@@ -50,8 +50,12 @@ module.exports = (grunt) ->
   ]
 
   ### QUICK SERVER
-    command: grunt serve --target=dev || grunt serve --target=prod
-      serve either dev or prod directory
+    command: grunt serve --target=dev 
+             OR 
+             grunt serve --target=prod
+
+    Serves either dev or prod directory builds
+    #static #server
   ###
   target = grunt.option "target" or "dev"
   grunt.registerTask "serve", [
@@ -62,8 +66,9 @@ module.exports = (grunt) ->
 
   ### STATIC PRODUCTION BUILD (example)
     command: grunt compile
-      turbo crunch but don't watch
-      static version, no server
+    
+    Turbo crunch but don't watch
+    #static
   ###
   grunt.registerTask "compile", [
     "clean"

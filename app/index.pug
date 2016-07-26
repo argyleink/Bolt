@@ -1,16 +1,24 @@
 extends _pug/layouts/page
 
 block content
-  header.row.center-xs.middle-xs
-    h2.col-xs.text-thin Bolt v#{project.version} is working and ready!
+  header.grid.center-center: section.text-center
+    h2.text-thin Bolt v#{project.version}, ready to go.
+    p 
+      | Feedback is welcome! 
+      +link({
+        text: 'Bolt on GitHub'
+      , url:  'https://github.com/argyleink/Bolt'
+      , blank: true
+      })
 
   article: section
-    h5 Thanks for using it! Feedback is very welcome! Follow me on:
-    dl
+    h5 Example Pug Data Loop
+    small Array sourced from _data/social.yml
+
+    ul
       each item in data.social
-        dt= item.name
-        dd: +link({
-          text:   item.username,
-          url:    item.url,
-          blank:  true
+        li: +link({
+          text:   item.name
+        , url:    item.url
+        , blank:  true
         })

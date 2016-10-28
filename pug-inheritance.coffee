@@ -11,9 +11,11 @@ module.exports = (grunt) ->
     changedFiles.forEach (filename) ->
       inheritance     = new PugInheritance filename, options.basedir, options
       dependantFiles  = dependantFiles.concat inheritance.files
+      dependantFiles.push "!_pug/**"
 
     config      = grunt.config("pug.dev.files")[0]
     config.src  = dependantFiles
+    console.log dependantFiles
     grunt.config "pug.dev.files", [config]
 
     changedFiles = []

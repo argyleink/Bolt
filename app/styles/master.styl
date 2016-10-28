@@ -3,7 +3,14 @@ if prod
   for path in libs
     @import url('../' + path)
 
-@require "nib"          // Nib is awesome: http://visionmedia.github.io/nib/
+// set some nib defaults for modern browsers
+// Nib is awesome: http://visionmedia.github.io/nib/
+flex-version      = flex
+support-for-ie    = false
+vendor-prefixes   = official
+@require "nib"
+
+// your app imports
 @require "mixins/*"     // bring in mixins
 @require "base/*"       // import base styles, ready for extending
 @require "modules/*"    // where most of your css should go for custom styles
